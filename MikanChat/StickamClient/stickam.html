@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <title>StickamTalk</title>
+    <link rel="stylesheet" type="text/css" href="http://jquery-ui.googlecode.com/svn/tags/1.8.1/themes/base/jquery.ui.all.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://jquery-ui.googlecode.com/svn/tags/1.8.1/ui/minified/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://swfobject.googlecode.com/svn/tags/swfobject_2_2/swfobject.js"></script>
+    
+    <script type="text/javascript">/*<![CDATA[*/
+        var eventCode = {
+            message : 0,
+            authSuccess : 1,
+            authFail : 2
+        };
+        
+        var joinChat = function(url,nickname){ stickam.roomEnter({url:url,nickname:nickname}); };
+        
+        var exitChat = function(){ stickam.roomExit();};
+        var setNickname = function(nickname){ stickam.roomSetNickname({nickname:nickname});};
+        var login = function(username,password){ stickam.authLogin({domain:'www.stickam.jp',email:username,password:password})};
+        var logout = function(){stickam.authLogout();};
+        
+/*        
+パラメータ
+名前	意味	値
+text	発言内容	文字列
+font	フォント	 
+size	サイズ	 
+color	色	 
+bold	太字かどうか	true,false
+italic	斜体かどうか	true,false
+underline	下線をつけるか	true,false
+*/
+        var post = function(text, font, size, color, bold, italic, underline){stickam.roomSay(text, font, size, color, bold, italic, underline)};
+        
+        $document = $(document);
+        
+        $document.ready(function(){
+            var wso = window.app;
+            if (wso === undefined) return;
+            
+           
+            swfobject.embedSWF('http://labs.stickam.jp/api/flash/v1/', 'externalStickamPlayerAPI', "320", "240", "9.0.0", null, {}, {bgcolor:'#336699',allowScriptAccess: 'always'}, {name: 'externalStickamPlayerAPI'});
+            swfobject.addDomLoadEvent(function() {
+                window.stickam = document.getElementById('externalStickamPlayerAPI');
+                stickam.oninit = function() {
+                    if (typeof console != 'undefined') {
+                        for (var i = 0; i < stickam.EVENTS.length; ++i) {
+                            with ({type: stickam.EVENTS[i]}) {
+                                if (type.match(/media.get_(volume|position)/)) {
+                                    stickam.addCallback(type,function(event) {
+                                                //console.debug(event.type, event.status);
+                                                //console.debug(event.type + " works fine");
+                                                //printConsole(event.type + " works fine");
+                                                this.removeCallback(event.type, arguments.callee);
+                                    });
+                                    continue;
+                                }
+                                stickam.addCallback(type, function(event) {
+                                   if (event.status == 'ok') {
+                                       //console[type.indexOf('room.observe')==0?'debug':'info'](type, event.status, event.data);
+                                       //printConsole(type + " " + event.status + " " + event.data.message);
+                                   } else {
+                                       //console.error(type, event.status, event.error);
+                                       //printConsole(type + " " + event.status + " " + event.error.code + " " + event.error.message);
+                                   }
+                                });
+                            }//with ({type: stickam.EVENTS[i]})
+                        }//for (var i = 0; i < stickam.EVENTS.length; ++i)
+                    }//if (typeof console != 'undefined')
+
+                    stickam.addCallback('media.play', function(event) {
+                        if (event.status != 'ok') {
+                            alert(event.error.message);
+                            return;
+                        }
+                    });
+
+                    stickam.addCallback('room.observe_message', function(event) {
+                    /*
+                        wso.printChatName_message_font_size_color_bold_italic_underline_(event.data.occupant.nickname, event.data.message.text, event.data.message.font, event.data.message.size, event.data.message.color, event.data.message.bold, event.data.message.italic, event.data.message.underline);                                
+                    */
+                        var arg = event.data.message;
+                        arg.nickname = event.data.occupant.nickname;
+                        wso.stevent(eventCode.message,arg);
+                    });
+                };//stickam.oninit
+            });//swfobject.addDomLoadEvent
+        });//$document.ready
+/*]]>*/</script>
+</head>
+<body>
+<div id="externalStickamPlayerAPI"></div>
+</body>
+</html>

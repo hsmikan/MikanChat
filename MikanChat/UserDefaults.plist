@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MCReadModeIsConvert</key>
+	<true/>
+	<key>MCReadModeIsReadTitle</key>
+	<true/>
+	<key>MCReadModeTitle</key>
+	<string>さん、</string>
+	<key>MCReadModeQueue</key>
+	<string>10</string>
+	<key>MCReadModeList</key>
+	<array/>
+	<key>MCConvertYomiList</key>
+	<array/>
+	<key>MCIgnoreList</key>
+	<array/>
+</dict>
+</plist>

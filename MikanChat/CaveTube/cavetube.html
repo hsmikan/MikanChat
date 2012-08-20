@@ -1,0 +1,134 @@
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"/><meta http-equiv="Content-Script-Type" content="text/javascript" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://ws.cavelis.net:3000/socket.io/socket.io.v0.9.5.js"></script>
+<title>cavetube</title></head><body><script type="text/javascript">
+var eventCode = {
+    test : 1000,
+    newMessage : 0,
+    postedMessages : 1,
+    ready : 2,
+    startEntry : 3,
+    closeEntry : 4,
+    ban : 5,
+    join : 6,
+    leave : 7,
+    connected : 8,
+    unready : 9,
+    set : 10,
+    error : 400
+};
+var $document=$(document);
+//
+// wso.cvevent(eventCode.hoge,data);
+//
+var wso=null;
+//
+// communicate cocoa method
+//
+var joinChannel=function(roomID){$document.trigger('socket_send_join',roomID);};
+var leaveChannel=function(){$document.trigger('socket_send_leave');};
+var sendMessage=function(username,message){$document.trigger('socket_send_comment',{message:message,username:username});};
+var disconnect=function(){$document.trigger('socket_send_disconnect');};
+//
+// onbeforeunload
+//
+$(window).bind('beforeunload',function(e){
+    /* shut down socket.io connection */
+    /* ???: this is correct? */
+    disconnect();
+});
+//
+// onload
+//  socket communicate
+//
+$document.ready(function(){
+    wso=window.cavetube;
+    if(window.io===undefined || wso===undefined)return;
+
+    var socket = window.io.connect('http://ws.cavelis.net:3000');
+    socket.on('connect',function(message){
+        wso.cvevent(eventCode.connected,"connection start");
+    });
+    
+    socket.on('message',function(json){
+        var data = JSON.parse(json);
+        if ('mode' in data) {
+            wso.cvevent(eventCode.test,data.mode);
+            $document.trigger('socket_receive_'+data.mode,[data,socket.socket.transport.sessid]);
+        }
+    });
+    
+    $document.one({
+        socket_send_join : function(e,roomID) {
+            socket.send(JSON.stringify({
+                mode : 'get',
+                room : roomID
+            }));
+        }
+    });
+    $document.bind({
+        //
+        // catch cavetube event
+        //
+        socket_receive_ready : function(e,data) {
+            wso.cvevent(eventCode.ready,null);
+        },
+        socket_receive_unready : function(e){
+            wso.cvevent(eventCode.unready,null);
+        },
+        socket_receive_set : function(e,data) {
+            if (data.ret == true)
+                wso.cvevent(eventCode.set,data.title);
+        },
+        socket_receive_start_entry : function(e,data) {
+        },
+        socket_receive_close_entry : function(e,data) {
+        },
+        socket_receive_ban_notify : function(e,data) {
+        },
+        socket_receive_join : function(e,data) {
+        },
+        socket_receive_leave : function(e,data) {
+        },
+        socket_receive_get : function(e,data){
+            for(i=0;i<data.comments.length;i++)
+                if (data.comments[i].user_icon === undefined)
+                    data.comments[i].user_icon = "";
+                    wso.cvevent(eventCode.postedMessages,data.comments);
+        },
+        socket_receive_post : function(e,data) {
+            if (data.ret)
+              if(data.user_icon===undefined) data.user_icon="";
+                wso.cvevent(eventCode.newMessage,data);
+        },
+        
+        //
+        // send event
+        //
+        socket_send_join : function(e,roomID) {
+            socket.send(JSON.stringify({
+                   mode : 'join',
+                  room : roomID
+            }));
+        },
+        socket_send_comment : function(e,msgInfo) {
+            socket.send(JSON.stringify({
+                mode : 'post',
+                name : msgInfo.username,
+                message : msgInfo.message,
+                /* ???: apikeyの習得方法は？ */
+                apikey : ""
+            }));
+        },
+        socket_send_leave : function(e) {
+            socket.send(JSON.stringify({
+                 mode : 'leave'
+            }));
+        },
+        // ??? : 切断方法はこれでいいの？
+        socket_send_disconnect : function(e){
+            if(socket!=null)socket.send('disconnect');
+        }
+    });// $document.bind
+});// $document.ready
+</script></body></html>

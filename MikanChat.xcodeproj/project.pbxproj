@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9206790115E1C9ED00DF8678 /* stickam.html in Resources */ = {isa = PBXBuildFile; fileRef = 9206790015E1C9ED00DF8678 /* stickam.html */; };
+		924305E615D438930018E2EB /* MCTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 924305E515D438930018E2EB /* MCTableViewDelegate.m */; };
+		924305ED15D44CD10018E2EB /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 924305EC15D44CD10018E2EB /* UserDefaults.plist */; };
+		9243063215D4BDBE0018E2EB /* NSString+MCRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243063115D4BDBD0018E2EB /* NSString+MCRegex.m */; };
+		9243063C15D4CB120018E2EB /* MCReadModeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243063B15D4CB110018E2EB /* MCReadModeTableView.m */; };
+		9243064315D4D6500018E2EB /* MCPhontColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243064215D4D6500018E2EB /* MCPhontColumn.m */; };
+		9243064915D4DA500018E2EB /* MCExpansionSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243064815D4DA4F0018E2EB /* MCExpansionSlider.m */; };
+		9243065615D565B90018E2EB /* MCIRCProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243065515D565B90018E2EB /* MCIRCProtocol.m */; };
+		924901E915D8504000BD9633 /* appicon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 924901E815D8504000BD9633 /* appicon.icns */; };
+		924901EC15D8535D00BD9633 /* MCUserDefaultsKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 924901EB15D8535D00BD9633 /* MCUserDefaultsKeys.m */; };
+		9262BE3615D40711007DC7B3 /* MCSoundDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 9262BE3515D40711007DC7B3 /* MCSoundDevice.m */; };
+		9262BE3D15D407EE007DC7B3 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9262BE3C15D407EE007DC7B3 /* CoreAudio.framework */; };
+		926DE95015D7AFDD000094B9 /* MCNumereicOnlyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 926DE94F15D7AFDC000094B9 /* MCNumereicOnlyTextField.m */; };
+		92B682BB15E0E21200BF1692 /* MCStickamClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B682B915E0E21200BF1692 /* MCStickamClient.m */; };
+		92B682BC15E0E21200BF1692 /* MCStickamClient.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B682BA15E0E21200BF1692 /* MCStickamClient.xib */; };
+		92B682C015E0E2B000BF1692 /* MCParentClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B682BF15E0E2AF00BF1692 /* MCParentClient.m */; };
+		92B8515215D338F100F306E4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B8515115D338F100F306E4 /* WebKit.framework */; };
+		92B8515415D3394500F306E4 /* cavetube.html in Resources */ = {isa = PBXBuildFile; fileRef = 92B8515315D3394500F306E4 /* cavetube.html */; };
+		92B8515815D3480300F306E4 /* LiveTube.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B8515715D3480300F306E4 /* LiveTube.xib */; };
+		92B8516C15D3C28100F306E4 /* NSString+MCConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B8516B15D3C28100F306E4 /* NSString+MCConverter.m */; };
+		92BF8C7A15D6C16C00E091E9 /* MCReadModePopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF8C7915D6C16B00E091E9 /* MCReadModePopUpButton.m */; };
+		92BF8C8815D7390D00E091E9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 92BF8C8715D7390C00E091E9 /* README.md */; };
+		92D6A1AA15D2E870007F58C8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D6A1A915D2E870007F58C8 /* Cocoa.framework */; };
+		92D6A1B415D2E871007F58C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92D6A1B215D2E871007F58C8 /* InfoPlist.strings */; };
+		92D6A1B615D2E871007F58C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D6A1B515D2E871007F58C8 /* main.m */; };
+		92D6A1BA15D2E871007F58C8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 92D6A1B815D2E871007F58C8 /* Credits.rtf */; };
+		92D6A1BD15D2E871007F58C8 /* MCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D6A1BC15D2E871007F58C8 /* MCAppDelegate.m */; };
+		92D6A1C015D2E871007F58C8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D6A1BE15D2E871007F58C8 /* MainMenu.xib */; };
+		92D6A1CE15D2EBF7007F58C8 /* MCIRCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D6A1CD15D2EBF7007F58C8 /* MCIRCClient.m */; };
+		92D6A1D115D2EC41007F58C8 /* MCCaveTubeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D6A1D015D2EC41007F58C8 /* MCCaveTubeClient.m */; };
+		92D6A1D415D2EC60007F58C8 /* MCLiveTubeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D6A1D315D2EC60007F58C8 /* MCLiveTubeClient.m */; };
+		92D6A1EA15D2F4C6007F58C8 /* MCClientWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D6A1E815D2F4C6007F58C8 /* MCClientWindowController.m */; };
+		92D6A1EB15D2F4C6007F58C8 /* MCClientWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D6A1E915D2F4C6007F58C8 /* MCClientWindowController.xib */; };
+		92D6A1EE15D2F677007F58C8 /* MCReadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D6A1ED15D2F677007F58C8 /* MCReadManager.m */; };
+		92D6A20B15D328D0007F58C8 /* MCIRCView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D6A20915D328D0007F58C8 /* MCIRCView.xib */; };
+		92D6A20D15D32A2F007F58C8 /* CaveTubeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D6A20C15D32A2F007F58C8 /* CaveTubeView.xib */; };
+		92E4CEA415E112FD00237B10 /* uploadstickamdocument.sh in Resources */ = {isa = PBXBuildFile; fileRef = 92E4CEA315E112FD00237B10 /* uploadstickamdocument.sh */; };
+		92E4CEA815E1185700237B10 /* NSColorWell+MCCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E4CEA715E1185700237B10 /* NSColorWell+MCCategory.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9206790015E1C9ED00DF8678 /* stickam.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = stickam.html; path = StickamClient/stickam.html; sourceTree = "<group>"; };
+		924305E415D438930018E2EB /* MCTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTableViewDelegate.h; path = TableViewDelegate/MCTableViewDelegate.h; sourceTree = "<group>"; };
+		924305E515D438930018E2EB /* MCTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCTableViewDelegate.m; path = TableViewDelegate/MCTableViewDelegate.m; sourceTree = "<group>"; };
+		924305EC15D44CD10018E2EB /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
+		924305F015D451E60018E2EB /* RegexKitLite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RegexKitLite.h; path = NSString/RegexKitLite.h; sourceTree = "<group>"; };
+		924305F115D451E60018E2EB /* RegexKitLite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RegexKitLite.m; path = NSString/RegexKitLite.m; sourceTree = "<group>"; };
+		9243063015D4BDBD0018E2EB /* NSString+MCRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MCRegex.h"; path = "NSString/NSString+MCRegex.h"; sourceTree = "<group>"; };
+		9243063115D4BDBD0018E2EB /* NSString+MCRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MCRegex.m"; path = "NSString/NSString+MCRegex.m"; sourceTree = "<group>"; };
+		9243063A15D4CB100018E2EB /* MCReadModeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCReadModeTableView.h; path = TableView/MCReadModeTableView.h; sourceTree = "<group>"; };
+		9243063B15D4CB110018E2EB /* MCReadModeTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCReadModeTableView.m; path = TableView/MCReadModeTableView.m; sourceTree = "<group>"; };
+		9243064115D4D6500018E2EB /* MCPhontColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCPhontColumn.h; path = TableView/MCPhontColumn.h; sourceTree = "<group>"; };
+		9243064215D4D6500018E2EB /* MCPhontColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCPhontColumn.m; path = TableView/MCPhontColumn.m; sourceTree = "<group>"; };
+		9243064715D4DA4E0018E2EB /* MCExpansionSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCExpansionSlider.h; path = ExpansionSlider/MCExpansionSlider.h; sourceTree = "<group>"; };
+		9243064815D4DA4F0018E2EB /* MCExpansionSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCExpansionSlider.m; path = ExpansionSlider/MCExpansionSlider.m; sourceTree = "<group>"; };
+		9243065415D565B90018E2EB /* MCIRCProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCIRCProtocol.h; path = MCIRCClient/MCIRCProtocol.h; sourceTree = "<group>"; };
+		9243065515D565B90018E2EB /* MCIRCProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCIRCProtocol.m; path = MCIRCClient/MCIRCProtocol.m; sourceTree = "<group>"; };
+		9243065715D574860018E2EB /* MCIRCClientConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MCIRCClientConstants.h; path = MCIRCClient/MCIRCClientConstants.h; sourceTree = "<group>"; };
+		924901E815D8504000BD9633 /* appicon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = appicon.icns; sourceTree = "<group>"; };
+		924901EB15D8535D00BD9633 /* MCUserDefaultsKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCUserDefaultsKeys.m; sourceTree = "<group>"; };
+		9262BE3415D40711007DC7B3 /* MCSoundDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCSoundDevice.h; path = SoundDevice/MCSoundDevice.h; sourceTree = "<group>"; };
+		9262BE3515D40711007DC7B3 /* MCSoundDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCSoundDevice.m; path = SoundDevice/MCSoundDevice.m; sourceTree = "<group>"; };
+		9262BE3C15D407EE007DC7B3 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		926DE94E15D7AFDC000094B9 /* MCNumereicOnlyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCNumereicOnlyTextField.h; path = TextField/MCNumereicOnlyTextField.h; sourceTree = "<group>"; };
+		926DE94F15D7AFDC000094B9 /* MCNumereicOnlyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCNumereicOnlyTextField.m; path = TextField/MCNumereicOnlyTextField.m; sourceTree = "<group>"; };
+		92B682B815E0E21200BF1692 /* MCStickamClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCStickamClient.h; path = StickamClient/MCStickamClient.h; sourceTree = "<group>"; };
+		92B682B915E0E21200BF1692 /* MCStickamClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCStickamClient.m; path = StickamClient/MCStickamClient.m; sourceTree = "<group>"; };
+		92B682BA15E0E21200BF1692 /* MCStickamClient.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCStickamClient.xib; path = StickamClient/MCStickamClient.xib; sourceTree = "<group>"; };
+		92B682BE15E0E2AF00BF1692 /* MCParentClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCParentClient.h; sourceTree = "<group>"; };
+		92B682BF15E0E2AF00BF1692 /* MCParentClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCParentClient.m; sourceTree = "<group>"; };
+		92B8515115D338F100F306E4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		92B8515315D3394500F306E4 /* cavetube.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = cavetube.html; path = CaveTube/cavetube.html; sourceTree = "<group>"; };
+		92B8515715D3480300F306E4 /* LiveTube.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LiveTube.xib; path = LiveTubeClient/LiveTube.xib; sourceTree = "<group>"; };
+		92B8516915D3C0AD00F306E4 /* MCUserDefaultsKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCUserDefaultsKeys.h; sourceTree = "<group>"; };
+		92B8516A15D3C28000F306E4 /* NSString+MCConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MCConverter.h"; path = "NSString/NSString+MCConverter.h"; sourceTree = "<group>"; };
+		92B8516B15D3C28100F306E4 /* NSString+MCConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MCConverter.m"; path = "NSString/NSString+MCConverter.m"; sourceTree = "<group>"; };
+		92BF8C6C15D65A6700E091E9 /* MCCaveTubeClientConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MCCaveTubeClientConstants.h; path = CaveTube/MCCaveTubeClientConstants.h; sourceTree = "<group>"; };
+		92BF8C7815D6C16B00E091E9 /* MCReadModePopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCReadModePopUpButton.h; path = PopUpButton/MCReadModePopUpButton.h; sourceTree = "<group>"; };
+		92BF8C7915D6C16B00E091E9 /* MCReadModePopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCReadModePopUpButton.m; path = PopUpButton/MCReadModePopUpButton.m; sourceTree = "<group>"; };
+		92BF8C8715D7390C00E091E9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		92D6A1A515D2E870007F58C8 /* MikanChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MikanChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92D6A1A915D2E870007F58C8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		92D6A1AC15D2E870007F58C8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		92D6A1AD15D2E870007F58C8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		92D6A1AE15D2E870007F58C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		92D6A1B115D2E871007F58C8 /* MikanChat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MikanChat-Info.plist"; sourceTree = "<group>"; };
+		92D6A1B315D2E871007F58C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		92D6A1B515D2E871007F58C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		92D6A1B715D2E871007F58C8 /* MikanChat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MikanChat-Prefix.pch"; sourceTree = "<group>"; };
+		92D6A1B915D2E871007F58C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		92D6A1BB15D2E871007F58C8 /* MCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAppDelegate.h; sourceTree = "<group>"; };
+		92D6A1BC15D2E871007F58C8 /* MCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCAppDelegate.m; sourceTree = "<group>"; };
+		92D6A1BF15D2E871007F58C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		92D6A1CC15D2EBF7007F58C8 /* MCIRCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCIRCClient.h; path = MCIRCClient/MCIRCClient.h; sourceTree = "<group>"; };
+		92D6A1CD15D2EBF7007F58C8 /* MCIRCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCIRCClient.m; path = MCIRCClient/MCIRCClient.m; sourceTree = "<group>"; };
+		92D6A1CF15D2EC41007F58C8 /* MCCaveTubeClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCCaveTubeClient.h; path = CaveTube/MCCaveTubeClient.h; sourceTree = "<group>"; };
+		92D6A1D015D2EC41007F58C8 /* MCCaveTubeClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCCaveTubeClient.m; path = CaveTube/MCCaveTubeClient.m; sourceTree = "<group>"; };
+		92D6A1D215D2EC60007F58C8 /* MCLiveTubeClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCLiveTubeClient.h; path = LiveTubeClient/MCLiveTubeClient.h; sourceTree = "<group>"; };
+		92D6A1D315D2EC60007F58C8 /* MCLiveTubeClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCLiveTubeClient.m; path = LiveTubeClient/MCLiveTubeClient.m; sourceTree = "<group>"; };
+		92D6A1E715D2F4C6007F58C8 /* MCClientWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCClientWindowController.h; sourceTree = "<group>"; };
+		92D6A1E815D2F4C6007F58C8 /* MCClientWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCClientWindowController.m; sourceTree = "<group>"; };
+		92D6A1E915D2F4C6007F58C8 /* MCClientWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCClientWindowController.xib; sourceTree = "<group>"; };
+		92D6A1EC15D2F677007F58C8 /* MCReadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCReadManager.h; path = ReadManager/MCReadManager.h; sourceTree = "<group>"; };
+		92D6A1ED15D2F677007F58C8 /* MCReadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCReadManager.m; path = ReadManager/MCReadManager.m; sourceTree = "<group>"; };
+		92D6A20115D315E7007F58C8 /* MCIRCClientDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MCIRCClientDelegate.h; path = MCIRCClient/MCIRCClientDelegate.h; sourceTree = "<group>"; };
+		92D6A20915D328D0007F58C8 /* MCIRCView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCIRCView.xib; path = MCIRCClient/MCIRCView.xib; sourceTree = "<group>"; };
+		92D6A20C15D32A2F007F58C8 /* CaveTubeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CaveTubeView.xib; path = CaveTube/CaveTubeView.xib; sourceTree = "<group>"; };
+		92E4CEA315E112FD00237B10 /* uploadstickamdocument.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = uploadstickamdocument.sh; sourceTree = "<group>"; };
+		92E4CEA615E1185700237B10 /* NSColorWell+MCCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSColorWell+MCCategory.h"; path = "NSCollorWell/NSColorWell+MCCategory.h"; sourceTree = "<group>"; };
+		92E4CEA715E1185700237B10 /* NSColorWell+MCCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSColorWell+MCCategory.m"; path = "NSCollorWell/NSColorWell+MCCategory.m"; sourceTree = "<group>"; };
+		92E775FA15D873B5003682F0 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = SOURCE_ROOT; };
+		92E775FC15D873B5003682F0 /* upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = upload.sh; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92D6A1A215D2E870007F58C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9262BE3D15D407EE007DC7B3 /* CoreAudio.framework in Frameworks */,
+				92B8515215D338F100F306E4 /* WebKit.framework in Frameworks */,
+				92D6A1AA15D2E870007F58C8 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		924305E815D438990018E2EB /* TableViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				924305E415D438930018E2EB /* MCTableViewDelegate.h */,
+				924305E515D438930018E2EB /* MCTableViewDelegate.m */,
+			);
+			name = TableViewDelegate;
+			sourceTree = "<group>";
+		};
+		9243063D15D4CB180018E2EB /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				9243063A15D4CB100018E2EB /* MCReadModeTableView.h */,
+				9243063B15D4CB110018E2EB /* MCReadModeTableView.m */,
+				9243064115D4D6500018E2EB /* MCPhontColumn.h */,
+				9243064215D4D6500018E2EB /* MCPhontColumn.m */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		9243064A15D4DA9E0018E2EB /* ExpansionSlider */ = {
+			isa = PBXGroup;
+			children = (
+				9243064715D4DA4E0018E2EB /* MCExpansionSlider.h */,
+				9243064815D4DA4F0018E2EB /* MCExpansionSlider.m */,
+			);
+			name = ExpansionSlider;
+			sourceTree = "<group>";
+		};
+		9262BE3815D40717007DC7B3 /* SoundDevice */ = {
+			isa = PBXGroup;
+			children = (
+				9262BE3415D40711007DC7B3 /* MCSoundDevice.h */,
+				9262BE3515D40711007DC7B3 /* MCSoundDevice.m */,
+			);
+			name = SoundDevice;
+			sourceTree = "<group>";
+		};
+		926DE95215D7AFFF000094B9 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				926DE94E15D7AFDC000094B9 /* MCNumereicOnlyTextField.h */,
+				926DE94F15D7AFDC000094B9 /* MCNumereicOnlyTextField.m */,
+			);
+			name = TextField;
+			sourceTree = "<group>";
+		};
+		92B682BD15E0E21A00BF1692 /* StickamClient */ = {
+			isa = PBXGroup;
+			children = (
+				92B682BA15E0E21200BF1692 /* MCStickamClient.xib */,
+				92B682B815E0E21200BF1692 /* MCStickamClient.h */,
+				92B682B915E0E21200BF1692 /* MCStickamClient.m */,
+				9206790015E1C9ED00DF8678 /* stickam.html */,
+			);
+			name = StickamClient;
+			sourceTree = "<group>";
+		};
+		92B8516D15D3C34F00F306E4 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				924305F015D451E60018E2EB /* RegexKitLite.h */,
+				924305F115D451E60018E2EB /* RegexKitLite.m */,
+				92B8516A15D3C28000F306E4 /* NSString+MCConverter.h */,
+				92B8516B15D3C28100F306E4 /* NSString+MCConverter.m */,
+				9243063015D4BDBD0018E2EB /* NSString+MCRegex.h */,
+				9243063115D4BDBD0018E2EB /* NSString+MCRegex.m */,
+			);
+			name = NSString;
+			sourceTree = "<group>";
+		};
+		92BF8C7B15D6C17200E091E9 /* PopUpButton */ = {
+			isa = PBXGroup;
+			children = (
+				92BF8C7815D6C16B00E091E9 /* MCReadModePopUpButton.h */,
+				92BF8C7915D6C16B00E091E9 /* MCReadModePopUpButton.m */,
+			);
+			name = PopUpButton;
+			sourceTree = "<group>";
+		};
+		92D6A19A15D2E870007F58C8 = {
+			isa = PBXGroup;
+			children = (
+				924901E815D8504000BD9633 /* appicon.icns */,
+				92E775FA15D873B5003682F0 /* Makefile */,
+				92E775FC15D873B5003682F0 /* upload.sh */,
+				92E4CEA315E112FD00237B10 /* uploadstickamdocument.sh */,
+				92D6A1AF15D2E870007F58C8 /* MikanChat */,
+				92D6A1A815D2E870007F58C8 /* Frameworks */,
+				92D6A1A615D2E870007F58C8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		92D6A1A615D2E870007F58C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92D6A1A515D2E870007F58C8 /* MikanChat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92D6A1A815D2E870007F58C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9262BE3C15D407EE007DC7B3 /* CoreAudio.framework */,
+				92B8515115D338F100F306E4 /* WebKit.framework */,
+				92D6A1A915D2E870007F58C8 /* Cocoa.framework */,
+				92D6A1AB15D2E870007F58C8 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92D6A1AB15D2E870007F58C8 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92D6A1AC15D2E870007F58C8 /* AppKit.framework */,
+				92D6A1AD15D2E870007F58C8 /* CoreData.framework */,
+				92D6A1AE15D2E870007F58C8 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		92D6A1AF15D2E870007F58C8 /* MikanChat */ = {
+			isa = PBXGroup;
+			children = (
+				92D6A1B015D2E871007F58C8 /* Supporting Files */,
+				92D6A1BE15D2E871007F58C8 /* MainMenu.xib */,
+				92B8516915D3C0AD00F306E4 /* MCUserDefaultsKeys.h */,
+				924901EB15D8535D00BD9633 /* MCUserDefaultsKeys.m */,
+				92D6A1BB15D2E871007F58C8 /* MCAppDelegate.h */,
+				92D6A1BC15D2E871007F58C8 /* MCAppDelegate.m */,
+				92D6A20615D32145007F58C8 /* Client */,
+				92D6A1EF15D2F67F007F58C8 /* ReadManager */,
+				9262BE3815D40717007DC7B3 /* SoundDevice */,
+				92B8516D15D3C34F00F306E4 /* NSString */,
+				92BF8C7B15D6C17200E091E9 /* PopUpButton */,
+				924305E815D438990018E2EB /* TableViewDelegate */,
+				9243063D15D4CB180018E2EB /* TableView */,
+				9243064A15D4DA9E0018E2EB /* ExpansionSlider */,
+				926DE95215D7AFFF000094B9 /* TextField */,
+				92E4CEA915E1187B00237B10 /* NSCollorWell */,
+			);
+			path = MikanChat;
+			sourceTree = "<group>";
+		};
+		92D6A1B015D2E871007F58C8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92BF8C8715D7390C00E091E9 /* README.md */,
+				92D6A1B815D2E871007F58C8 /* Credits.rtf */,
+				924305EC15D44CD10018E2EB /* UserDefaults.plist */,
+				92D6A1B215D2E871007F58C8 /* InfoPlist.strings */,
+				92D6A1B115D2E871007F58C8 /* MikanChat-Info.plist */,
+				92D6A1B515D2E871007F58C8 /* main.m */,
+				92D6A1B715D2E871007F58C8 /* MikanChat-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92D6A1D515D2EC6B007F58C8 /* LiveTubeClient */ = {
+			isa = PBXGroup;
+			children = (
+				92B8515715D3480300F306E4 /* LiveTube.xib */,
+				92D6A1D215D2EC60007F58C8 /* MCLiveTubeClient.h */,
+				92D6A1D315D2EC60007F58C8 /* MCLiveTubeClient.m */,
+			);
+			name = LiveTubeClient;
+			sourceTree = "<group>";
+		};
+		92D6A1D615D2EC74007F58C8 /* CaveTube */ = {
+			isa = PBXGroup;
+			children = (
+				92D6A20C15D32A2F007F58C8 /* CaveTubeView.xib */,
+				92BF8C6C15D65A6700E091E9 /* MCCaveTubeClientConstants.h */,
+				92D6A1CF15D2EC41007F58C8 /* MCCaveTubeClient.h */,
+				92D6A1D015D2EC41007F58C8 /* MCCaveTubeClient.m */,
+				92B8515315D3394500F306E4 /* cavetube.html */,
+			);
+			name = CaveTube;
+			sourceTree = "<group>";
+		};
+		92D6A1D715D2EC85007F58C8 /* MCIRCClient */ = {
+			isa = PBXGroup;
+			children = (
+				92D6A20915D328D0007F58C8 /* MCIRCView.xib */,
+				9243065715D574860018E2EB /* MCIRCClientConstants.h */,
+				92D6A20115D315E7007F58C8 /* MCIRCClientDelegate.h */,
+				92D6A1CC15D2EBF7007F58C8 /* MCIRCClient.h */,
+				92D6A1CD15D2EBF7007F58C8 /* MCIRCClient.m */,
+				9243065415D565B90018E2EB /* MCIRCProtocol.h */,
+				9243065515D565B90018E2EB /* MCIRCProtocol.m */,
+			);
+			name = MCIRCClient;
+			sourceTree = "<group>";
+		};
+		92D6A1E615D2F4C6007F58C8 /* ClientWindowController */ = {
+			isa = PBXGroup;
+			children = (
+				92D6A1E915D2F4C6007F58C8 /* MCClientWindowController.xib */,
+				92D6A1E715D2F4C6007F58C8 /* MCClientWindowController.h */,
+				92D6A1E815D2F4C6007F58C8 /* MCClientWindowController.m */,
+			);
+			path = ClientWindowController;
+			sourceTree = "<group>";
+		};
+		92D6A1EF15D2F67F007F58C8 /* ReadManager */ = {
+			isa = PBXGroup;
+			children = (
+				92D6A1EC15D2F677007F58C8 /* MCReadManager.h */,
+				92D6A1ED15D2F677007F58C8 /* MCReadManager.m */,
+			);
+			name = ReadManager;
+			sourceTree = "<group>";
+		};
+		92D6A20615D32145007F58C8 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				92B682BE15E0E2AF00BF1692 /* MCParentClient.h */,
+				92B682BF15E0E2AF00BF1692 /* MCParentClient.m */,
+				92D6A1E615D2F4C6007F58C8 /* ClientWindowController */,
+				92D6A1D715D2EC85007F58C8 /* MCIRCClient */,
+				92D6A1D615D2EC74007F58C8 /* CaveTube */,
+				92B682BD15E0E21A00BF1692 /* StickamClient */,
+				92D6A1D515D2EC6B007F58C8 /* LiveTubeClient */,
+			);
+			name = Client;
+			sourceTree = "<group>";
+		};
+		92E4CEA915E1187B00237B10 /* NSCollorWell */ = {
+			isa = PBXGroup;
+			children = (
+				92E4CEA615E1185700237B10 /* NSColorWell+MCCategory.h */,
+				92E4CEA715E1185700237B10 /* NSColorWell+MCCategory.m */,
+			);
+			name = NSCollorWell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92D6A1A415D2E870007F58C8 /* MikanChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92D6A1C315D2E871007F58C8 /* Build configuration list for PBXNativeTarget "MikanChat" */;
+			buildPhases = (
+				92D6A1A115D2E870007F58C8 /* Sources */,
+				92D6A1A215D2E870007F58C8 /* Frameworks */,
+				92D6A1A315D2E870007F58C8 /* Resources */,
+				92BF8C8215D6EF7500E091E9 /* Xcode Marks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MikanChat;
+			productName = MikanChat;
+			productReference = 92D6A1A515D2E870007F58C8 /* MikanChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92D6A19C15D2E870007F58C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MC;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = hsmikan;
+			};
+			buildConfigurationList = 92D6A19F15D2E870007F58C8 /* Build configuration list for PBXProject "MikanChat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 92D6A19A15D2E870007F58C8;
+			productRefGroup = 92D6A1A615D2E870007F58C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92D6A1A415D2E870007F58C8 /* MikanChat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92D6A1A315D2E870007F58C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92D6A1B415D2E871007F58C8 /* InfoPlist.strings in Resources */,
+				92D6A1BA15D2E871007F58C8 /* Credits.rtf in Resources */,
+				92D6A1C015D2E871007F58C8 /* MainMenu.xib in Resources */,
+				92D6A1EB15D2F4C6007F58C8 /* MCClientWindowController.xib in Resources */,
+				92D6A20B15D328D0007F58C8 /* MCIRCView.xib in Resources */,
+				92D6A20D15D32A2F007F58C8 /* CaveTubeView.xib in Resources */,
+				92B8515415D3394500F306E4 /* cavetube.html in Resources */,
+				92B8515815D3480300F306E4 /* LiveTube.xib in Resources */,
+				924305ED15D44CD10018E2EB /* UserDefaults.plist in Resources */,
+				92BF8C8815D7390D00E091E9 /* README.md in Resources */,
+				924901E915D8504000BD9633 /* appicon.icns in Resources */,
+				92B682BC15E0E21200BF1692 /* MCStickamClient.xib in Resources */,
+				92E4CEA415E112FD00237B10 /* uploadstickamdocument.sh in Resources */,
+				9206790115E1C9ED00DF8678 /* stickam.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		92BF8C8215D6EF7500E091E9 /* Xcode Marks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Xcode Marks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind ${SRCROOT} \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | \\\nxargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | \\\nperl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92D6A1A115D2E870007F58C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92D6A1B615D2E871007F58C8 /* main.m in Sources */,
+				92D6A1BD15D2E871007F58C8 /* MCAppDelegate.m in Sources */,
+				92D6A1CE15D2EBF7007F58C8 /* MCIRCClient.m in Sources */,
+				92D6A1D115D2EC41007F58C8 /* MCCaveTubeClient.m in Sources */,
+				92D6A1D415D2EC60007F58C8 /* MCLiveTubeClient.m in Sources */,
+				92D6A1EA15D2F4C6007F58C8 /* MCClientWindowController.m in Sources */,
+				92D6A1EE15D2F677007F58C8 /* MCReadManager.m in Sources */,
+				92B8516C15D3C28100F306E4 /* NSString+MCConverter.m in Sources */,
+				9262BE3615D40711007DC7B3 /* MCSoundDevice.m in Sources */,
+				924305E615D438930018E2EB /* MCTableViewDelegate.m in Sources */,
+				9243063215D4BDBE0018E2EB /* NSString+MCRegex.m in Sources */,
+				9243063C15D4CB120018E2EB /* MCReadModeTableView.m in Sources */,
+				9243064315D4D6500018E2EB /* MCPhontColumn.m in Sources */,
+				9243064915D4DA500018E2EB /* MCExpansionSlider.m in Sources */,
+				9243065615D565B90018E2EB /* MCIRCProtocol.m in Sources */,
+				92BF8C7A15D6C16C00E091E9 /* MCReadModePopUpButton.m in Sources */,
+				926DE95015D7AFDD000094B9 /* MCNumereicOnlyTextField.m in Sources */,
+				924901EC15D8535D00BD9633 /* MCUserDefaultsKeys.m in Sources */,
+				92B682BB15E0E21200BF1692 /* MCStickamClient.m in Sources */,
+				92B682C015E0E2B000BF1692 /* MCParentClient.m in Sources */,
+				92E4CEA815E1185700237B10 /* NSColorWell+MCCategory.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		92D6A1B215D2E871007F58C8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92D6A1B315D2E871007F58C8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		92D6A1B815D2E871007F58C8 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92D6A1B915D2E871007F58C8 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		92D6A1BE15D2E871007F58C8 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92D6A1BF15D2E871007F58C8 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		92D6A1C115D2E871007F58C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.8;
+			};
+			name = Debug;
+		};
+		92D6A1C215D2E871007F58C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx10.8;
+			};
+			name = Release;
+		};
+		92D6A1C415D2E871007F58C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MikanChat/MikanChat-Prefix.pch";
+				INFOPLIST_FILE = "MikanChat/MikanChat-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.8;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		92D6A1C515D2E871007F58C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MikanChat/MikanChat-Prefix.pch";
+				INFOPLIST_FILE = "MikanChat/MikanChat-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.8;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92D6A19F15D2E870007F58C8 /* Build configuration list for PBXProject "MikanChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92D6A1C115D2E871007F58C8 /* Debug */,
+				92D6A1C215D2E871007F58C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92D6A1C315D2E871007F58C8 /* Build configuration list for PBXNativeTarget "MikanChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92D6A1C415D2E871007F58C8 /* Debug */,
+				92D6A1C515D2E871007F58C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 92D6A19C15D2E870007F58C8 /* Project object */;
+}
