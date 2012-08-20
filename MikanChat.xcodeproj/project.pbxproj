@@ -27,7 +27,6 @@
 		92B8515815D3480300F306E4 /* LiveTube.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B8515715D3480300F306E4 /* LiveTube.xib */; };
 		92B8516C15D3C28100F306E4 /* NSString+MCConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B8516B15D3C28100F306E4 /* NSString+MCConverter.m */; };
 		92BF8C7A15D6C16C00E091E9 /* MCReadModePopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF8C7915D6C16B00E091E9 /* MCReadModePopUpButton.m */; };
-		92BF8C8815D7390D00E091E9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 92BF8C8715D7390C00E091E9 /* README.md */; };
 		92D6A1AA15D2E870007F58C8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D6A1A915D2E870007F58C8 /* Cocoa.framework */; };
 		92D6A1B415D2E871007F58C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92D6A1B215D2E871007F58C8 /* InfoPlist.strings */; };
 		92D6A1B615D2E871007F58C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D6A1B515D2E871007F58C8 /* main.m */; };
@@ -84,7 +83,6 @@
 		92BF8C6C15D65A6700E091E9 /* MCCaveTubeClientConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MCCaveTubeClientConstants.h; path = CaveTube/MCCaveTubeClientConstants.h; sourceTree = "<group>"; };
 		92BF8C7815D6C16B00E091E9 /* MCReadModePopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCReadModePopUpButton.h; path = PopUpButton/MCReadModePopUpButton.h; sourceTree = "<group>"; };
 		92BF8C7915D6C16B00E091E9 /* MCReadModePopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCReadModePopUpButton.m; path = PopUpButton/MCReadModePopUpButton.m; sourceTree = "<group>"; };
-		92BF8C8715D7390C00E091E9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		92D6A1A515D2E870007F58C8 /* MikanChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MikanChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D6A1A915D2E870007F58C8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		92D6A1AC15D2E870007F58C8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -280,7 +278,6 @@
 		92D6A1B015D2E871007F58C8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				92BF8C8715D7390C00E091E9 /* README.md */,
 				92D6A1B815D2E871007F58C8 /* Credits.rtf */,
 				924305EC15D44CD10018E2EB /* UserDefaults.plist */,
 				92D6A1B215D2E871007F58C8 /* InfoPlist.strings */,
@@ -431,7 +428,6 @@
 				92B8515415D3394500F306E4 /* cavetube.html in Resources */,
 				92B8515815D3480300F306E4 /* LiveTube.xib in Resources */,
 				924305ED15D44CD10018E2EB /* UserDefaults.plist in Resources */,
-				92BF8C8815D7390D00E091E9 /* README.md in Resources */,
 				924901E915D8504000BD9633 /* appicon.icns in Resources */,
 				92B682BC15E0E21200BF1692 /* MCStickamClient.xib in Resources */,
 				92E4CEA415E112FD00237B10 /* uploadstickamdocument.sh in Resources */,
