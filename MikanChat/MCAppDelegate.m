@@ -143,6 +143,12 @@
 // read mode add/remove
 //
 - (IBAction)addNewReadMode:(id)sender {
+    if (![[MCReadManager sharedReader] hasReadSystem]) {
+        NSRunAlertPanel(@"MikanChat", @"有効な音声合成環境がありません。", @"O.K.", nil, nil);
+        return;
+    }
+    
+    
     NSUserDefaults * df = [NSUserDefaults standardUserDefaults];
     int suffix = 0;
     for (NSDictionary * readmodeproperty in [df objectForKey:kMCReadModeListKey]) {

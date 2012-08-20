@@ -188,6 +188,7 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
 
 
 - (NSString*)systemNameAtIndex:(NSUInteger)index {
+    if ( _readSystemList.count-1 > index ) return nil;
     return [_readSystemList objectAtIndex:index];
 }
 
@@ -204,6 +205,8 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
  *==============================================================================*/
 
 - (NSArray*)phontsBySystemIndex:(NSUInteger)index {
+    if ( _readSystemList.count-1 > index ) return nil;
+    
     NSString * systemName = [_readSystemList objectAtIndex:index];
     
     if ( COMPARESTRING(systemName, kMCKyokoName) || !systemName.length)
@@ -309,6 +312,18 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
     
     return ret;
 }
+
+
+
+
+
+
+- (BOOL)hasReadSystem {
+    if (_readSystemList.count) return YES;
+    else return NO;
+}
+
+
 
 
 

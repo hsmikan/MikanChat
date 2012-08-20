@@ -14,6 +14,8 @@
 #import "../MCUserDefaultsKeys.h"
 #import "../NSString/NSString+MCConverter.h"
 
+#import "../PopUpButton/MCReadModePopUpButton.h"
+
 
 //
 // Singleton
@@ -39,6 +41,7 @@
 
 
 @interface MCClientWindowController () <MCClientProtocol>
+- (void)MC_PRIVATE_METHOD_PREPEND(readModePBUpdated);
 @end
 
 @implementation MCClientWindowController
@@ -68,10 +71,16 @@
     [super windowDidLoad];
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    NSNotificationCenter * nfc = [NSNotificationCenter defaultCenter];
+    [nfc addObserver:self selector:@selector(MC_PRIVATE_METHOD_PREPEND(readModePBUpdated))
+                name:kMCReadModePBNotficationKey object:nil];
 }
 
 
 - (void)dealloc {
+    NSNotificationCenter * nfc = [NSNotificationCenter defaultCenter];
+    [nfc removeObserver:self name:kMCReadModePBNotficationKey object:nil];
+
     [_clientController release];
     [super dealloc];
 }
@@ -172,7 +181,8 @@
     if (isIgnore) return NO;
     
     
-    if ([_isReadCB state]) {
+    
+    if ([_isReadCB isEnabled] && [_isReadCB state]) {
         
         NSDictionary * readMode;
         NSString * modeName = [[_readModePB selectedItem] title];
@@ -228,6 +238,21 @@
         if ([_clientController startChat])
             [_toggleBT setTitle:@"Leave"];
         
+    }
+}
+
+
+
+
+
+
+
+- (void)MC_PRIVATE_METHOD_PREPEND(readModePBUpdated) {
+    if ( [_readModePB itemTitles].count )
+        [_isReadCB setEnabled:YES];
+    else {
+        [_isReadCB setEnabled:NO];
+        [_isReadCB setState:0];
     }
 }
 

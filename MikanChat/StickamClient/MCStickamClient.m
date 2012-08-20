@@ -20,9 +20,10 @@
 
 
 typedef enum {
-    kMCStickamMessageEvent,
-    kMCStickamSuccessAuthEvent,
-    kMCStickamFailAuthEvent,
+    kMCStickamConsoleEvent = 1000,
+    kMCStickamMessageEvent = 0,
+    kMCStickamSuccessAuthEvent = 1,
+    kMCStickamFailAuthEvent = 2,
 } MCStickamEventCode;
 
 @interface MCStickamClient ()
@@ -74,20 +75,19 @@ typedef enum {
 }
 
 - (void)awakeFromNib {
-//    _webView = [[WebView alloc] init];
-    {
-        [_webView setPolicyDelegate:self];
-        [_webView setUIDelegate:self];
-        [_webView setFrameLoadDelegate:self];
-        
-        WebScriptObject * wso = [_webView windowScriptObject];
-        [wso setValue:self forKey:JSCallKey];
+    [_webView setPolicyDelegate:self];
+    [_webView setUIDelegate:self];
+    [_webView setFrameLoadDelegate:self];
+    
+    WebScriptObject * wso = [_webView windowScriptObject];
+    [wso setValue:self forKey:JSCallKey];
 #ifdef DEBUG
-        [_webView setMainFrameURL:@"http://localhost/~hsmikan/test/stickam/stickam.html"];
+    //FIXME: local sever response 403
+    //[_webView setMainFrameURL:@"http://localhost/~hsmikan/debug/stickam/debug.html"];
+    [_webView setMainFrameURL:@"http://www.waterbolt.info/apps/MikanChat/html/debug/stickam.html"];
 #else
-        [_webView setMainFrameURL:@"http://www.waterbolt.info/apps/MikanChat/html/stickam.html"];
+    [_webView setMainFrameURL:@"http://www.waterbolt.info/apps/MikanChat/html/release/stickam.html"];
 #endif
-    }
     
 }
 
@@ -155,7 +155,6 @@ typedef enum {
         }
         joinScript = STRINGFORMAT(@"joinChat('%@');",url);
     }
-    DLOG(@"%@",joinScript);
     EVALUATEJS(joinScript);
     
     return _isJoin = YES;
@@ -383,7 +382,6 @@ initiatedByFrame:(WebFrame *)frame{
 - (void)MC_PRIVATE_METHOD_PREPEND(getComment):(WebScriptObject*)webObj {
     NSString * message = [webObj valueForKey:@"text"];
     NSString * nickname = [webObj valueForKey:@"nickname"];
-    DLOG(@"nickname : %@, message : %@",nickname,message);
     
     if (![self.delegate clientGetMessage:message userName:nickname])
         return;

@@ -19,6 +19,7 @@
 		9262BE3615D40711007DC7B3 /* MCSoundDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 9262BE3515D40711007DC7B3 /* MCSoundDevice.m */; };
 		9262BE3D15D407EE007DC7B3 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9262BE3C15D407EE007DC7B3 /* CoreAudio.framework */; };
 		926DE95015D7AFDD000094B9 /* MCNumereicOnlyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 926DE94F15D7AFDC000094B9 /* MCNumereicOnlyTextField.m */; };
+		929DDF1A15E2AA45005F115E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 929DDF1915E2AA44005F115E /* README.md */; };
 		92B682BB15E0E21200BF1692 /* MCStickamClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B682B915E0E21200BF1692 /* MCStickamClient.m */; };
 		92B682BC15E0E21200BF1692 /* MCStickamClient.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B682BA15E0E21200BF1692 /* MCStickamClient.xib */; };
 		92B682C015E0E2B000BF1692 /* MCParentClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B682BF15E0E2AF00BF1692 /* MCParentClient.m */; };
@@ -41,7 +42,6 @@
 		92D6A1EE15D2F677007F58C8 /* MCReadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D6A1ED15D2F677007F58C8 /* MCReadManager.m */; };
 		92D6A20B15D328D0007F58C8 /* MCIRCView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D6A20915D328D0007F58C8 /* MCIRCView.xib */; };
 		92D6A20D15D32A2F007F58C8 /* CaveTubeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D6A20C15D32A2F007F58C8 /* CaveTubeView.xib */; };
-		92E4CEA415E112FD00237B10 /* uploadstickamdocument.sh in Resources */ = {isa = PBXBuildFile; fileRef = 92E4CEA315E112FD00237B10 /* uploadstickamdocument.sh */; };
 		92E4CEA815E1185700237B10 /* NSColorWell+MCCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E4CEA715E1185700237B10 /* NSColorWell+MCCategory.m */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +69,7 @@
 		9262BE3C15D407EE007DC7B3 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		926DE94E15D7AFDC000094B9 /* MCNumereicOnlyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCNumereicOnlyTextField.h; path = TextField/MCNumereicOnlyTextField.h; sourceTree = "<group>"; };
 		926DE94F15D7AFDC000094B9 /* MCNumereicOnlyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCNumereicOnlyTextField.m; path = TextField/MCNumereicOnlyTextField.m; sourceTree = "<group>"; };
+		929DDF1915E2AA44005F115E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		92B682B815E0E21200BF1692 /* MCStickamClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCStickamClient.h; path = StickamClient/MCStickamClient.h; sourceTree = "<group>"; };
 		92B682B915E0E21200BF1692 /* MCStickamClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCStickamClient.m; path = StickamClient/MCStickamClient.m; sourceTree = "<group>"; };
 		92B682BA15E0E21200BF1692 /* MCStickamClient.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCStickamClient.xib; path = StickamClient/MCStickamClient.xib; sourceTree = "<group>"; };
@@ -110,11 +111,8 @@
 		92D6A20115D315E7007F58C8 /* MCIRCClientDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MCIRCClientDelegate.h; path = MCIRCClient/MCIRCClientDelegate.h; sourceTree = "<group>"; };
 		92D6A20915D328D0007F58C8 /* MCIRCView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCIRCView.xib; path = MCIRCClient/MCIRCView.xib; sourceTree = "<group>"; };
 		92D6A20C15D32A2F007F58C8 /* CaveTubeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CaveTubeView.xib; path = CaveTube/CaveTubeView.xib; sourceTree = "<group>"; };
-		92E4CEA315E112FD00237B10 /* uploadstickamdocument.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = uploadstickamdocument.sh; sourceTree = "<group>"; };
 		92E4CEA615E1185700237B10 /* NSColorWell+MCCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSColorWell+MCCategory.h"; path = "NSCollorWell/NSColorWell+MCCategory.h"; sourceTree = "<group>"; };
 		92E4CEA715E1185700237B10 /* NSColorWell+MCCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSColorWell+MCCategory.m"; path = "NSCollorWell/NSColorWell+MCCategory.m"; sourceTree = "<group>"; };
-		92E775FA15D873B5003682F0 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = SOURCE_ROOT; };
-		92E775FC15D873B5003682F0 /* upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = upload.sh; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,9 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				924901E815D8504000BD9633 /* appicon.icns */,
-				92E775FA15D873B5003682F0 /* Makefile */,
-				92E775FC15D873B5003682F0 /* upload.sh */,
-				92E4CEA315E112FD00237B10 /* uploadstickamdocument.sh */,
+				929DDF1915E2AA44005F115E /* README.md */,
 				92D6A1AF15D2E870007F58C8 /* MikanChat */,
 				92D6A1A815D2E870007F58C8 /* Frameworks */,
 				92D6A1A615D2E870007F58C8 /* Products */,
@@ -430,7 +426,7 @@
 				924305ED15D44CD10018E2EB /* UserDefaults.plist in Resources */,
 				924901E915D8504000BD9633 /* appicon.icns in Resources */,
 				92B682BC15E0E21200BF1692 /* MCStickamClient.xib in Resources */,
-				92E4CEA415E112FD00237B10 /* uploadstickamdocument.sh in Resources */,
+				929DDF1A15E2AA45005F115E /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

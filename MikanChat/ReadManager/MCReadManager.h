@@ -15,5 +15,6 @@
 - (NSString*)systemNameAtIndex:(NSUInteger)index;
 - (NSArray*)phontsBySystemIndex:(NSUInteger)index;
 - (NSString*)phontNameAtIndex:(NSUInteger)index systemIndex:(NSUInteger)systemIndex;
+- (BOOL)hasReadSystem;
 - (void)read:(NSString *)message name:(NSString *)title modeProperty:(NSDictionary*)property;
 @end
