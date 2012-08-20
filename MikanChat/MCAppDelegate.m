@@ -8,6 +8,10 @@
 
 #import "MCAppDelegate.h"
 
+
+#import "Yukkuroid/YukkuroidRPCClinet.h"
+
+
 @implementation MCAppDelegate
 #pragma mark -
 #pragma mark synthesize
@@ -67,6 +71,7 @@
 //
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    
 }
 
 

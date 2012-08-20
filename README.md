@@ -10,7 +10,8 @@ The MIT License.
 <http://www.opensource.org/licenses/mit-license.php>
 
 * INCLUDED
-** [RegexKitLite](http://regexkit.sourceforge.net/RegexKitLite/)  Copyright (c) 2008-2010, John Engelhart
+ * [RegexKitLite](http://regexkit.sourceforge.net/RegexKitLite/)  Copyright (c) 2008-2010, John Engelhart
+ * [YukkuroidRPCClient](http://yukkuroid.com/)  Copyright 2011 Cisco Systems. All rights reserved.
 
 
 

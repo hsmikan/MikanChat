@@ -1471,14 +1471,14 @@
 							<bool key="NSToolbarIsUserRemovable">YES</bool>
 							<int key="NSToolbarItemVisibilityPriority">0</int>
 						</object>
-						<object class="NSToolbarItem" key="997E5CC7-B82C-42F2-9A92-220B80B25F09" id="533077427">
+						<object class="NSToolbarItem" key="997E5CC7-B82C-42F2-9A92-220B80B25F09" id="141813564">
 							<object class="NSMutableString" key="NSToolbarItemIdentifier">
 								<characters key="NS.bytes">997E5CC7-B82C-42F2-9A92-220B80B25F09</characters>
 							</object>
 							<string key="NSToolbarItemLabel">HELP</string>
 							<string key="NSToolbarItemPaletteLabel">HELP</string>
 							<nil key="NSToolbarItemToolTip"/>
-							<object class="NSButton" key="NSToolbarItemView" id="8806252">
+							<object class="NSButton" key="NSToolbarItemView" id="680028781">
 								<reference key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {71, 32}}</string>
@@ -1486,13 +1486,13 @@
 								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
-								<object class="NSButtonCell" key="NSCell" id="465443916">
+								<object class="NSButtonCell" key="NSCell" id="305243816">
 									<int key="NSCellFlags">67108864</int>
 									<int key="NSCellFlags2">134217728</int>
 									<string key="NSContents">HELP</string>
 									<reference key="NSSupport" ref="1055977906"/>
 									<string key="NSCellIdentifier">_NS:9</string>
-									<reference key="NSControlView" ref="8806252"/>
+									<reference key="NSControlView" ref="680028781"/>
 									<int key="NSButtonFlags">-2038284288</int>
 									<int key="NSButtonFlags2">129</int>
 									<string key="NSAlternateContents"/>
@@ -1703,7 +1703,7 @@
 						<reference ref="392420697"/>
 						<reference ref="480961224"/>
 						<reference ref="653664622"/>
-						<reference ref="533077427"/>
+						<reference ref="141813564"/>
 					</array>
 					<array key="NSToolbarIBDefaultItems">
 						<reference ref="480961224"/>
@@ -1714,7 +1714,7 @@
 						<reference ref="392420697"/>
 						<reference ref="1033929203"/>
 						<reference ref="653664622"/>
-						<reference ref="533077427"/>
+						<reference ref="141813564"/>
 					</array>
 					<array key="NSToolbarIBSelectableItems" id="0"/>
 				</object>
@@ -2316,7 +2316,7 @@
 												<string key="NSFrame">{{734, 11}, {71, 32}}</string>
 												<reference key="NSSuperview" ref="1027135779"/>
 												<reference key="NSWindow"/>
-												<reference key="NSNextKeyView"/>
+												<reference key="NSNextKeyView" ref="498152442"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="344435072">
@@ -2707,7 +2707,7 @@
 												<int key="NSvFlags">293</int>
 												<string key="NSFrame">{{525, 11}, {83, 32}}</string>
 												<reference key="NSSuperview" ref="1059362149"/>
-												<reference key="NSNextKeyView"/>
+												<reference key="NSNextKeyView" ref="498152442"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="979141166">
@@ -5855,7 +5855,7 @@
 							<reference ref="80262679"/>
 							<reference ref="653664622"/>
 							<reference ref="392420697"/>
-							<reference ref="533077427"/>
+							<reference ref="141813564"/>
 						</array>
 						<reference key="parent" ref="917829055"/>
 					</object>
@@ -6053,24 +6053,24 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1296</int>
-						<reference key="object" ref="533077427"/>
+						<reference key="object" ref="141813564"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="8806252"/>
+							<reference ref="680028781"/>
 						</array>
 						<reference key="parent" ref="461807370"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1294</int>
-						<reference key="object" ref="8806252"/>
+						<reference key="object" ref="680028781"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="465443916"/>
+							<reference ref="305243816"/>
 						</array>
-						<reference key="parent" ref="533077427"/>
+						<reference key="parent" ref="141813564"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1295</int>
-						<reference key="object" ref="465443916"/>
-						<reference key="parent" ref="8806252"/>
+						<reference key="object" ref="305243816"/>
+						<reference key="parent" ref="680028781"/>
 					</object>
 				</array>
 			</object>
@@ -6373,7 +6373,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1296</int>
+			<int key="maxID">1301</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
