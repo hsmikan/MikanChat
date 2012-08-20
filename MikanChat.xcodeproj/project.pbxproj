@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9206790115E1C9ED00DF8678 /* stickam.html in Resources */ = {isa = PBXBuildFile; fileRef = 9206790015E1C9ED00DF8678 /* stickam.html */; };
 		924305E615D438930018E2EB /* MCTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 924305E515D438930018E2EB /* MCTableViewDelegate.m */; };
 		924305ED15D44CD10018E2EB /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 924305EC15D44CD10018E2EB /* UserDefaults.plist */; };
 		9243063215D4BDBE0018E2EB /* NSString+MCRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243063115D4BDBD0018E2EB /* NSString+MCRegex.m */; };
@@ -48,7 +47,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9206790015E1C9ED00DF8678 /* stickam.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = stickam.html; path = StickamClient/stickam.html; sourceTree = "<group>"; };
 		924305E415D438930018E2EB /* MCTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTableViewDelegate.h; path = TableViewDelegate/MCTableViewDelegate.h; sourceTree = "<group>"; };
 		924305E515D438930018E2EB /* MCTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCTableViewDelegate.m; path = TableViewDelegate/MCTableViewDelegate.m; sourceTree = "<group>"; };
 		924305EC15D44CD10018E2EB /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 				92B682BA15E0E21200BF1692 /* MCStickamClient.xib */,
 				92B682B815E0E21200BF1692 /* MCStickamClient.h */,
 				92B682B915E0E21200BF1692 /* MCStickamClient.m */,
-				9206790015E1C9ED00DF8678 /* stickam.html */,
 			);
 			name = StickamClient;
 			sourceTree = "<group>";
@@ -438,7 +435,6 @@
 				924901E915D8504000BD9633 /* appicon.icns in Resources */,
 				92B682BC15E0E21200BF1692 /* MCStickamClient.xib in Resources */,
 				92E4CEA415E112FD00237B10 /* uploadstickamdocument.sh in Resources */,
-				9206790115E1C9ED00DF8678 /* stickam.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
