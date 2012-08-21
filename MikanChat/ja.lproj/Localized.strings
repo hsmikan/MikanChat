@@ -1,0 +1,25 @@
+"noValidReadSystem" = "有効な音声合成環境がありません。";
+
+"noReadText" = "読み上げるテキストがありません。";
+
+"patternExist" = "すでに登録されているパターンです。";
+
+"AlreadyExist" = "すでに登録されています。";
+
+"lackInformation" = "情報が不足しています。";
+
+"invalidChannel" = "不正なチャンネルです。";
+
+//
+// IRC
+//
+"failedConnection" = "接続に失敗しました。\nURLが正しいかどうか確かめてください。";
+"deniedConnetion" = "卒族を拒否されました。";
+"invalidPassword" = "パスワードが正しくありません。";
+"banned" =  "サーバからバンされています。";
+"channelIsFull" = "チャンネルは満員です。";
+"requiredInvite" = "チャンネルに入るには、\nオペレータからの招待が必要です。";
+"channelBanned" = "チャンネルからバンされています";
+"kicked" = "キックされました。";
+"serverError" = "サーバエラーが生じました";
+"somethingError" = "何らかの要因でサーバとの接続を切断しました";

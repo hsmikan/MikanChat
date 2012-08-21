@@ -106,6 +106,12 @@
 
 
 
+- (IBAction)openMainWindow:(id)sender {
+    [_window makeKeyAndOrderFront:self];
+}
+
+
+
 #pragma mark -
 #pragma mark Toolbar Action
 /*==============================================================================
@@ -149,7 +155,8 @@
 //
 - (IBAction)addNewReadMode:(id)sender {
     if (![[MCReadManager sharedReader] hasReadSystem]) {
-        NSRunAlertPanel(@"MikanChat", @"有効な音声合成環境がありません。", @"O.K.", nil, nil);
+        
+        NSRunAlertPanel(@"MikanChat", NSLocalizedString(@"noValidReadSytem", @""), @"O.K.", nil, nil);
         return;
     }
     
@@ -214,6 +221,16 @@
 
 
 - (IBAction)testReading:(id)sender {
+    if ([[MCReadManager sharedReader] hasReadSystem]) {
+        NSRunAlertPanel(@"MikanChat", NSLocalizedString(@"noValidReadSytem", @""), @"O.K.", nil, nil);
+        return;
+    }
+    
+    if ( _testTextTF.stringValue.length ) {
+        NSRunAlertPanel(@"MikanChat", NSLocalizedString(@"noReadText", @""), @"O.K.", nil, nil);
+        return;
+    }
+    
     NSUserDefaults * df = [NSUserDefaults standardUserDefaults];
     NSDictionary * testReadMode = [[df arrayForKey:kMCReadModeListKey] objectAtIndex:[_testReadModePB indexOfSelectedItem]];
     
@@ -246,7 +263,7 @@
     
     
     if ( [[update valueForKeyPath:kMCConvertYomiListPatternKey] containsObject:pattern] ) {
-        NSRunAlertPanel(@"MCConvertYomiDictionary", @"There is already that Pattern.", @"O.K", nil, nil);
+        NSRunAlertPanel(@"MCConvertYomiDictionary", NSLocalizedString(@"patternExist", @""), @"O.K", nil, nil);
         return;
     }
     
@@ -305,7 +322,7 @@
     
 
     if ([update containsObject:newItem]) {
-        NSRunAlertPanel(@"MCIgnoreDictionary", @"There is already that Content.", @"O.K", nil, nil);
+        NSRunAlertPanel(@"MCIgnoreDictionary", NSLocalizedString(@"AlreadyExist", @""), @"O.K", nil, nil);
         return;
     }
     

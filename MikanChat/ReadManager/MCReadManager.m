@@ -205,7 +205,7 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
  *==============================================================================*/
 
 - (NSArray*)phontsBySystemIndex:(NSUInteger)index {
-    if ( _readSystemList.count-1 > index ) return nil;
+    if ( _readSystemList.count-1 < index ) return nil;
     
     NSString * systemName = [_readSystemList objectAtIndex:index];
     

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		922EA3F515E3C2F900BD31DB /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 922EA3F715E3C2F900BD31DB /* Localized.strings */; };
+		922EA3FA15E3C41F00BD31DB /* MCClientWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922EA3FC15E3C41F00BD31DB /* MCClientWindowController.xib */; };
+		922EA3FD15E3C42400BD31DB /* MCIRCView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922EA3FF15E3C42400BD31DB /* MCIRCView.xib */; };
+		922EA40015E3C42900BD31DB /* CaveTubeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922EA40215E3C42900BD31DB /* CaveTubeView.xib */; };
+		922EA40315E3C42E00BD31DB /* MCStickamClient.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922EA40515E3C42E00BD31DB /* MCStickamClient.xib */; };
 		924305E615D438930018E2EB /* MCTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 924305E515D438930018E2EB /* MCTableViewDelegate.m */; };
 		924305ED15D44CD10018E2EB /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 924305EC15D44CD10018E2EB /* UserDefaults.plist */; };
 		9243063215D4BDBE0018E2EB /* NSString+MCRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243063115D4BDBD0018E2EB /* NSString+MCRegex.m */; };
@@ -21,7 +26,6 @@
 		926DE95015D7AFDD000094B9 /* MCNumereicOnlyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 926DE94F15D7AFDC000094B9 /* MCNumereicOnlyTextField.m */; };
 		929DDF1A15E2AA45005F115E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 929DDF1915E2AA44005F115E /* README.md */; };
 		92B682BB15E0E21200BF1692 /* MCStickamClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B682B915E0E21200BF1692 /* MCStickamClient.m */; };
-		92B682BC15E0E21200BF1692 /* MCStickamClient.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B682BA15E0E21200BF1692 /* MCStickamClient.xib */; };
 		92B682C015E0E2B000BF1692 /* MCParentClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B682BF15E0E2AF00BF1692 /* MCParentClient.m */; };
 		92B8515215D338F100F306E4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B8515115D338F100F306E4 /* WebKit.framework */; };
 		92B8515415D3394500F306E4 /* cavetube.html in Resources */ = {isa = PBXBuildFile; fileRef = 92B8515315D3394500F306E4 /* cavetube.html */; };
@@ -38,15 +42,25 @@
 		92D6A1D115D2EC41007F58C8 /* MCCaveTubeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D6A1D015D2EC41007F58C8 /* MCCaveTubeClient.m */; };
 		92D6A1D415D2EC60007F58C8 /* MCLiveTubeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D6A1D315D2EC60007F58C8 /* MCLiveTubeClient.m */; };
 		92D6A1EA15D2F4C6007F58C8 /* MCClientWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D6A1E815D2F4C6007F58C8 /* MCClientWindowController.m */; };
-		92D6A1EB15D2F4C6007F58C8 /* MCClientWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D6A1E915D2F4C6007F58C8 /* MCClientWindowController.xib */; };
 		92D6A1EE15D2F677007F58C8 /* MCReadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D6A1ED15D2F677007F58C8 /* MCReadManager.m */; };
-		92D6A20B15D328D0007F58C8 /* MCIRCView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D6A20915D328D0007F58C8 /* MCIRCView.xib */; };
-		92D6A20D15D32A2F007F58C8 /* CaveTubeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D6A20C15D32A2F007F58C8 /* CaveTubeView.xib */; };
 		92E4CEA815E1185700237B10 /* NSColorWell+MCCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E4CEA715E1185700237B10 /* NSColorWell+MCCategory.m */; };
 		92E7672415E2D9D2006104A9 /* YukkuroidRPCClinet.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E7672315E2D9D2006104A9 /* YukkuroidRPCClinet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		922EA3F615E3C2F900BD31DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
+		922EA3FB15E3C41F00BD31DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MCClientWindowController.xib; sourceTree = "<group>"; };
+		922EA3FE15E3C42400BD31DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MCIRCView.xib; sourceTree = "<group>"; };
+		922EA40115E3C42900BD31DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CaveTubeView.xib; sourceTree = "<group>"; };
+		922EA40415E3C42E00BD31DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MCStickamClient.xib; sourceTree = "<group>"; };
+		922EA40615E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ja; path = ja.lproj/Credits.rtf; sourceTree = "<group>"; };
+		922EA40715E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		922EA40815E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localized.strings; sourceTree = "<group>"; };
+		922EA40915E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		922EA40A15E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MCIRCView.xib; sourceTree = "<group>"; };
+		922EA40B15E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MCStickamClient.xib; sourceTree = "<group>"; };
+		922EA40C15E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MCClientWindowController.xib; sourceTree = "<group>"; };
+		922EA40D15E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/CaveTubeView.xib; sourceTree = "<group>"; };
 		924305E415D438930018E2EB /* MCTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTableViewDelegate.h; path = TableViewDelegate/MCTableViewDelegate.h; sourceTree = "<group>"; };
 		924305E515D438930018E2EB /* MCTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCTableViewDelegate.m; path = TableViewDelegate/MCTableViewDelegate.m; sourceTree = "<group>"; };
 		924305EC15D44CD10018E2EB /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
@@ -73,7 +87,6 @@
 		929DDF1915E2AA44005F115E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		92B682B815E0E21200BF1692 /* MCStickamClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCStickamClient.h; path = StickamClient/MCStickamClient.h; sourceTree = "<group>"; };
 		92B682B915E0E21200BF1692 /* MCStickamClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCStickamClient.m; path = StickamClient/MCStickamClient.m; sourceTree = "<group>"; };
-		92B682BA15E0E21200BF1692 /* MCStickamClient.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCStickamClient.xib; path = StickamClient/MCStickamClient.xib; sourceTree = "<group>"; };
 		92B682BE15E0E2AF00BF1692 /* MCParentClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCParentClient.h; sourceTree = "<group>"; };
 		92B682BF15E0E2AF00BF1692 /* MCParentClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCParentClient.m; sourceTree = "<group>"; };
 		92B8515115D338F100F306E4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -106,12 +119,9 @@
 		92D6A1D315D2EC60007F58C8 /* MCLiveTubeClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCLiveTubeClient.m; path = LiveTubeClient/MCLiveTubeClient.m; sourceTree = "<group>"; };
 		92D6A1E715D2F4C6007F58C8 /* MCClientWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCClientWindowController.h; sourceTree = "<group>"; };
 		92D6A1E815D2F4C6007F58C8 /* MCClientWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCClientWindowController.m; sourceTree = "<group>"; };
-		92D6A1E915D2F4C6007F58C8 /* MCClientWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCClientWindowController.xib; sourceTree = "<group>"; };
 		92D6A1EC15D2F677007F58C8 /* MCReadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCReadManager.h; path = ReadManager/MCReadManager.h; sourceTree = "<group>"; };
 		92D6A1ED15D2F677007F58C8 /* MCReadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCReadManager.m; path = ReadManager/MCReadManager.m; sourceTree = "<group>"; };
 		92D6A20115D315E7007F58C8 /* MCIRCClientDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MCIRCClientDelegate.h; path = MCIRCClient/MCIRCClientDelegate.h; sourceTree = "<group>"; };
-		92D6A20915D328D0007F58C8 /* MCIRCView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCIRCView.xib; path = MCIRCClient/MCIRCView.xib; sourceTree = "<group>"; };
-		92D6A20C15D32A2F007F58C8 /* CaveTubeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CaveTubeView.xib; path = CaveTube/CaveTubeView.xib; sourceTree = "<group>"; };
 		92E4CEA615E1185700237B10 /* NSColorWell+MCCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSColorWell+MCCategory.h"; path = "NSCollorWell/NSColorWell+MCCategory.h"; sourceTree = "<group>"; };
 		92E4CEA715E1185700237B10 /* NSColorWell+MCCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSColorWell+MCCategory.m"; path = "NSCollorWell/NSColorWell+MCCategory.m"; sourceTree = "<group>"; };
 		92E7672215E2D9D2006104A9 /* YukkuroidRPCClinet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YukkuroidRPCClinet.h; path = Yukkuroid/YukkuroidRPCClinet.h; sourceTree = "<group>"; };
@@ -182,7 +192,7 @@
 		92B682BD15E0E21A00BF1692 /* StickamClient */ = {
 			isa = PBXGroup;
 			children = (
-				92B682BA15E0E21200BF1692 /* MCStickamClient.xib */,
+				922EA40515E3C42E00BD31DB /* MCStickamClient.xib */,
 				92B682B815E0E21200BF1692 /* MCStickamClient.h */,
 				92B682B915E0E21200BF1692 /* MCStickamClient.m */,
 			);
@@ -265,12 +275,12 @@
 				9262BE3815D40717007DC7B3 /* SoundDevice */,
 				92E7672515E2D9D9006104A9 /* Yukkuroid */,
 				92B8516D15D3C34F00F306E4 /* NSString */,
+				92E4CEA915E1187B00237B10 /* NSCollorWell */,
 				92BF8C7B15D6C17200E091E9 /* PopUpButton */,
 				924305E815D438990018E2EB /* TableViewDelegate */,
 				9243063D15D4CB180018E2EB /* TableView */,
 				9243064A15D4DA9E0018E2EB /* ExpansionSlider */,
 				926DE95215D7AFFF000094B9 /* TextField */,
-				92E4CEA915E1187B00237B10 /* NSCollorWell */,
 			);
 			path = MikanChat;
 			sourceTree = "<group>";
@@ -281,6 +291,7 @@
 				92D6A1B815D2E871007F58C8 /* Credits.rtf */,
 				924305EC15D44CD10018E2EB /* UserDefaults.plist */,
 				92D6A1B215D2E871007F58C8 /* InfoPlist.strings */,
+				922EA3F715E3C2F900BD31DB /* Localized.strings */,
 				92D6A1B115D2E871007F58C8 /* MikanChat-Info.plist */,
 				92D6A1B515D2E871007F58C8 /* main.m */,
 				92D6A1B715D2E871007F58C8 /* MikanChat-Prefix.pch */,
@@ -301,7 +312,7 @@
 		92D6A1D615D2EC74007F58C8 /* CaveTube */ = {
 			isa = PBXGroup;
 			children = (
-				92D6A20C15D32A2F007F58C8 /* CaveTubeView.xib */,
+				922EA40215E3C42900BD31DB /* CaveTubeView.xib */,
 				92BF8C6C15D65A6700E091E9 /* MCCaveTubeClientConstants.h */,
 				92D6A1CF15D2EC41007F58C8 /* MCCaveTubeClient.h */,
 				92D6A1D015D2EC41007F58C8 /* MCCaveTubeClient.m */,
@@ -313,7 +324,7 @@
 		92D6A1D715D2EC85007F58C8 /* MCIRCClient */ = {
 			isa = PBXGroup;
 			children = (
-				92D6A20915D328D0007F58C8 /* MCIRCView.xib */,
+				922EA3FF15E3C42400BD31DB /* MCIRCView.xib */,
 				9243065715D574860018E2EB /* MCIRCClientConstants.h */,
 				92D6A20115D315E7007F58C8 /* MCIRCClientDelegate.h */,
 				92D6A1CC15D2EBF7007F58C8 /* MCIRCClient.h */,
@@ -327,7 +338,7 @@
 		92D6A1E615D2F4C6007F58C8 /* ClientWindowController */ = {
 			isa = PBXGroup;
 			children = (
-				92D6A1E915D2F4C6007F58C8 /* MCClientWindowController.xib */,
+				922EA3FC15E3C41F00BD31DB /* MCClientWindowController.xib */,
 				92D6A1E715D2F4C6007F58C8 /* MCClientWindowController.h */,
 				92D6A1E815D2F4C6007F58C8 /* MCClientWindowController.m */,
 			);
@@ -431,15 +442,16 @@
 				92D6A1B415D2E871007F58C8 /* InfoPlist.strings in Resources */,
 				92D6A1BA15D2E871007F58C8 /* Credits.rtf in Resources */,
 				92D6A1C015D2E871007F58C8 /* MainMenu.xib in Resources */,
-				92D6A1EB15D2F4C6007F58C8 /* MCClientWindowController.xib in Resources */,
-				92D6A20B15D328D0007F58C8 /* MCIRCView.xib in Resources */,
-				92D6A20D15D32A2F007F58C8 /* CaveTubeView.xib in Resources */,
+				922EA3FA15E3C41F00BD31DB /* MCClientWindowController.xib in Resources */,
+				922EA3FD15E3C42400BD31DB /* MCIRCView.xib in Resources */,
+				922EA40015E3C42900BD31DB /* CaveTubeView.xib in Resources */,
 				92B8515415D3394500F306E4 /* cavetube.html in Resources */,
 				92B8515815D3480300F306E4 /* LiveTube.xib in Resources */,
 				924305ED15D44CD10018E2EB /* UserDefaults.plist in Resources */,
 				924901E915D8504000BD9633 /* appicon.icns in Resources */,
-				92B682BC15E0E21200BF1692 /* MCStickamClient.xib in Resources */,
+				922EA40315E3C42E00BD31DB /* MCStickamClient.xib in Resources */,
 				929DDF1A15E2AA45005F115E /* README.md in Resources */,
+				922EA3F515E3C2F900BD31DB /* Localized.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,10 +507,59 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		922EA3F715E3C2F900BD31DB /* Localized.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				922EA3F615E3C2F900BD31DB /* en */,
+				922EA40815E3C43D00BD31DB /* ja */,
+			);
+			name = Localized.strings;
+			sourceTree = "<group>";
+		};
+		922EA3FC15E3C41F00BD31DB /* MCClientWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				922EA3FB15E3C41F00BD31DB /* en */,
+				922EA40C15E3C43D00BD31DB /* ja */,
+			);
+			name = MCClientWindowController.xib;
+			sourceTree = "<group>";
+		};
+		922EA3FF15E3C42400BD31DB /* MCIRCView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				922EA3FE15E3C42400BD31DB /* en */,
+				922EA40A15E3C43D00BD31DB /* ja */,
+			);
+			name = MCIRCView.xib;
+			path = MCIRCClient;
+			sourceTree = "<group>";
+		};
+		922EA40215E3C42900BD31DB /* CaveTubeView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				922EA40115E3C42900BD31DB /* en */,
+				922EA40D15E3C43D00BD31DB /* ja */,
+			);
+			name = CaveTubeView.xib;
+			path = CaveTube;
+			sourceTree = "<group>";
+		};
+		922EA40515E3C42E00BD31DB /* MCStickamClient.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				922EA40415E3C42E00BD31DB /* en */,
+				922EA40B15E3C43D00BD31DB /* ja */,
+			);
+			name = MCStickamClient.xib;
+			path = StickamClient;
+			sourceTree = "<group>";
+		};
 		92D6A1B215D2E871007F58C8 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				92D6A1B315D2E871007F58C8 /* en */,
+				922EA40715E3C43D00BD31DB /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -507,6 +568,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				92D6A1B915D2E871007F58C8 /* en */,
+				922EA40615E3C43D00BD31DB /* ja */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -515,6 +577,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				92D6A1BF15D2E871007F58C8 /* en */,
+				922EA40915E3C43D00BD31DB /* ja */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

@@ -14,7 +14,7 @@ EXTERNED NSString * const kMCReadModeTitleKey       =   @"MCReadModeTitle";
 EXTERNED NSString * const kMCReadModeQueueKey       =   @"MCReadModeQueue";
 
 //
-// ReradMode
+// ReadMode
 //
 EXTERNED NSString * const kMCReadModeTBLID          =   @"MCReadModeTBL";
 EXTERNED NSString * const kMCReadModeListKey        =   @"MCReadModeList";

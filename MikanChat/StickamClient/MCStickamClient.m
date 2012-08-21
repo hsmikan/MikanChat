@@ -128,8 +128,6 @@ typedef enum {
             break;
         
         case NSCancelButton:
-            break;
-            
         default:
             break;
     }
@@ -171,6 +169,7 @@ typedef enum {
 
 - (IBAction)sendMessage:(id)sender {
     NSString * message = [sender stringValue];
+    
     if (message.length) {
         /*
          パラメータ

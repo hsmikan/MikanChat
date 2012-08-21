@@ -13,7 +13,26 @@
 	<key>MCReadModeList</key>
 	<array/>
 	<key>MCConvertYomiList</key>
-	<array/>
+	<array>
+		<dict>
+			<key>MCConvertYomiListPattern</key>
+			<string>(w|ｗ)+</string>
+			<key>MCConvertYomiListYomi</key>
+			<string>わら</string>
+		</dict>
+		<dict>
+			<key>MCConvertYomiListPattern</key>
+			<string>(8|８){5,}</string>
+			<key>MCConvertYomiListYomi</key>
+			<string>パチパチパチ</string>
+		</dict>
+		<dict>
+			<key>MCConvertYomiListPattern</key>
+			<string>(orz|ｏｒｚ)</string>
+			<key>MCConvertYomiListYomi</key>
+			<string>がっくし</string>
+		</dict>
+	</array>
 	<key>MCIgnoreList</key>
 	<array/>
 </dict>

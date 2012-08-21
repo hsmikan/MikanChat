@@ -139,7 +139,7 @@ typedef enum {
         return YES;
     }
     else {
-        NSRunAlertPanel(@"MikanChat - cavetube -", @"不正なチャンネル名です。", @"O.K.", nil, nil);
+        NSRunAlertPanel(@"MikanChat - cavetube -", NSLocalizedString(@"invalidChannel", @""), @"O.K.", nil, nil);
     }
     
     return NO;

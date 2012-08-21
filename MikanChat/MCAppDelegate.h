@@ -22,12 +22,18 @@
 @interface MCAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+//
+// General
+//
+- (IBAction)openMainWindow:(id)sender;
 
+//
+// Toolbar
+//
 - (IBAction)openIRCWindow:(id)sender;
 - (IBAction)openCaveTubeWindow:(id)sender;
 - (IBAction)openLiveTube:(id)sender;
 - (IBAction)openStcikamWIndow:(id)sender;
-
 - (IBAction)reloadSoundDevices:(id)sender;
 
 //

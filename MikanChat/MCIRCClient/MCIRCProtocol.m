@@ -140,7 +140,7 @@ if ( [self.delegate respondsToSelector:@selector(IRCEventOccured:withObject:)] )
 - (void)startRun{
     if ([self MC_PRIVATE_METHOD_PREPEND(isEnoughInfo)])
     {
-        IRCEVENT(IRCLackInfo, @"情報に不備があります。");
+        IRCEVENT(IRCLackInfo, NSLocalizedString(@"lackInformation", @""));
         return;
     }
     
@@ -160,7 +160,7 @@ if ( [self.delegate respondsToSelector:@selector(IRCEventOccured:withObject:)] )
     [self send:STRINGFORMAT(@"USER %@ cocobot2 server %@",_username,_realname)];
     
     if ([_inputStream streamStatus] == NSStreamStatusNotOpen)
-        IRCEVENT(IRCCantOpen,@"接続に失敗しました。\nURLが正しいかどうか確かめてください。");
+        IRCEVENT(IRCCantOpen, NSLocalizedString(@"failedConnection", @""));
 }
 
 
@@ -295,7 +295,7 @@ if ( [self.delegate respondsToSelector:@selector(IRCEventOccured:withObject:)] )
              * 4xx
              */
         case 403: // no such channel
-            IRCEVENT(IRCNoSuchChannel,@"不正なチャンネル名です。");
+            IRCEVENT(IRCNoSuchChannel,NSLocalizedString(@"invalidChannel", @""));
             break;
             
         case 404: // 404 code cannot send message
@@ -312,27 +312,27 @@ if ( [self.delegate respondsToSelector:@selector(IRCEventOccured:withObject:)] )
             break;
             
         case 463: // your host isn't among the privileged. //denied connection
-            IRCEVENT(IRCDeniedConnection,@"接続を拒否されました。");
+            IRCEVENT(IRCDeniedConnection,NSLocalizedString(@"deniedConnetion", @""));
             break;
             
         case 464: // password incorrect
-            IRCEVENT(IRCPasswordIncorrect,@"パスワードが正しくありません。");
+            IRCEVENT(IRCPasswordIncorrect, NSLocalizedString(@"invalidPassword",@""));
             break;
             
         case 465: // you are banned from server
-            IRCEVENT(IRCBannedServer,@"サーバからバンされています。");
+            IRCEVENT(IRCBannedServer,NSLocalizedString(@"banned", @""));
             break;
             
         case 471: // channel is full
-            IRCEVENT(IRCChannelFull,@"チャンネルは満員です。");
+            IRCEVENT(IRCChannelFull,NSLocalizedString(@"channelIsFull", @""));
             break;
             
         case 473: // invite only channel
-            IRCEVENT(IRCInviteOnly,@"チャンネルに入るには、\nオペレータからの招待が必要です。");
+            IRCEVENT(IRCInviteOnly, NSLocalizedString(@"requiredInvite", @""));
             break;
             
         case 474: // banned from channel
-            IRCEVENT(IRCBannedChannel,@"チャンネルからバンされています。");
+            IRCEVENT(IRCBannedChannel, NSLocalizedString(@"channelBanned", @""));
             break;
             
         case 329: // channel time -- MODE reply
@@ -395,7 +395,7 @@ if ( [self.delegate respondsToSelector:@selector(IRCEventOccured:withObject:)] )
 	if      (INSENSITIVECOMPARE(statusString,@"NOTICE") ) {
 		// Ustream Password is incorrective.
 		if ([string rangeOfString:@"Incorrect password" options:NSCaseInsensitiveSearch].location != NSNotFound) {
-			IRCEVENT(IRCPasswordIncorrect,@"パスワードが正しくありません。");
+			IRCEVENT(IRCPasswordIncorrect,NSLocalizedString(@"invalidPassword", @""));
 		}
 		else if ([string rangeOfString:@"This is a registered nick," options:NSCaseInsensitiveSearch].location != NSNotFound) {
 			[_subnickname appendString:@"_"];
@@ -487,7 +487,7 @@ if ( [self.delegate respondsToSelector:@selector(IRCEventOccured:withObject:)] )
 		NAMES();
 		if ( INSENSITIVECOMPARE([rec objectAtIndex:2],_channel)
 			&&  CHECKMSG(rec,3,_subnickname) ) {
-			IRCEVENT(IRCKicked,@"あなたはキックされました。");
+			IRCEVENT(IRCKicked, NSLocalizedString(@"kicked", @""));
 		}
 	}
 	
@@ -510,7 +510,7 @@ if ( [self.delegate respondsToSelector:@selector(IRCEventOccured:withObject:)] )
 	
 	/***** fTrim index 0 *****/
 	if (CHECKMSG(fTrim,0,@"ERROR")) {
-		IRCEVENT(IRCError,@"サーバエラーが生じました");
+		IRCEVENT(IRCError, NSLocalizedString(@"serverError", @""));
 	}
 	
     else if(CHECKMSG(fTrim,0,@"PING") || [retStrFromIRC rangeOfString:@"PING"].location != NSNotFound){
@@ -577,7 +577,7 @@ if ( [self.delegate respondsToSelector:@selector(IRCEventOccured:withObject:)] )
 			break;
 		case NSStreamEventEndEncountered:
 		case NSStreamEventErrorOccurred:
-			IRCEVENT(IRCConnectionFailed,@"何らかの要因でサーバとの接続を切断しました。");
+			IRCEVENT(IRCConnectionFailed,NSLocalizedString(@"somethingError", @""));
 			break;
 		case NSStreamEventOpenCompleted:
 			break;

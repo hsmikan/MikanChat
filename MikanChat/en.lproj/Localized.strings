@@ -1,0 +1,26 @@
+//
+"noValidReadSystem" = "NO VALID READ SYSTEM.";
+
+"noReadText" = "NO TEXT TO READING.";
+
+"patternExist" = "THE PATTERN IS ALREADY REGISTERED.";
+
+"AlreadyExist" = "ALREADY REGISTERED.";
+
+"lackInformation" = "FILL OUT THE INFORMATIONS.";
+
+"invalidChannel" = "Invalid Channel.";
+
+//
+// IRC
+//
+"failedConnection" = "Failed Connection.\nCheck URL is valid, please.";
+"deniedConnetion" = "Denied Connection.";
+"invalidPassword" = "Invalid Password.";
+"banned" =  "You are banned from the Server.";
+"channelIsFull" = "Channel if Full.";
+"requiredInvite" = "Required invitation From Operator to Enter the Channel.";
+"channelBanned" = "You are banned From the Channel.";
+"kicked" = "You are Kicked.";
+"serverError" = "Server Error.";
+"somethingError" = "Disconnect due to Something Server Error.";

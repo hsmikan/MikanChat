@@ -18,7 +18,6 @@
     NSArray * modelist = [df objectForKey:kMCReadModeListKey];
     NSInteger index = [[[modelist objectAtIndex:row] objectForKey:kMCReadModeSystemIndexKey] integerValue];
     NSArray * phontslist = [[MCReadManager sharedReader] phontsBySystemIndex:index];
-    
     [cell removeAllItems];
     [cell addItemsWithTitles:phontslist];
     

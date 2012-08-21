@@ -105,7 +105,7 @@
         }
     }
     
-    NSRunAlertPanel(@"MCIRCClient", @"情報が不足しています。", @"O.K.", nil, nil);
+    NSRunAlertPanel(@"MCIRCClient", NSLocalizedString(@"lackInformation", @""), @"O.K.", nil, nil);
 #undef CHECK_EMPTY
 #undef CHECK_EMPTY_NUM
 }
