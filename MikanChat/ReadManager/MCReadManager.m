@@ -493,7 +493,7 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
         [self sound:nil didFinishPlaying:YES];
     }
     else {
-        // TODO: Yukkuroid is not Running
+        // TODO: warn Yukkuroid is not Running
         [self sound:nil didFinishPlaying:YES];
     }
 }

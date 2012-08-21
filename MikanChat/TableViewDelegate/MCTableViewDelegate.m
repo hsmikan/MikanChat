@@ -9,7 +9,7 @@
 #import "MCTableViewDelegate.h"
 #import "../MCUserDefaultsKeys.h"
 #import "../ReadManager/MCReadManager.h"
-#import "../Yukkuroid/YukkuroidRPCClinet.h";
+#import "../Yukkuroid/YukkuroidRPCClinet.h"
 
 @implementation MCTableViewDelegate
 + (NSString *)tableViewKey:(NSTableView*)tableView {

@@ -52,3 +52,8 @@ EXTERNED NSString * const kMCIRCChannelKey      =   @"MCIRCChannel";
 EXTERNED NSString * const kMCIRCNicknameKey     =   @"MCIRCNickname";
 EXTERNED NSString * const kMCIRCLoginNameKey    =   @"MCIRCLoginName";
 EXTERNED NSString * const kMCIRCRealNameKey     =   @"MCIRCRealName";
+
+//
+// updates
+//
+EXTERNED NSString * const kMCAutomaaticallyUpdatesKey = @"MCIsAutomaticallyUpdates";

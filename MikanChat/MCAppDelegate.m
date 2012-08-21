@@ -10,7 +10,7 @@
 
 
 #import "Yukkuroid/YukkuroidRPCClinet.h"
-
+#import "updates/MCUpdatesController.h"
 
 @implementation MCAppDelegate
 #pragma mark -
@@ -71,7 +71,14 @@
 //
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    
+    NSUserDefaults * df = [NSUserDefaults standardUserDefaults];
+    if ( [df boolForKey:kMCAutomaaticallyUpdatesKey]) {
+        MCUpdatesController * updates = [[MCUpdatesController alloc] init];
+        if ( updates.isUpToDate )
+            [updates showWindow:self];
+        else
+            [updates release];
+    }
 }
 
 
@@ -137,6 +144,11 @@
 //
 - (IBAction)reloadSoundDevices:(id)sender {
     [[NSNotificationCenter defaultCenter] postNotificationName:kMCReadModeSystemDeviceUpdateNotification object:nil];
+}
+
+- (IBAction)openUpdates:(id)sender {
+    MCUpdatesController * updates = [[MCUpdatesController alloc] init];
+    [updates showWindow:self];
 }
 
 

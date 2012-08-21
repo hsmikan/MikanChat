@@ -6,7 +6,8 @@
 //  Copyright (c) 2012 hsmikan. All rights reserved.
 //
 
-
+//
+//
 //
 extern NSString * const kMCReadModeIsConvertKey;
 extern NSString * const kMCReadModeIsReadTitleKey;
@@ -52,3 +53,9 @@ extern NSString * const kMCIRCChannelKey;
 extern NSString * const kMCIRCNicknameKey;
 extern NSString * const kMCIRCLoginNameKey;
 extern NSString * const kMCIRCRealNameKey;
+
+
+//
+// updates
+//
+extern NSString * const kMCAutomaaticallyUpdatesKey;

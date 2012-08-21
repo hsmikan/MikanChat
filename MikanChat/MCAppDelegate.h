@@ -35,6 +35,7 @@
 - (IBAction)openLiveTube:(id)sender;
 - (IBAction)openStcikamWIndow:(id)sender;
 - (IBAction)reloadSoundDevices:(id)sender;
+- (IBAction)openUpdates:(id)sender;
 
 //
 // read mode
