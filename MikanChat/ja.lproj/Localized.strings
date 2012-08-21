@@ -14,7 +14,7 @@
 // IRC
 //
 "failedConnection" = "接続に失敗しました。\nURLが正しいかどうか確かめてください。";
-"deniedConnetion" = "卒族を拒否されました。";
+"deniedConnetion" = "接続を拒否されました。";
 "invalidPassword" = "パスワードが正しくありません。";
 "banned" =  "サーバからバンされています。";
 "channelIsFull" = "チャンネルは満員です。";
