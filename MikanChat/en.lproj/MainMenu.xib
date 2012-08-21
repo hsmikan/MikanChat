@@ -1357,10 +1357,9 @@
 							<string key="NSToolbarItemPaletteLabel">Stickam</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="571666422">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {90, 32}}</string>
-								<reference key="NSSuperview"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="181516328">
@@ -1402,10 +1401,9 @@
 							<string key="NSToolbarItemPaletteLabel">YomiConvertion</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="714209551">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {100, 18}}</string>
-								<reference key="NSSuperview"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="884977185">
@@ -1477,10 +1475,9 @@
 							<string key="NSToolbarItemPaletteLabel">IRC</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="74352772">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {61, 32}}</string>
-								<reference key="NSSuperview"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="312518286">
@@ -1518,10 +1515,9 @@
 							<string key="NSToolbarItemPaletteLabel">CaveTube</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="855671557">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {102, 32}}</string>
-								<reference key="NSSuperview"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="351268904">
@@ -1559,10 +1555,9 @@
 							<string key="NSToolbarItemPaletteLabel">LiveTube</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSButton" key="NSToolbarItemView" id="1041475126">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {97, 32}}</string>
-								<reference key="NSSuperview"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="992180827">
@@ -1769,6 +1764,7 @@
 																<object class="NSTableHeaderView" key="NSHeaderView" id="117090943">
 																	<reference key="NSNextResponder" ref="429417542"/>
 																	<int key="NSvFlags">256</int>
+																	<array class="NSMutableArray" key="NSSubviews"/>
 																	<string key="NSFrameSize">{788, 17}</string>
 																	<reference key="NSSuperview" ref="429417542"/>
 																	<reference key="NSWindow"/>
@@ -1948,44 +1944,6 @@
 																			<string key="NSSelector">compare:</string>
 																		</object>
 																	</object>
-																	<object class="NSTableColumn" id="27520012">
-																		<string key="NSIdentifier">MCReadModeVolume</string>
-																		<double key="NSWidth">125.4140625</double>
-																		<double key="NSMinWidth">10</double>
-																		<double key="NSMaxWidth">3.4028234663852886e+38</double>
-																		<object class="NSTableHeaderCell" key="NSHeaderCell">
-																			<int key="NSCellFlags">75497536</int>
-																			<int key="NSCellFlags2">2048</int>
-																			<string key="NSContents">Volume</string>
-																			<reference key="NSSupport" ref="26"/>
-																			<reference key="NSBackgroundColor" ref="337718441"/>
-																			<reference key="NSTextColor" ref="40726496"/>
-																		</object>
-																		<object class="NSSliderCell" key="NSDataCell" id="755021864">
-																			<int key="NSCellFlags">-2080374784</int>
-																			<int key="NSCellFlags2">0</int>
-																			<string key="NSContents"/>
-																			<string key="NSCellIdentifier">_NS:9</string>
-																			<reference key="NSControlView" ref="694214803"/>
-																			<double key="NSMaxValue">100</double>
-																			<double key="NSMinValue">0.0</double>
-																			<double key="NSValue">50</double>
-																			<double key="NSAltIncValue">0.0</double>
-																			<int key="NSNumberOfTickMarks">0</int>
-																			<int key="NSTickMarkPosition">1</int>
-																			<bool key="NSAllowsTickMarkValuesOnly">NO</bool>
-																			<bool key="NSVertical">NO</bool>
-																		</object>
-																		<int key="NSResizingMask">3</int>
-																		<bool key="NSIsResizeable">YES</bool>
-																		<bool key="NSIsEditable">YES</bool>
-																		<reference key="NSTableView" ref="694214803"/>
-																		<object class="NSSortDescriptor" key="NSSortDescriptorPrototype">
-																			<string key="NSKey">MCReadModeVolume.floatValue</string>
-																			<bool key="NSAscending">YES</bool>
-																			<string key="NSSelector">compare:</string>
-																		</object>
-																	</object>
 																	<object class="NSTableColumn" id="963454594">
 																		<string key="NSIdentifier">MCReadModeSpeed</string>
 																		<double key="NSWidth">122.0625</double>
@@ -2020,6 +1978,44 @@
 																		<reference key="NSTableView" ref="694214803"/>
 																		<object class="NSSortDescriptor" key="NSSortDescriptorPrototype">
 																			<string key="NSKey">MCReadModeSpeed.floatValue</string>
+																			<bool key="NSAscending">YES</bool>
+																			<string key="NSSelector">compare:</string>
+																		</object>
+																	</object>
+																	<object class="NSTableColumn" id="27520012">
+																		<string key="NSIdentifier">MCReadModeVolume</string>
+																		<double key="NSWidth">125.4140625</double>
+																		<double key="NSMinWidth">10</double>
+																		<double key="NSMaxWidth">3.4028234663852886e+38</double>
+																		<object class="NSTableHeaderCell" key="NSHeaderCell">
+																			<int key="NSCellFlags">75497536</int>
+																			<int key="NSCellFlags2">2048</int>
+																			<string key="NSContents">Volume</string>
+																			<reference key="NSSupport" ref="26"/>
+																			<reference key="NSBackgroundColor" ref="337718441"/>
+																			<reference key="NSTextColor" ref="40726496"/>
+																		</object>
+																		<object class="NSSliderCell" key="NSDataCell" id="755021864">
+																			<int key="NSCellFlags">-2080374784</int>
+																			<int key="NSCellFlags2">0</int>
+																			<string key="NSContents"/>
+																			<string key="NSCellIdentifier">_NS:9</string>
+																			<reference key="NSControlView" ref="694214803"/>
+																			<double key="NSMaxValue">100</double>
+																			<double key="NSMinValue">0.0</double>
+																			<double key="NSValue">50</double>
+																			<double key="NSAltIncValue">0.0</double>
+																			<int key="NSNumberOfTickMarks">0</int>
+																			<int key="NSTickMarkPosition">1</int>
+																			<bool key="NSAllowsTickMarkValuesOnly">NO</bool>
+																			<bool key="NSVertical">NO</bool>
+																		</object>
+																		<int key="NSResizingMask">3</int>
+																		<bool key="NSIsResizeable">YES</bool>
+																		<bool key="NSIsEditable">YES</bool>
+																		<reference key="NSTableView" ref="694214803"/>
+																		<object class="NSSortDescriptor" key="NSSortDescriptorPrototype">
+																			<string key="NSKey">MCReadModeVolume.floatValue</string>
 																			<bool key="NSAscending">YES</bool>
 																			<string key="NSSelector">compare:</string>
 																		</object>

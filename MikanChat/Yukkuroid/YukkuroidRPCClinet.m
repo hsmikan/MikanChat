@@ -5,8 +5,8 @@
 //  Copyright 2011 Cisco Systems. All rights reserved.
 //
 //
-//  hsmikan modified on 12/08/21.
-//
+//  2012/08/21
+//   modified By hsmikan
 //
 
 #import "YukkuroidRPCClinet.h"
@@ -151,6 +151,33 @@
 + (void)playSync:(int)setting{
 	NSDistantObject *proxy = [YukkuroidRPCClinet getYukProxy];
 	[proxy playSync:setting];
+}
+
+
+#pragma mark -
+#pragma mark Additon by hsmikan
+/*==============================================================================
+ *
+ * hsmikan Additon
+ *
+ *==============================================================================*/
+
++ (NSArray *)voices {
+    return [NSArray arrayWithObjects:
+            @"女性1",
+            @"女性2",
+            @"aq_default",
+            @"aq_f1c",
+            @"aq_f3a",
+            @"aq_huskey",
+            @"aq_m4b",
+            @"aq_mf1",
+            @"aq_rb2",
+            @"aq_rb3",
+            @"aq_rm",
+            @"aq_robo",
+            @"aq_yukkuri",
+            nil];
 }
 
 @end

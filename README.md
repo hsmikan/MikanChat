@@ -20,11 +20,13 @@ The MIT License.
 
 
 
+
 開発状況/予定
 -----------
 * 機能テスト段階（ALPHA）
 * アイコン作ってくれる人募集中
 * LiveTubeは気が向いたら・・・
+
 
 
 
@@ -35,9 +37,8 @@ Mac用チャットブラウザ／コメント読み上げアプリケーショ�
 
 * IRC(Ustreamでも採用されているチャットシステム)
 * [cavetube](http://gae.cavelis.net/)
-* [Livetube](http://livetube.cc/)
 * [STICKAM JAPAN](http://www.stickam.jp)
-
+* [Livetube](http://livetube.cc/)（予定）
 
 
 
@@ -46,7 +47,15 @@ Mac用チャットブラウザ／コメント読み上げアプリケーショ�
 ----------
 * Tested on Mac OS X 10.8
  * 10.7ではたぶん動きません。
- * 10.6の対応予定はありません。
+ * 10.6以前の対応予定はありません。
+
+
+
+
+仕様というなのバグ
+------------------
+* 利用できる音声合成環境の数が変わった場合（インストール・アンインストール・ゆっくろいどの起動の有無、など）、読み上げ設定データが崩れてしまいます。
+
 
 
 
@@ -54,7 +63,6 @@ Mac用チャットブラウザ／コメント読み上げアプリケーショ�
 -------------------
  * [SayKotoeri2](https://sites.google.com/site/nicohemus/home/saykotoeri2)
  * [SayKotoeri](https://sites.google.com/site/nicohemus/home/saykotoeri) ※ SayKotoeriを利用するには[SayKana](http://www.a-quest.com/quickware/saykana/)も必要になります。
- * say コマンドの Kyokoボイス
+ * sayコマンドの Kyokoボイス
  * [ゆっくろいど](http://www.yukkuroid.com/yukkuroid/index.html)
   * ゆっくろいどを使用した場合、音声再生デバイス選択機能は利用できません。
-  * 声種はゆっくろいど側で選択することになります。

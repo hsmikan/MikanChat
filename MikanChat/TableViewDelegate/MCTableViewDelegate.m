@@ -9,7 +9,7 @@
 #import "MCTableViewDelegate.h"
 #import "../MCUserDefaultsKeys.h"
 #import "../ReadManager/MCReadManager.h"
-
+#import "../Yukkuroid/YukkuroidRPCClinet.h";
 
 @implementation MCTableViewDelegate
 + (NSString *)tableViewKey:(NSTableView*)tableView {
@@ -44,10 +44,7 @@
 
 - (void)MC_PRIVATE_METHOD_PREPEND(tableView):(NSTableView *)tableView row:(NSInteger)row yukkuroidMode:(BOOL)isEnable {
     for ( NSTableColumn * column in [tableView tableColumns] )
-        if (COMPARESTRING([column identifier],kMCReadModePhontIndexKey)
-            ||
-            COMPARESTRING([column identifier],kMCReadModeDeviceIndexKey)
-            )
+        if ( COMPARESTRING([column identifier],kMCReadModeDeviceIndexKey) )
             [[column dataCellForRow:row] setEnabled:!isEnable];
 }
 
@@ -62,7 +59,6 @@
     
     
     if (COMPARESTRING([tableColumn identifier], kMCReadModeSystemIndexKey)) {
-        
         //
         // isYukkuroid
         //
@@ -72,8 +68,6 @@
             [self MC_PRIVATE_METHOD_PREPEND(tableView):tableView row:row yukkuroidMode:NO];
     }
 
-    
-    
     
     return [[modeList objectAtIndex:row] objectForKey:[tableColumn identifier]];
 }

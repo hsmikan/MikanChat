@@ -55,6 +55,9 @@
 #define kReadVolumeKey kMCReadModeVolumeKey
 #define kReadDeviceIndexKey kMCReadModeDeviceIndexKey
 #define kReadSpeedKey kMCReadModeSpeedKey
+#define kReadPhontIndexKey kMCReadModePhontIndexKey
+#define kReadSystemIndexKey kMCReadModeSystemIndexKey
+
 
 
 #pragma mark -
@@ -236,7 +239,7 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
     
     NSString * systemName = [_readSystemList objectAtIndex:index];
     
-    if ( COMPARESTRING(systemName, kMCKyokoName) || COMPARESTRING(systemName, kMCYukkuroidName) || !systemName.length)
+    if ( COMPARESTRING(systemName, kMCKyokoName) || !systemName.length)
         return nil;
     
     if ( COMPARESTRING(systemName, kMCSK2Name) ) {
@@ -267,6 +270,9 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
     else if ( COMPARESTRING(systemName, kMCSKName) ) {
         return [NSArray arrayWithObjects:@"女声", @"男声", nil];
     }
+    else if ( COMPARESTRING(systemName, kMCYukkuroidName) ) {
+        return [YukkuroidRPCClinet voices];
+    }
     
     return nil;
 }
@@ -290,12 +296,12 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
     NSMutableString * ret = [NSMutableString string];
     
     MCReadManager * reader = [MCReadManager sharedReader];
-    NSUInteger speed = [[property objectForKey:kMCReadModeSpeedKey] integerValue];
+    NSUInteger speed = [[property objectForKey:kReadSpeedKey] integerValue];
     
-    NSUInteger systemNameIndex= [[property objectForKey:kMCReadModeSystemIndexKey] integerValue];
+    NSUInteger systemNameIndex= [[property objectForKey:kReadSystemIndexKey] integerValue];
     NSString * systemName = [reader systemNameAtIndex:systemNameIndex];
     
-    NSUInteger phontIndex  = [[property objectForKey:kMCReadModePhontIndexKey] integerValue];
+    NSUInteger phontIndex  = [[property objectForKey:kReadPhontIndexKey] integerValue];
     NSString * phontName = [reader phontNameAtIndex:phontIndex systemIndex:systemNameIndex];
     
     
@@ -395,6 +401,7 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
                                trimedReadString,kMCYukkuroidReadStringsKey,
                                [property objectForKey:kReadVolumeKey],kReadVolumeKey,
                                [property objectForKey:kReadSpeedKey],kReadSpeedKey,
+                               [property objectForKey:kReadPhontIndexKey],kReadPhontIndexKey,
                                nil]];
     }
     //
@@ -414,12 +421,15 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
         [_readQueue addObject:[NSDictionary dictionaryWithObjectsAndKeys:
                                [NSNumber numberWithBool:NO],kReadIsYukkuroidKey,
                                readCmd,kReadCommandKey,
-                               [property objectForKey:kMCReadModeVolumeKey],kReadVolumeKey,
-                               [property objectForKey:kMCReadModeDeviceIndexKey],kReadDeviceIndexKey,
+                               [property objectForKey:kReadVolumeKey],kReadVolumeKey,
+                               [property objectForKey:kReadDeviceIndexKey],kReadDeviceIndexKey,
                                nil]];
     }
     [self MC_PRIVATE_METHOD_PREPEND(playTerminal)];
 }
+
+
+
 
 
 - (void)MC_PRIVATE_METHOD_PREPEND(playTerminal) {
@@ -466,11 +476,19 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
     }
 }
 
+
+
+
+
 - (void)MC_PRIVATE_METHOD_PREPEND(yukkuroidRead):task {
     if ([YukkuroidRPCClinet getVersion]) {
+        if ( [YukkuroidRPCClinet getKoeText].length ) {
+            [YukkuroidRPCClinet pushKoeTextClearButton];
+        }
         [YukkuroidRPCClinet setKanjiText:[task objectForKey:kMCYukkuroidReadStringsKey]];
         [YukkuroidRPCClinet setVoiceSpeed:[[task objectForKey:kReadSpeedKey] intValue] setting:0];
         [YukkuroidRPCClinet setVoiceVolume:[[task objectForKey:kReadVolumeKey] intValue] setting:0];
+        [YukkuroidRPCClinet setVoiceType:[[task objectForKey:kReadPhontIndexKey] intValue] setting:0];
         [YukkuroidRPCClinet playSync:0];
         [self sound:nil didFinishPlaying:YES];
     }
@@ -479,6 +497,11 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
         [self sound:nil didFinishPlaying:YES];
     }
 }
+
+
+
+
+
 
 - (void)MC_PRIVATE_METHOD_PREPEND(playInNewThread) {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];

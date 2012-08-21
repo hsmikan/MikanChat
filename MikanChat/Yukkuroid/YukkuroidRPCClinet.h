@@ -4,6 +4,10 @@
 //  Created by Yuichi Ito on 11/08/14.
 //  Copyright 2011 Cisco Systems. All rights reserved.
 //
+//
+//  2012/08/21
+//   modified By hsmikan
+//
 
 #import <Cocoa/Cocoa.h>
 
@@ -56,4 +60,5 @@
 
 
 @interface YukkuroidRPCClinet : NSObject <YukkuroidProtocol>
++ (NSArray *)voices;
 @end
