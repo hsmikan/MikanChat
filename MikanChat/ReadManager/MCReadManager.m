@@ -188,7 +188,7 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
 
 
 - (NSString*)systemNameAtIndex:(NSUInteger)index {
-    if ( _readSystemList.count-1 > index ) return nil;
+    if ( _readSystemList.count-1 < index ) return nil;
     return [_readSystemList objectAtIndex:index];
 }
 
@@ -310,6 +310,7 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
     }
 #undef IF_MCSystemCheck
     
+
     return ret;
 }
 
@@ -353,7 +354,6 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
           trimedReadString = [readString stringByTrimmingUnvalidCharacters];
       
     readCmd = [self MC_PRIVATE_METHOD_PREPEND(createCommandString):trimedReadString modeProperty:property];
-    
     
     
     if ( readCmd.length == 0 )

@@ -221,12 +221,12 @@
 
 
 - (IBAction)testReading:(id)sender {
-    if ([[MCReadManager sharedReader] hasReadSystem]) {
+    if (![[MCReadManager sharedReader] hasReadSystem]) {
         NSRunAlertPanel(@"MikanChat", NSLocalizedString(@"noValidReadSytem", @""), @"O.K.", nil, nil);
         return;
     }
     
-    if ( _testTextTF.stringValue.length ) {
+    if ( !_testTextTF.stringValue.length ) {
         NSRunAlertPanel(@"MikanChat", NSLocalizedString(@"noReadText", @""), @"O.K.", nil, nil);
         return;
     }
