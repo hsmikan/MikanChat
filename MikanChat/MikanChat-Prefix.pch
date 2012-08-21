@@ -13,8 +13,8 @@
 #define STRINGFORMAT(...) [NSString stringWithFormat : __VA_ARGS__]
 
 #ifdef DEBUG
-#define DLOG(...) NSLog(@"%@\t%d\t%s\n\t\t%@\n", [[[NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding] componentsSeparatedByString:@"/"] lastObject], __LINE__, __func__,STRINGFORMAT(__VA_ARGS__));
-#define DLog(...) printf("%s\t%d\t%s\t",__FILE__,__LINE__,__func__);printf(__VA_ARGS__);printf("\n");
+#define DLOG(...) NSLog(@"%@\t%d\t%s\n\t\t%@\n", [[[NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding] componentsSeparatedByString:@"/"] lastObject], __LINE__, __func__,STRINGFORMAT(__VA_ARGS__))
+#define DLog(...) printf("%s\t%d\t%s\t",__FILE__,__LINE__,__func__);printf(__VA_ARGS__);printf("\n")
 #else
 #define DLOG
 #define DLog

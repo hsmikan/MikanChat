@@ -12,6 +12,9 @@
 #import "../NSString/NSString+MCConverter.h"
 #import "../SoundDevice/MCSoundDevice.h"
 
+#import "../Yukkuroid/YukkuroidRPCClinet.h"
+
+
 //
 // read queue
 //
@@ -32,6 +35,7 @@
 #define kMCSKName @"SayKotoeri"
 #define kMCSK2Name @"SayKotoeri2"
 #define kMCKyokoName @"Kyoko"
+#define kMCYukkuroidName @"Yukkuroid"
 
 
 //
@@ -44,10 +48,13 @@
 //
 // reading information Dictionary's key
 //
+#define kReadIsYukkuroidKey @"isYukkuroid"
+#define kMCYukkuroidReadStringsKey @"yukkuroidStrings"
+
 #define kReadCommandKey @"readCommand"
 #define kReadVolumeKey kMCReadModeVolumeKey
 #define kReadDeviceIndexKey kMCReadModeDeviceIndexKey
-
+#define kReadSpeedKey kMCReadModeSpeedKey
 
 
 #pragma mark -
@@ -152,6 +159,13 @@ static BOOL                 _isPlaying      =   NO;
     return _readSystemList;
 }
 
+- (NSArray *)readSystemNameListByReload {
+    RELEASE_NIL_ASSIGN(_readSystemList)
+    _readSystemList = [[NSArray alloc] initWithArray:MC_PRIVATE_METHOD_PREPEND(readSystemNameList)()];
+    return [self readSystemNameList];
+}
+
+
 NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
     NSMutableArray * systems = [[NSMutableArray alloc] init];
     
@@ -183,6 +197,13 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
         }
     }
     
+    
+    // Yukkuroid
+    if ( [YukkuroidRPCClinet getVersion]/* != nil*/ ) {
+        [systems addObject:kMCYukkuroidName];
+    }
+    
+    
     return [systems autorelease];
 }
 
@@ -192,6 +213,12 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
     return [_readSystemList objectAtIndex:index];
 }
 
+
+- (BOOL)isYukkuroidAtIndex:(NSUInteger)index {
+    if ( COMPARESTRING([self systemNameAtIndex:index],kMCYukkuroidName) )
+        return YES;
+    else return NO;
+}
 
 
 
@@ -209,7 +236,7 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
     
     NSString * systemName = [_readSystemList objectAtIndex:index];
     
-    if ( COMPARESTRING(systemName, kMCKyokoName) || !systemName.length)
+    if ( COMPARESTRING(systemName, kMCKyokoName) || COMPARESTRING(systemName, kMCYukkuroidName) || !systemName.length)
         return nil;
     
     if ( COMPARESTRING(systemName, kMCSK2Name) ) {
@@ -338,34 +365,59 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
         return;
     
     
-    NSString * readCmd;
-      /* merge strings */
-      NSString * readString;
-      if ([df boolForKey:kMCReadModeIsReadTitleKey])
-          readString = [NSString stringWithFormat:@"%@%@%@",name,[df stringForKey:kMCReadModeTitleKey],message];
-      else
-          readString = message;
-      
-      /* Convert Yomi   &   trimming strings */
-      NSString * trimedReadString;
-      if ([df boolForKey:kMCReadModeIsConvertKey])
-          trimedReadString = [[readString stringByConvertingYomi] stringByTrimmingUnvalidCharacters];
-      else
-          trimedReadString = [readString stringByTrimmingUnvalidCharacters];
-      
-    readCmd = [self MC_PRIVATE_METHOD_PREPEND(createCommandString):trimedReadString modeProperty:property];
     
     
-    if ( readCmd.length == 0 )
-        return;
+    /* merge strings */
+    NSString * readString;
+    if ([df boolForKey:kMCReadModeIsReadTitleKey])
+        readString = [NSString stringWithFormat:@"%@%@%@",name,[df stringForKey:kMCReadModeTitleKey],message];
+    else
+        readString = message;
+    
+    /* Convert Yomi   &   trimming strings */
+    NSString * trimedReadString;
+    if ([df boolForKey:kMCReadModeIsConvertKey])
+        trimedReadString = [[readString stringByConvertingYomi] stringByTrimmingUnvalidCharacters];
+    else
+        trimedReadString = [readString stringByTrimmingUnvalidCharacters];
+
     
     
-    [_readQueue addObject:[NSDictionary dictionaryWithObjectsAndKeys:
-                           readCmd,kReadCommandKey,
-                           [property objectForKey:kMCReadModeVolumeKey],kReadVolumeKey,
-                           [property objectForKey:kMCReadModeDeviceIndexKey],kReadDeviceIndexKey,
-                           nil]];
     
+    //
+    // Yukkuroid
+    //
+    NSUInteger systemNameIndex= [[property objectForKey:kMCReadModeSystemIndexKey] integerValue];
+    NSString * systemName = [[MCReadManager sharedReader] systemNameAtIndex:systemNameIndex];
+    if ( COMPARESTRING(systemName, kMCYukkuroidName) ){
+        [_readQueue addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                               [NSNumber numberWithBool:YES],kReadIsYukkuroidKey,
+                               trimedReadString,kMCYukkuroidReadStringsKey,
+                               [property objectForKey:kReadVolumeKey],kReadVolumeKey,
+                               [property objectForKey:kReadSpeedKey],kReadSpeedKey,
+                               nil]];
+    }
+    //
+    // not Yukkuroid
+    //
+    else {
+        
+        NSString * readCmd;
+        
+        readCmd = [self MC_PRIVATE_METHOD_PREPEND(createCommandString):trimedReadString modeProperty:property];
+        
+        
+        if ( readCmd.length == 0 )
+            return;
+        
+        
+        [_readQueue addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                               [NSNumber numberWithBool:NO],kReadIsYukkuroidKey,
+                               readCmd,kReadCommandKey,
+                               [property objectForKey:kMCReadModeVolumeKey],kReadVolumeKey,
+                               [property objectForKey:kMCReadModeDeviceIndexKey],kReadDeviceIndexKey,
+                               nil]];
+    }
     [self MC_PRIVATE_METHOD_PREPEND(playTerminal)];
 }
 
@@ -380,12 +432,9 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
 }
 
 
-- (void)MC_PRIVATE_METHOD_PREPEND(playInNewThread) {
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    
-    NSDictionary * task = [_readQueue objectAtIndex:0];
-    
-    
+
+
+- (void)MC_PRIVATE_METHOD_PREPEND(notYukkuroidRead):(NSDictionary *)task {
     NSString * command = [task objectForKey:kReadCommandKey];
     system([command cStringUsingEncoding:NSUTF8StringEncoding]);
     
@@ -415,6 +464,32 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
         [sound autorelease];
         [self sound:nil didFinishPlaying:NO];
     }
+}
+
+- (void)MC_PRIVATE_METHOD_PREPEND(yukkuroidRead):task {
+    if ([YukkuroidRPCClinet getVersion]) {
+        [YukkuroidRPCClinet setKanjiText:[task objectForKey:kMCYukkuroidReadStringsKey]];
+        [YukkuroidRPCClinet setVoiceSpeed:[[task objectForKey:kReadSpeedKey] intValue] setting:0];
+        [YukkuroidRPCClinet setVoiceVolume:[[task objectForKey:kReadVolumeKey] intValue] setting:0];
+        [YukkuroidRPCClinet playSync:0];
+        [self sound:nil didFinishPlaying:YES];
+    }
+    else {
+        // TODO: Yukkuroid is not Running
+        [self sound:nil didFinishPlaying:YES];
+    }
+}
+
+- (void)MC_PRIVATE_METHOD_PREPEND(playInNewThread) {
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+    
+    NSDictionary * task = [_readQueue objectAtIndex:0];
+    
+    if ( [[task objectForKey:kReadIsYukkuroidKey] boolValue] )
+        [self MC_PRIVATE_METHOD_PREPEND(yukkuroidRead):task];
+    else
+        [self MC_PRIVATE_METHOD_PREPEND(notYukkuroidRead):task];
+    
     [pool release];
     [NSThread exit];
 }
@@ -422,18 +497,20 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
 
 
 
+
+
+
 #pragma mark -
 #pragma mark NSSound delegate
 
--(void)sound:(NSSound *)snd didFinishPlaying:(BOOL)aBool{
+-(void)sound:(NSSound *)snd didFinishPlaying:(BOOL)aBool {
     if ( [[NSFileManager defaultManager] fileExistsAtPath:kTMPSNDPATH] ) {
 		[[NSFileManager defaultManager] removeItemAtPath:kTMPSNDPATH error:NULL];
 	}
 	if (!aBool)
-		NSLog(@"sound failed to play");
+		DLOG(@"sound failed to play");
     else
-        NSLog(@"sound success");
-    
+        DLOG(@"sound success");
     
     
 	[snd autorelease];

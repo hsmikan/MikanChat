@@ -11,6 +11,8 @@
 
 "invalidChannel" = "Invalid Channel.";
 
+"notEmail" = "Invalid Email Adress.";
+
 //
 // IRC
 //

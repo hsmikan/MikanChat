@@ -11,6 +11,10 @@
 #import "../ReadManager/MCReadManager.h"
 #import "../SoundDevice/MCSoundDevice.h"
 
+@interface MCReadModeTableView()
+- (void)MC_PRIVATE_METHOD_PREPEND(loadReadSystemDevice);
+@end
+
 
 @implementation MCReadModeTableView
 /*
@@ -31,28 +35,33 @@
 }
 */
 
+- (void) awakeFromNib {
+    NSNotificationCenter * nfc = [NSNotificationCenter defaultCenter];
+    [nfc addObserver:self selector:@selector(MC_PRIVATE_METHOD_PREPEND(loadReadSystemDevice)) name:kMCReadModeSystemDeviceUpdateNotification object:nil];
+    [self MC_PRIVATE_METHOD_PREPEND(loadReadSystemDevice)];
+}
+
+
+
 - (void)MC_PRIVATE_METHOD_PREPEND(loadReadSystemDevice) {
     //
     // readSystem Column
     //
     NSTableColumn * systemTBLCL = [self tableColumnWithIdentifier:kMCReadModeSystemIndexKey];
-	NSArray * systemArr = [[MCReadManager sharedReader] readSystemNameList];
-    [[systemTBLCL dataCell] addItemsWithTitles:systemArr];
+	NSArray * systemArr = [[MCReadManager sharedReader] readSystemNameListByReload];
+    id systems = [systemTBLCL dataCell];
+    [systems removeAllItems];
+    [systems addItemsWithTitles:systemArr];
     
     //
     // sound device column
     //
     NSTableColumn * deviceTBLCL = [self tableColumnWithIdentifier:kMCReadModeDeviceIndexKey];
-    NSArray * deviceList = [[MCSoundDevice sharedAudioDevice] deviceNameList];
-    [[deviceTBLCL dataCell] addItemsWithTitles:deviceList];
+    NSArray * deviceList = [[MCSoundDevice sharedAudioDevice] deviceNameListByReload];
+    id sounds = [deviceTBLCL dataCell];
+    [sounds removeAllItems];
+    [sounds addItemsWithTitles:deviceList];
 }
 
-
-
-- (void) awakeFromNib {
-    NSNotificationCenter * nfc = [NSNotificationCenter defaultCenter];
-    [nfc addObserver:self selector:@selector(_loadReadSystemDevice) name:kMCReadModeSystemDeviceUpdateNotification object:nil];
-    [self MC_PRIVATE_METHOD_PREPEND(loadReadSystemDevice)];
-}
 
 @end

@@ -40,6 +40,18 @@
 }
 
 
+
+
+- (void)MC_PRIVATE_METHOD_PREPEND(tableView):(NSTableView *)tableView row:(NSInteger)row yukkuroidMode:(BOOL)isEnable {
+    for ( NSTableColumn * column in [tableView tableColumns] )
+        if (COMPARESTRING([column identifier],kMCReadModePhontIndexKey)
+            ||
+            COMPARESTRING([column identifier],kMCReadModeDeviceIndexKey)
+            )
+            [[column dataCellForRow:row] setEnabled:!isEnable];
+}
+
+
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     NSString * operateKey = [[self class] tableViewKey:tableView];
@@ -47,6 +59,21 @@
     NSArray * modeList = nil;
       NSUserDefaults * df = [NSUserDefaults standardUserDefaults];
       modeList = [df objectForKey:operateKey];
+    
+    
+    if (COMPARESTRING([tableColumn identifier], kMCReadModeSystemIndexKey)) {
+        
+        //
+        // isYukkuroid
+        //
+        if ([[MCReadManager sharedReader] isYukkuroidAtIndex:[[[modeList objectAtIndex:row] objectForKey:kMCReadModeSystemIndexKey] integerValue]])
+            [self MC_PRIVATE_METHOD_PREPEND(tableView):tableView row:row yukkuroidMode:YES];
+        else
+            [self MC_PRIVATE_METHOD_PREPEND(tableView):tableView row:row yukkuroidMode:NO];
+    }
+
+    
+    
     
     return [[modeList objectAtIndex:row] objectForKey:[tableColumn identifier]];
 }
@@ -108,11 +135,13 @@ subdic = [NSMutableDictionary dictionaryWithDictionary:[subarr objectAtIndex:row
     
     if (isContained) return;
     
-    
     //
-    // reset Phont index
+    // Change Read System
     //
     if (COMPARESTRING([tableColumn identifier], kMCReadModeSystemIndexKey)) {
+        //
+        //  reset Phont index
+        //
         [subdic setObject:[NSNumber numberWithInteger:0] forKey:kMCReadModePhontIndexKey];
     }
 

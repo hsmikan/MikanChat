@@ -92,9 +92,11 @@ typedef enum {
 }
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
-// TODO: Stickam login
-//    [NSApp beginSheet:_loginModalPanel modalForWindow:[[self view] window] modalDelegate:self
-//       didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
+    // TODO: login
+    /*
+    [NSApp beginSheet:_loginModalPanel modalForWindow:[[self view] window] modalDelegate:self
+       didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
+     */
 }
 
 
@@ -109,9 +111,16 @@ typedef enum {
  *==============================================================================*/
 - (IBAction)login:(id)sender {
     if (!_loginUserEmail.stringValue.length || !_loginUserPassword.stringValue.length) {
-        NSRunAlertPanel(@"StickamClient", @"Fill out Forms.", @"O.K.", nil, nil);
+        NSRunAlertPanel(@"StickamClient", NSLocalizedString(@"lackInformation", @""), @"O.K.", nil, nil);
         return;
     }
+    
+    if (![_loginUserEmail.stringValue isMatchedByRegex:@"^.+@.+\\..+$"]) {
+        NSRunAlertPanel(@"Stickam Client", NSLocalizedString(@"notEmail", @""), @"O.K.", nil, nil);
+        return;
+    }
+    
+    EVALUATEJS(STRINGFORMAT(@"login('%@','%@')",_loginUserEmail.stringValue,_loginUserPassword.stringValue));
 }
 
 
@@ -123,10 +132,6 @@ typedef enum {
     
     switch (returnCode) {
         case NSOKButton:
-            // TODO: Stickam login
-            //EVALUATEJS(STRINGFORMAT(@"login('%@','%@')",));
-            break;
-        
         case NSCancelButton:
         default:
             break;
@@ -216,11 +221,13 @@ typedef enum {
             _isAuth = YES;
             [NSApp endSheet:_loginModalPanel returnCode:NSOKButton];
             break;
+            
         case kMCStickamFailAuthEvent:
             _isAuth = NO;
-            NSRunAlertPanel(@"Stickcam Client", @"Sign in Failed", @"O.K.", nil, nil);
+            NSRunAlertPanel(@"Stickcam Client", @"Filed Sign in.", @"O.K.", nil, nil);
             DLOG(@"%@",context);
             break;
+            
         default:
             break;
     }

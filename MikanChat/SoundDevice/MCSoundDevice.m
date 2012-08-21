@@ -126,6 +126,13 @@ static NSDictionary * _deviceDic = nil;
 }
 
 
+- (NSArray*)deviceNameListByReload {
+    RELEASE_NIL_ASSIGN(_deviceDic)
+    _deviceDic = [[NSDictionary alloc] initWithDictionary:SHAD_loadDevices()];
+    return [self deviceNameList];
+}
+
+
 
 
 

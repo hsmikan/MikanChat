@@ -10,6 +10,8 @@
 
 "invalidChannel" = "不正なチャンネルです。";
 
+"notEmail" = "不正なメールアドレス";
+
 //
 // IRC
 //

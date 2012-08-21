@@ -6319,9 +6319,9 @@
 						<string key="deleteConvertion:">id</string>
 						<string key="deleteIgnore:">id</string>
 						<string key="openCaveTubeWindow:">id</string>
-						<string key="openHelpPage:">id</string>
 						<string key="openIRCWindow:">id</string>
 						<string key="openLiveTube:">id</string>
+						<string key="openMainWindow:">id</string>
 						<string key="openStcikamWIndow:">id</string>
 						<string key="reloadSoundDevices:">id</string>
 						<string key="removeReadMode:">id</string>
@@ -6352,16 +6352,16 @@
 							<string key="name">openCaveTubeWindow:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="openHelpPage:">
-							<string key="name">openHelpPage:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="openIRCWindow:">
 							<string key="name">openIRCWindow:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="openLiveTube:">
 							<string key="name">openLiveTube:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="openMainWindow:">
+							<string key="name">openMainWindow:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="openStcikamWIndow:">

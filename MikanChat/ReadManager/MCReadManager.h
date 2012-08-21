@@ -12,7 +12,9 @@
 @interface MCReadManager : NSObject
 + (MCReadManager *)sharedReader;
 - (NSArray*)readSystemNameList;
+- (NSArray*)readSystemNameListByReload;
 - (NSString*)systemNameAtIndex:(NSUInteger)index;
+- (BOOL)isYukkuroidAtIndex:(NSUInteger)index;
 - (NSArray*)phontsBySystemIndex:(NSUInteger)index;
 - (NSString*)phontNameAtIndex:(NSUInteger)index systemIndex:(NSUInteger)systemIndex;
 - (BOOL)hasReadSystem;

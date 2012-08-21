@@ -11,5 +11,6 @@
 @interface MCSoundDevice : NSObject
 + (MCSoundDevice*)sharedAudioDevice;
 - (NSArray*)deviceNameList;
+- (NSArray*)deviceNameListByReload;
 - (NSString*)deviceUIDByIndex:(NSUInteger)index;
 @end
