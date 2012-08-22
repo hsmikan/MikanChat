@@ -47,11 +47,12 @@ Mac用チャットブラウザ／コメント読み上げアプリケーショ�
 
 <a name="onsei">音声合成環境</a>
 -------------------
- * [SayKotoeri2](https://sites.google.com/site/nicohemus/home/saykotoeri2)
- * [SayKotoeri](https://sites.google.com/site/nicohemus/home/saykotoeri) ※ SayKotoeriを利用するには[SayKana](http://www.a-quest.com/quickware/saykana/)も必要になります。
- * sayコマンドの Kyokoボイス。『mac say 日本語』で検索してみてください。
- * [ゆっくろいど](http://www.yukkuroid.com/yukkuroid/index.html)
-  * ゆっくろいどを使用した場合、音声再生デバイス選択機能は利用できません。
+* [SayKotoeri2](https://sites.google.com/site/nicohemus/home/saykotoeri2)
+* [SayKotoeri](https://sites.google.com/site/nicohemus/home/saykotoeri) ※ SayKotoeriを利用するには[SayKana](http://www.a-quest.com/quickware/saykana/)も必要になります。
+* sayコマンドの Kyokoボイス。『mac say 日本語』で検索してみてください。
+* [ゆっくろいど](http://www.yukkuroid.com/yukkuroid/index.html)
+ * 事前に起動しておくことをおすすめします。
+ * 音声再生デバイス選択機能は利用できません。
 
 
 

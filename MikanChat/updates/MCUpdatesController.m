@@ -68,9 +68,9 @@
     
     
     if (_isUpToDate) {
-        [_updateStatement setStringValue:STRINGFORMAT(@"Found New Version(%@).",_latestVersion)];
+        [_updateStatement setStringValue:STRINGFORMAT(@"New Version(%@) is available.",_latestVersion)];
         [_notesTF setStringValue:_notes];
-        [_downloadPageBT setHidden:NO];
+        [_downloadPageBT setEnabled:YES];
     }
     else {
         [_updateStatement setStringValue:@"Up to date."];
