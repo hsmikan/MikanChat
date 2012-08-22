@@ -19,7 +19,6 @@
 		9243064315D4D6500018E2EB /* MCPhontColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243064215D4D6500018E2EB /* MCPhontColumn.m */; };
 		9243064915D4DA500018E2EB /* MCExpansionSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243064815D4DA4F0018E2EB /* MCExpansionSlider.m */; };
 		9243065615D565B90018E2EB /* MCIRCProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243065515D565B90018E2EB /* MCIRCProtocol.m */; };
-		924901E915D8504000BD9633 /* appicon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 924901E815D8504000BD9633 /* appicon.icns */; };
 		924901EC15D8535D00BD9633 /* MCUserDefaultsKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 924901EB15D8535D00BD9633 /* MCUserDefaultsKeys.m */; };
 		9262BE3615D40711007DC7B3 /* MCSoundDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 9262BE3515D40711007DC7B3 /* MCSoundDevice.m */; };
 		9262BE3D15D407EE007DC7B3 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9262BE3C15D407EE007DC7B3 /* CoreAudio.framework */; };
@@ -79,7 +78,6 @@
 		9243065415D565B90018E2EB /* MCIRCProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCIRCProtocol.h; path = MCIRCClient/MCIRCProtocol.h; sourceTree = "<group>"; };
 		9243065515D565B90018E2EB /* MCIRCProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCIRCProtocol.m; path = MCIRCClient/MCIRCProtocol.m; sourceTree = "<group>"; };
 		9243065715D574860018E2EB /* MCIRCClientConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MCIRCClientConstants.h; path = MCIRCClient/MCIRCClientConstants.h; sourceTree = "<group>"; };
-		924901E815D8504000BD9633 /* appicon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = appicon.icns; sourceTree = "<group>"; };
 		924901EB15D8535D00BD9633 /* MCUserDefaultsKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCUserDefaultsKeys.m; sourceTree = "<group>"; };
 		9262BE3415D40711007DC7B3 /* MCSoundDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCSoundDevice.h; path = SoundDevice/MCSoundDevice.h; sourceTree = "<group>"; };
 		9262BE3515D40711007DC7B3 /* MCSoundDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCSoundDevice.m; path = SoundDevice/MCSoundDevice.m; sourceTree = "<group>"; };
@@ -239,7 +237,6 @@
 		92D6A19A15D2E870007F58C8 = {
 			isa = PBXGroup;
 			children = (
-				924901E815D8504000BD9633 /* appicon.icns */,
 				929DDF1915E2AA44005F115E /* README.md */,
 				92D6A1AF15D2E870007F58C8 /* MikanChat */,
 				92D6A1A815D2E870007F58C8 /* Frameworks */,
@@ -464,7 +461,6 @@
 				92B8515415D3394500F306E4 /* cavetube.html in Resources */,
 				92B8515815D3480300F306E4 /* LiveTube.xib in Resources */,
 				924305ED15D44CD10018E2EB /* UserDefaults.plist in Resources */,
-				924901E915D8504000BD9633 /* appicon.icns in Resources */,
 				922EA40315E3C42E00BD31DB /* MCStickamClient.xib in Resources */,
 				929DDF1A15E2AA45005F115E /* README.md in Resources */,
 				922EA3F515E3C2F900BD31DB /* Localized.strings in Resources */,
