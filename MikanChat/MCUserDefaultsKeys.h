@@ -13,8 +13,8 @@ extern NSString * const kMCReadModeIsConvertKey;
 extern NSString * const kMCReadModeIsReadTitleKey;
 extern NSString * const kMCReadModeTitleKey;
 extern NSString * const kMCReadModeQueueKey;
-
-
+extern NSString * const kMCReadModeStringLimit;
+extern NSString * const kMCReadModeStringLimitSuffix;
 //
 // ReradMode
 //

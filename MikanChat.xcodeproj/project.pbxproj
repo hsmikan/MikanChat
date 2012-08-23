@@ -58,7 +58,6 @@
 		922EA40615E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ja; path = ja.lproj/Credits.rtf; sourceTree = "<group>"; };
 		922EA40715E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		922EA40815E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localized.strings; sourceTree = "<group>"; };
-		922EA40915E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		922EA40A15E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MCIRCView.xib; sourceTree = "<group>"; };
 		922EA40B15E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MCStickamClient.xib; sourceTree = "<group>"; };
 		922EA40C15E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MCClientWindowController.xib; sourceTree = "<group>"; };
@@ -131,6 +130,7 @@
 		92E4CEA715E1185700237B10 /* NSColorWell+MCCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSColorWell+MCCategory.m"; path = "NSCollorWell/NSColorWell+MCCategory.m"; sourceTree = "<group>"; };
 		92E7672215E2D9D2006104A9 /* YukkuroidRPCClinet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YukkuroidRPCClinet.h; path = Yukkuroid/YukkuroidRPCClinet.h; sourceTree = "<group>"; };
 		92E7672315E2D9D2006104A9 /* YukkuroidRPCClinet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YukkuroidRPCClinet.m; path = Yukkuroid/YukkuroidRPCClinet.m; sourceTree = "<group>"; };
+		92F8ADB315E65EB800248A3F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,6 +439,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ja,
 			);
 			mainGroup = 92D6A19A15D2E870007F58C8;
 			productRefGroup = 92D6A1A615D2E870007F58C8 /* Products */;
@@ -595,7 +596,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				92D6A1BF15D2E871007F58C8 /* en */,
-				922EA40915E3C43D00BD31DB /* ja */,
+				92F8ADB315E65EB800248A3F /* ja */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

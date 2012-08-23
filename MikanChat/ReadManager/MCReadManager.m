@@ -373,23 +373,33 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
     
     
     
-    /* merge strings */
+    /* merge strings to read */
     NSString * readString;
     if ([df boolForKey:kMCReadModeIsReadTitleKey])
         readString = [NSString stringWithFormat:@"%@%@%@",name,[df stringForKey:kMCReadModeTitleKey],message];
     else
         readString = message;
     
+    
     /* Convert Yomi   &   trimming strings */
-    NSString * trimedReadString;
+    NSMutableString * trimedReadString;
     if ([df boolForKey:kMCReadModeIsConvertKey])
-        trimedReadString = [[readString stringByConvertingYomi] stringByTrimmingUnvalidCharacters];
+        trimedReadString = [NSMutableString stringWithString:[[readString stringByConvertingYomi] stringByTrimmingUnvalidCharacters]];
     else
-        trimedReadString = [readString stringByTrimmingUnvalidCharacters];
-
+        trimedReadString = [NSMutableString stringWithString:[readString stringByTrimmingUnvalidCharacters]];
+    
+    
+    //
+    // limit string count
+    //
+    int limit = [[df objectForKey:kMCReadModeStringLimit] intValue];
+    NSInteger len = trimedReadString.length;
+    if (limit < len)
+        [trimedReadString replaceCharactersInRange:NSMakeRange(limit, len - limit) withString:[df stringForKey:kMCReadModeStringLimitSuffix]];
     
     
     
+    /* proxy */
     //
     // Yukkuroid
     //

@@ -68,5 +68,5 @@ The MIT License.
 
 * CONTAINS
  * [RegexKitLite](http://regexkit.sourceforge.net/RegexKitLite/)  Copyright (c) 2008-2010, John Engelhart
- * [YukkuroidRPCClient](http://yukkuroid.com/)  Copyright 2011 Cisco Systems. All rights reserved.
+ * [YukkuroidRPCClient](http://www.yukkuroid.com/yukkuroid/index.html)  Copyright 2011 Cisco Systems. All rights reserved.
 
