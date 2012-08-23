@@ -49,7 +49,7 @@
 	if (self) {
         _irc = [[MCIRCProtocol alloc] initWithDelegate:self];
         _nameList = [[NSMutableArray alloc] init];
-        _messageLog = [[NSMutableArray alloc] init];
+        _messageList = [[NSMutableArray alloc] init];
         _consoleLog  = [[NSMutableArray alloc] init];
 	}
 	return self;
@@ -62,7 +62,7 @@
 - (void)dealloc {
     RELEASE_NIL_ASSIGN(_irc)
     RELEASE_NIL_ASSIGN(_nameList)
-    RELEASE_NIL_ASSIGN(_messageLog)
+    RELEASE_NIL_ASSIGN(_messageList)
     RELEASE_NIL_ASSIGN(_consoleLog)
     
 	[super dealloc];
@@ -152,7 +152,7 @@
     else
         [_irc sendToChannelWithOperator:kIRCSendOperaterPRIVMSG message:message];
     
-    [_messageLog addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+    [_messageList addObject:[NSDictionary dictionaryWithObjectsAndKeys:
                             message,kMCIRCMessageTBLMessageColumnID,
                             @"ME",kMCIRCMessageTBLMessageColumnID,
                             nil]];
@@ -224,11 +224,11 @@
             NSString * username = [object objectAtIndex:0];
             NSString * message  = [object objectAtIndex:1];
             if ([self.delegate clientGetMessage:message userName:username]) {
-                [_messageLog addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                [_messageList addObject:[NSDictionary dictionaryWithObjectsAndKeys:
                                         username,kMCClientUserNameKey,
                                         message,kMCClientMessageKey,
                                         nil]];
-                MCTBLReloadData(_messageTBL, _messageLog.count);
+                MCTBLReloadData(_messageTBL, _messageList.count);
             }
             break;
             
@@ -247,7 +247,6 @@
 }
 
 
-@end
 
 
 
@@ -260,14 +259,11 @@
  *
  *==============================================================================*/
 
-@interface MCIRCClient (MCTableViewDelegate) <NSTableViewDataSource>
-@end
-@implementation MCIRCClient (MCTableViewDelegate)
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
     if (COMPARESTRING([tableView identifier], kMCIRCMessageListTBLID)) {
     NSSize size;
-      NSString * message = [[_messageLog objectAtIndex:row] objectForKey:kMCClientMessageKey];
+      NSString * message = [[_messageList objectAtIndex:row] objectForKey:kMCClientMessageKey];
       NSDictionary * attribute;
         NSTableColumn * column = [tableView tableColumnWithIdentifier:kMCIRCMessageTBLMessageColumnID];
         NSAttributedString * attributeStr = [[column dataCellForRow:row] attributedStringValue];
@@ -283,7 +279,7 @@
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     if      (COMPARESTRING([tableView identifier],kMCIRCNameListTBLID)) return [_nameList   count];
-    else if (COMPARESTRING([tableView identifier],kMCIRCMessageListTBLID)) return [_messageLog count];
+    else if (COMPARESTRING([tableView identifier],kMCIRCMessageListTBLID)) return [_messageList count];
     else
         return 0;
 }
@@ -292,16 +288,10 @@
 - (id)tableView:(NSTableView *)tableView
 objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    if      (COMPARESTRING([tableColumn identifier],kMCIRCMessageTBLUserNameCollumnID))
-        return [[_messageLog objectAtIndex:row] objectForKey:kMCClientUserNameKey];
-    
-    else if (COMPARESTRING([tableColumn identifier],kMCIRCMessageTBLMessageColumnID))
-        return [[_messageLog objectAtIndex:row] objectForKey:kMCClientMessageKey];
-    
-    else if (COMPARESTRING([tableColumn identifier],kMCIRCNameListColumnID))
+    if (COMPARESTRING([tableColumn identifier],kMCIRCNameListColumnID))
         return [_nameList objectAtIndex:row];
-    
     else
+        return [[_messageList objectAtIndex:row] objectForKey:[tableColumn identifier]];
         return nil;
 }
 @end

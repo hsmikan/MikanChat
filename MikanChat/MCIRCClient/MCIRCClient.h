@@ -14,7 +14,6 @@
 @interface MCIRCClient : MCParentClient {
     MCIRCProtocol  * _irc;
     NSMutableArray * _nameList;
-    NSMutableArray * _messageLog;
     NSMutableArray * _consoleLog;
 }
 @property (assign) IBOutlet NSPanel             *startModal;

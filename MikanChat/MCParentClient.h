@@ -7,8 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-extern NSString * const kMCClientMessageKey;
-extern NSString * const kMCClientUserNameKey;
+#define kMCClientMessageKey   @"message"
+#define kMCClientUserNameKey  @"username"
 
 
 
@@ -27,16 +27,14 @@ typedef enum {
 @end
 
 
-@protocol MCClientViewControllerProtocol <NSObject>
-@required
+
+@interface MCParentClient : NSViewController <NSTableViewDataSource,NSTableViewDelegate> {
+    NSMutableArray * _messageList;
+}
+@property (assign) id <MCClientProtocol>        delegate;
+- (id)initWithDelegate:(id<MCClientProtocol>)delegate nibName:(NSString*)nibName;
 - (id)initWithDelegate:(id<MCClientProtocol>)delegate;
 - (BOOL)startChat;
 - (void)endChat;
 - (BOOL)isJoin;
-@end
-
-
-@interface MCParentClient : NSViewController <MCClientViewControllerProtocol>
-@property (assign) id <MCClientProtocol>        delegate;
-- (id)initWithDelegate:(id<MCClientProtocol>)delegate nibName:(NSString*)nibName;
 @end

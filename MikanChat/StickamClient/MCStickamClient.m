@@ -43,7 +43,7 @@ typedef enum {
 @synthesize loginUserPassword = _loginUserPassword;
 @synthesize liveURLTF = _liveURLTF;
 @synthesize nicknameTF = _nicknameTF;
-@synthesize messageTBL = _messageTBL;
+@synthesize messageTBL      = _messageTBL;
 @synthesize isBoldCommentBT = _isBoldCommentBT;
 @synthesize isItalicCommentBT = _isItalicCommentBT;
 @synthesize isUnderlineCommentBT = _isUnderlineCommentBT;
@@ -401,10 +401,42 @@ initiatedByFrame:(WebFrame *)frame{
                              [attrNickname copy],kMCClientUserNameKey,
                              [attrMessage copy],kMCClientMessageKey,
                              nil]];
-    
     MCTBLReloadData(_messageTBL, _messageList.count);
+}
+
+
+
+
+
+
+#pragma mark -
+#pragma mark TableView Delegate Datasource
+/*==============================================================================
+ *
+ *  tableveiew delegate datasource
+ *
+ *==============================================================================*/
+
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+    return _messageList.count;
+}
+
+
+- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    return [[_messageList objectAtIndex:row] objectForKey:[tableColumn identifier]];
+}
+
+- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
+    NSSize size;
+    NSAttributedString * attrMessage = [[_messageList objectAtIndex:row] objectForKey:kMCClientMessageKey];
+    NSDictionary * attribute;
+//    NSTableColumn * column = [tableView tableColumnWithIdentifier:kMCClientMessageKey];
+//    NSAttributedString * attributeStr = [[column dataCellForRow:row] attributedStringValue];
+    attribute = [attrMessage attributesAtIndex:0 effectiveRange:nil];
+    size = [[attrMessage string] sizeWithAttributes:attribute];
     
-    
+    return size.height;
 }
 
 @end

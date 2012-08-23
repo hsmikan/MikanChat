@@ -1,0 +1,89 @@
+<html lang="ja">
+<head>
+    <meta charset='utf-8'/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+</head>
+<body><script>
+    var eventCode = {
+        message : 0,
+        firstLoad : 1,
+    };
+    var channelID = "aaaacoks47bcc";
+    var loadedCommentCount = 2390;
+    var void_cache = 1;
+    var loadComments = function(isFirstLoad){
+        $.ajax({
+            url : "http://livetube.cc/stream/" + channelID + ".comments." + loadedCommentCount + "?void=" + (++void_cache),
+            type : 'get',
+            success : function(data,transport){
+                var loaded = new Array();
+                
+                /*
+                <div style="background-color: #eee;">
+                  <div style="margin-top: 6px;">
+
+                    1601 :  <span style="">8/23 22:22:01</span><br />
+                    <span style="font-weight:bold;margin-bottom:0px; padding-bottom:0px;">Comment</span><br clear="left" />
+                  </div>
+                </div>
+                
+                
+                <div style="background-color: #eee;">
+                  <div style="margin-top: 6px;">
+                    <img src="/userimage/new%2859%29.jpg" width="37" height="46" align="left" />
+                    1609 : <a href="url"><span style="font-size:1em;color:green; font-weight:bolder;">username</span></a> <span style="">8/23 22:23:23</span><br />
+                <span style="font-weight:bold;margin-bottom:0px; padding-bottom:0px;">Comment</span><br clear="left" />
+                </div>
+                </div>
+                */
+                $(data).each(function(i){
+                    var ret = {};
+                    
+                    var commentDiv = $("div",this);
+                    
+                    var img = commentDiv.children("img");
+                    if (img !== undefined) {
+                        ret.image = "http://livetube.cc" + img.attr("src");
+                    }
+                    
+                    commentDiv.text().match(/([0-9]+) :/);
+                    ret.commentNum = RegExp.$1;
+                    
+                    var usernameAnchor = commentDiv.children("a");
+                    if (usernameAnchor !== undefined) {
+                        ret.username = usernameAnchor.text();
+                    }
+                    
+                    var spans = commentDiv.children("span");
+                    ret.time = $(spans[0]).text();
+                    ret.message = $(spans[1]).text();
+                    
+                    ++loadedCommentCount;
+                    
+                    console.log(ret);
+                    if (isFirstLoad) {
+                        loaded.push(ret);
+                    }
+                    else {
+                        //app.lvevent(eventCode.message,ret);
+                    }
+                });
+                
+                if (loaded.length) {
+                    //app.lvevent(eventCode.firstLoad,loaded);
+                }
+            }
+        });
+        ++void_cache;
+    };// loadComments
+    
+    var enterChannel = function(liveURL){
+        channelID = "";
+    };
+
+    $(document).ready(function(){
+        if ( window.app === undefined ) return;
+        
+    });
+</script></body>
+</html>

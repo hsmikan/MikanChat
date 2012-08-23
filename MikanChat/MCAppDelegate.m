@@ -72,6 +72,9 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     NSUserDefaults * df = [NSUserDefaults standardUserDefaults];
+    //
+    // 更新チェック
+    //
     if ( [df boolForKey:kMCAutomaaticallyUpdatesKey]) {
         MCUpdatesController * updates = [[MCUpdatesController alloc] init];
         if ( updates.isUpToDate )
@@ -79,6 +82,7 @@
         else
             [updates release];
     }
+    
 }
 
 

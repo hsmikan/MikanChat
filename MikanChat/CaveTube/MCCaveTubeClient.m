@@ -58,7 +58,7 @@ typedef enum {
 } MCCVEventCode;
 
 
-@interface MCCaveTubeClient () <NSTableViewDataSource,NSTableViewDelegate>
+@interface MCCaveTubeClient () 
 - (void)MC_PRIVATE_METHOD_PREPEND(addNewPost):(WebScriptObject*)post;
 - (void)MC_PRIVATE_METHOD_PREPEND(addNewPosts):(WebScriptObject*)posts;
 @end
@@ -67,7 +67,7 @@ typedef enum {
 
 @synthesize isReadCommentNumber = _isReadCommentNumber;
 @synthesize liveURLTF = _liveURLTF;
-@synthesize messageTBL = _messageTBL;
+@synthesize messageTBL      = _messageTBL;
 @synthesize username = _username;
 @synthesize isJoin = _isJoin;
 @synthesize delegate = _delegate;
@@ -359,7 +359,6 @@ initiatedByFrame:(WebFrame *)frame{
 
 
 
-@end
 
 
 
@@ -375,9 +374,6 @@ initiatedByFrame:(WebFrame *)frame{
  *  tableveiew delegate datasource
  *
  *==============================================================================*/
-@interface MCCaveTubeClient (tableViewDelegate) <NSTableViewDataSource,NSTableViewDelegate>
-@end
-@implementation MCCaveTubeClient (tableViewDelegate)
 
 
 - (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
@@ -409,13 +405,8 @@ initiatedByFrame:(WebFrame *)frame{
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    if      (COMPARESTRING([tableColumn identifier], kMCCVTBLUserNameColumnKey))
-        return [[_messageList objectAtIndex:row] objectForKey:kMCClientUserNameKey];
-    
-    else if (COMPARESTRING([tableColumn identifier], kMCCVTBLMessageColumnKey))
-        return [[_messageList objectAtIndex:row] objectForKey:kMCClientMessageKey];
-    
-    return nil;
+    DLOG(@"col : %@\n%@",[tableColumn identifier],[_messageList objectAtIndex:row]);
+    return [[_messageList objectAtIndex:row] objectForKey:[tableColumn identifier]];
 }
 
 @end

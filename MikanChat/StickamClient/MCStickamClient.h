@@ -13,7 +13,6 @@
 @class WebView;
 
 @interface MCStickamClient : MCParentClient {
-    NSMutableArray * _messageList;
     BOOL _isAuth;
 }
 @property (assign) IBOutlet WebView *webView;

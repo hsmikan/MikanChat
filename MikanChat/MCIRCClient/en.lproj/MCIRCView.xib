@@ -132,7 +132,7 @@
 														</object>
 														<array class="NSMutableArray" key="NSTableColumns">
 															<object class="NSTableColumn" id="885917657">
-																<string key="NSIdentifier">MCIRCMessageUserNameColumn</string>
+																<string key="NSIdentifier">username</string>
 																<double key="NSWidth">116</double>
 																<double key="NSMinWidth">40</double>
 																<double key="NSMaxWidth">1000</double>
@@ -184,7 +184,7 @@
 																<reference key="NSTableView" ref="878080536"/>
 															</object>
 															<object class="NSTableColumn" id="368019924">
-																<string key="NSIdentifier">MCIRCMessageTBLMessageColumn</string>
+																<string key="NSIdentifier">message</string>
 																<double key="NSWidth">297</double>
 																<double key="NSMinWidth">40</double>
 																<double key="NSMaxWidth">1000</double>
@@ -548,7 +548,7 @@
 							<string key="NSFrame">{{17, 191}, {56, 17}}</string>
 							<reference key="NSSuperview" ref="912068842"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="300080376"/>
+							<reference key="NSNextKeyView" ref="730237359"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="754195194">
@@ -621,7 +621,7 @@
 							<string key="NSFrame">{{17, 123}, {67, 17}}</string>
 							<reference key="NSSuperview" ref="912068842"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="206772578"/>
+							<reference key="NSNextKeyView" ref="226426233"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="942608861">
@@ -882,7 +882,7 @@
 							<string key="NSFrame">{{17, 288}, {43, 17}}</string>
 							<reference key="NSSuperview" ref="912068842"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="169286760"/>
+							<reference key="NSNextKeyView" ref="389664377"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="335661428">
@@ -928,7 +928,7 @@
 							<string key="NSFrame">{{14, 13}, {82, 32}}</string>
 							<reference key="NSSuperview" ref="912068842"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="389664377"/>
+							<reference key="NSNextKeyView" ref="453268043"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="384069538">
@@ -953,7 +953,7 @@
 							<string key="NSFrame">{{108, 288}, {17, 17}}</string>
 							<reference key="NSSuperview" ref="912068842"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="453268043"/>
+							<reference key="NSNextKeyView" ref="169286760"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="749503959">
@@ -981,6 +981,7 @@
 							<string key="NSFrame">{{108, 191}, {17, 17}}</string>
 							<reference key="NSSuperview" ref="912068842"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="300080376"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="437259522">
@@ -1001,6 +1002,7 @@
 							<string key="NSFrame">{{108, 126}, {17, 17}}</string>
 							<reference key="NSSuperview" ref="912068842"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="206772578"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="310488411">

@@ -1384,6 +1384,7 @@
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {90, 32}}</string>
 								<reference key="NSSuperview"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
@@ -1430,6 +1431,7 @@
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{10, 14}, {74, 18}}</string>
 								<reference key="NSSuperview"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
@@ -1506,6 +1508,7 @@
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {61, 32}}</string>
 								<reference key="NSSuperview"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
@@ -1548,6 +1551,7 @@
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {97, 32}}</string>
 								<reference key="NSSuperview"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
@@ -1590,11 +1594,12 @@
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {97, 32}}</string>
 								<reference key="NSSuperview"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="992180827">
-									<int key="NSCellFlags">603979776</int>
+									<int key="NSCellFlags">67108864</int>
 									<int key="NSCellFlags2">134217728</int>
 									<string key="NSContents">LiveTube</string>
 									<reference key="NSSupport" ref="1055977906"/>
@@ -1614,7 +1619,7 @@
 							<nil key="NSToolbarItemAction"/>
 							<string key="NSToolbarItemMinSize">{97, 32}</string>
 							<string key="NSToolbarItemMaxSize">{97, 32}</string>
-							<bool key="NSToolbarItemEnabled">NO</bool>
+							<bool key="NSToolbarItemEnabled">YES</bool>
 							<bool key="NSToolbarItemAutovalidates">YES</bool>
 							<int key="NSToolbarItemTag">0</int>
 							<bool key="NSToolbarIsUserRemovable">YES</bool>
@@ -1675,7 +1680,7 @@
 							</object>
 						</object>
 					</dictionary>
-					<array key="NSToolbarIBAllowedItems">
+					<array class="NSMutableArray" key="NSToolbarIBAllowedItems">
 						<reference ref="944426787"/>
 						<reference ref="1033929203"/>
 						<reference ref="607705777"/>
@@ -1691,6 +1696,7 @@
 						<reference ref="1033929203"/>
 						<reference ref="607705777"/>
 						<reference ref="77584332"/>
+						<reference ref="80262679"/>
 						<reference ref="392420697"/>
 						<reference ref="1033929203"/>
 						<reference ref="653664622"/>
@@ -2465,7 +2471,7 @@
 											<object class="NSTextField" id="743754796">
 												<reference key="NSNextResponder" ref="1027135779"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{14, 13}, {69, 17}}</string>
+												<string key="NSFrame">{{14, 16}, {69, 17}}</string>
 												<reference key="NSSuperview" ref="1027135779"/>
 												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="419169979"/>
@@ -2607,7 +2613,7 @@
 																<array class="NSMutableArray" key="NSSubviews"/>
 																<string key="NSFrameSize">{788, 228}</string>
 																<reference key="NSSuperview" ref="883983895"/>
-																<reference key="NSNextKeyView" ref="494462420"/>
+																<reference key="NSNextKeyView" ref="450440062"/>
 																<string key="NSReuseIdentifierKey">_NS:13</string>
 																<bool key="NSEnabled">YES</bool>
 																<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -2766,7 +2772,7 @@
 												</array>
 												<string key="NSFrame">{{17, 70}, {790, 246}}</string>
 												<reference key="NSSuperview" ref="1059362149"/>
-												<reference key="NSNextKeyView" ref="450440062"/>
+												<reference key="NSNextKeyView" ref="883983895"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<int key="NSsFlags">133682</int>
 												<reference key="NSVScroller" ref="692484702"/>
@@ -2935,7 +2941,7 @@
 																<array class="NSMutableArray" key="NSSubviews"/>
 																<string key="NSFrameSize">{788, 226}</string>
 																<reference key="NSSuperview" ref="527232811"/>
-																<reference key="NSNextKeyView" ref="766739607"/>
+																<reference key="NSNextKeyView" ref="750736011"/>
 																<string key="NSReuseIdentifierKey">_NS:13</string>
 																<bool key="NSEnabled">YES</bool>
 																<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -3131,7 +3137,7 @@
 												</array>
 												<string key="NSFrame">{{17, 72}, {790, 244}}</string>
 												<reference key="NSSuperview" ref="441394335"/>
-												<reference key="NSNextKeyView" ref="750736011"/>
+												<reference key="NSNextKeyView" ref="527232811"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<int key="NSsFlags">133682</int>
 												<reference key="NSVScroller" ref="100345136"/>
@@ -5562,15 +5568,15 @@
 							<reference ref="422144601"/>
 							<reference ref="618347816"/>
 							<reference ref="419169979"/>
-							<reference ref="743754796"/>
 							<reference ref="535413891"/>
-							<reference ref="615506298"/>
 							<reference ref="896146746"/>
 							<reference ref="760149993"/>
 							<reference ref="575329362"/>
 							<reference ref="595524188"/>
 							<reference ref="622853522"/>
 							<reference ref="385749504"/>
+							<reference ref="743754796"/>
+							<reference ref="615506298"/>
 						</array>
 						<reference key="parent" ref="530590552"/>
 					</object>

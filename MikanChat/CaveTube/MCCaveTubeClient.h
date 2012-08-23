@@ -14,7 +14,6 @@
 
 @interface MCCaveTubeClient : MCParentClient {
     WebView * _webView;
-    NSMutableArray * _messageList;
 }
 @property (assign) IBOutlet NSButton *isReadCommentNumber;
 @property (assign) IBOutlet NSTextField *liveURLTF;

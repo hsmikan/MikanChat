@@ -8,8 +8,6 @@
 
 #import "MCParentClient.h"
 
-EXTERNED NSString * const kMCClientMessageKey  = @"message";
-EXTERNED NSString * const kMCClientUserNameKey = @"username";
 
 
 @interface MCParentClient ()
@@ -52,5 +50,4 @@ EXTERNED NSString * const kMCClientUserNameKey = @"username";
 {
     return NO;
 }
-
 @end

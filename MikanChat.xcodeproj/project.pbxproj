@@ -47,6 +47,7 @@
 		92D6A1EE15D2F677007F58C8 /* MCReadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D6A1ED15D2F677007F58C8 /* MCReadManager.m */; };
 		92E4CEA815E1185700237B10 /* NSColorWell+MCCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E4CEA715E1185700237B10 /* NSColorWell+MCCategory.m */; };
 		92E7672415E2D9D2006104A9 /* YukkuroidRPCClinet.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E7672315E2D9D2006104A9 /* YukkuroidRPCClinet.m */; };
+		92F8ADB515E674ED00248A3F /* livetube.html in Resources */ = {isa = PBXBuildFile; fileRef = 92F8ADB415E674ED00248A3F /* livetube.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +132,7 @@
 		92E7672215E2D9D2006104A9 /* YukkuroidRPCClinet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YukkuroidRPCClinet.h; path = Yukkuroid/YukkuroidRPCClinet.h; sourceTree = "<group>"; };
 		92E7672315E2D9D2006104A9 /* YukkuroidRPCClinet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YukkuroidRPCClinet.m; path = Yukkuroid/YukkuroidRPCClinet.m; sourceTree = "<group>"; };
 		92F8ADB315E65EB800248A3F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		92F8ADB415E674ED00248A3F /* livetube.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = livetube.html; path = LiveTubeClient/livetube.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +323,7 @@
 				92B8515715D3480300F306E4 /* LiveTube.xib */,
 				92D6A1D215D2EC60007F58C8 /* MCLiveTubeClient.h */,
 				92D6A1D315D2EC60007F58C8 /* MCLiveTubeClient.m */,
+				92F8ADB415E674ED00248A3F /* livetube.html */,
 			);
 			name = LiveTubeClient;
 			sourceTree = "<group>";
@@ -373,9 +376,9 @@
 		92D6A20615D32145007F58C8 /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				92D6A1E615D2F4C6007F58C8 /* ClientWindowController */,
 				92B682BE15E0E2AF00BF1692 /* MCParentClient.h */,
 				92B682BF15E0E2AF00BF1692 /* MCParentClient.m */,
-				92D6A1E615D2F4C6007F58C8 /* ClientWindowController */,
 				92D6A1D715D2EC85007F58C8 /* MCIRCClient */,
 				92D6A1D615D2EC74007F58C8 /* CaveTube */,
 				92B682BD15E0E21A00BF1692 /* StickamClient */,
@@ -470,6 +473,7 @@
 				922EA3F515E3C2F900BD31DB /* Localized.strings in Resources */,
 				9283C1C015E431FA00E3A2CB /* MCUpdatesController.xib in Resources */,
 				9283C1D315E5555900E3A2CB /* appIcon.icns in Resources */,
+				92F8ADB515E674ED00248A3F /* livetube.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
