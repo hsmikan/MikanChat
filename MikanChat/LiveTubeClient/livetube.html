@@ -77,12 +77,48 @@
         ++void_cache;
     };// loadComments
     
+    
     var enterChannel = function(liveURL){
         channelID = "";
     };
-
+    
+    
+    var postComment = function(name,message) {
+        $.ajax({
+            url : 'http://livetube.cc/stream/' + channelID + '.comments',
+            type : 'post',
+            data : {
+                name : name,/* name | comment_name */
+                c : message/* c | */
+            },
+            success : function(rec){
+            }
+        });
+    };
+    /*
+    function PostComment(){
+        if( $( "comment_area").value.length > 0){
+            if( comment_load){
+                comment_load.transport.abort();
+            }
+            // new Ajax.Request(
+            new Ajax.Updater(
+                "comment_post_feedback",
+                "/stream/aaaacoks47bcc.comments",
+                {
+                    asynchronous : true,
+                    parameters : Form.serialize( "comment_form"),
+                    onSuccess : function( transport, json){
+                        $( "comment_area").value = "";
+                        LoadComments();
+                    }
+                }
+            );
+        }
+    }
+    */
     $(document).ready(function(){
-        if ( window.app === undefined ) return;
+        //if ( window.app === undefined ) return;
         
     });
 </script></body>

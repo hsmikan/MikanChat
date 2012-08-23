@@ -20,12 +20,15 @@ typedef enum {
 } MCLVEvent;
 
 @implementation MCLiveTubeClient
-@synthesize isJoin = _isJoin;
-@synthesize liveURL = _liveURL;
-@synthesize messageTBL = _messageTBL;
+@synthesize isJoin      =   _isJoin;
+@synthesize liveURL     =   _liveURL;
+@synthesize messageTBL  =   _messageTBL;
+@synthesize usernameTF  =   _usernameTF;
+@synthesize messageTF   =   _messageTF;
 
 - (void)dealloc {
     RELEASE(_messageList);
+    RELEASE(_webView);
     [super dealloc];
 }
 
@@ -65,10 +68,17 @@ typedef enum {
  *
  *  Required
  *
+ *
+ *  TODO: Livetubeコメントしゅうとく。
+ *      start : タイマースタート
+ *          リフレッシュ感覚
+ *          チャットIDのしゅうとく
+ *      end : タイマーストップ
+ *
  *==============================================================================*/
 
-- (BOOL)startChat
-{
+- (BOOL)startChat {
+    /*
     NSString * url = _liveURL.stringValue;
     if (!url.length) {
         NSRunAlertPanel(@"Livetube Client", @"不正なURLです。", @"O.K.", nil, nil);
@@ -76,21 +86,44 @@ typedef enum {
     }
     
     EVALUATEJS( STRINGFORMAT(@"enterChannel('%@')",url) );
-    
+    */
+    _isJoin = YES;
     return YES;
 }
 
 
-- (void)endChat
-{
+- (void)endChat {
+    _isJoin = NO;
     return;
 }
 
 
-- (BOOL)isJoin
-{
-    return NO;
+
+
+
+
+
+
+
+
+#pragma mark -
+#pragma mark Actions
+/*==============================================================================
+ *
+ *  Action
+ *
+ *==============================================================================*/
+
+- (IBAction)sendMessage:(id)sender {
+    NSString * message = _messageTF.stringValue;
+    
+    if (!message.length) return;
+    
+    EVALUATEJS( STRINGFORMAT(@"postComment('%@','%@')",_usernameTF.stringValue,message) );
+    [sender setString:@""];
+    
 }
+
 
 
 
@@ -206,7 +239,8 @@ typedef enum {
  *==============================================================================*/
 -(void)webView:(WebView *)sender
 runJavaScriptAlertPanelWithMessage:(NSString *)message
-initiatedByFrame:(WebFrame *)frame{
+initiatedByFrame:(WebFrame *)frame
+{
 	DLOG(@"javascript calls alert");
 	NSRunAlertPanel(@"CaveTube", message, @"OK", nil, nil);
 }
@@ -258,6 +292,4 @@ initiatedByFrame:(WebFrame *)frame{
     return size.height;
 }
 
-- (IBAction)sendMessage:(id)sender {
-}
 @end

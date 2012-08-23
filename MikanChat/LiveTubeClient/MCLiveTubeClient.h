@@ -19,5 +19,7 @@
 - (id)initWithDelegate:(id<MCClientProtocol>)delegate;
 @property (assign) IBOutlet NSTextField *liveURL;
 @property (assign) IBOutlet NSTableView *messageTBL;
+@property (assign) IBOutlet NSTextField *usernameTF;
+@property (assign) IBOutlet NSTextField *messageTF;
 - (IBAction)sendMessage:(id)sender;
 @end

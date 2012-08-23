@@ -405,7 +405,6 @@ initiatedByFrame:(WebFrame *)frame{
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    DLOG(@"col : %@\n%@",[tableColumn identifier],[_messageList objectAtIndex:row]);
     return [[_messageList objectAtIndex:row] objectForKey:[tableColumn identifier]];
 }
 
