@@ -8,7 +8,7 @@
 
 #import "MCClientWindowController.h"
 
-#import "../MCParentClient.h"
+#import "../MCClient.h"
 
 
 #import "../MCUserDefaultsKeys.h"
@@ -40,7 +40,7 @@
 
 
 
-@interface MCClientWindowController () <MCClientProtocol>
+@interface MCClientWindowController () <MCClientWindowDelegate>
 - (void)MC_PRIVATE_METHOD_PREPEND(readModePBUpdated);
 @end
 

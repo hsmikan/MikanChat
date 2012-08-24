@@ -7,12 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "../MCParentClient.h"
+#import "../MCClient.h"
 
 
 @class WebView;
 
-@interface MCStickamClient : MCParentClient {
+@interface MCStickamClient : MCClient <MCClientDelegate> {
     BOOL _isAuth;
 }
 @property (assign) IBOutlet WebView *webView;

@@ -29,7 +29,7 @@
 		9283C1D315E5555900E3A2CB /* appIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9283C1D215E5555900E3A2CB /* appIcon.icns */; };
 		929DDF1A15E2AA45005F115E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 929DDF1915E2AA44005F115E /* README.md */; };
 		92B682BB15E0E21200BF1692 /* MCStickamClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B682B915E0E21200BF1692 /* MCStickamClient.m */; };
-		92B682C015E0E2B000BF1692 /* MCParentClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B682BF15E0E2AF00BF1692 /* MCParentClient.m */; };
+		92B682C015E0E2B000BF1692 /* MCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B682BF15E0E2AF00BF1692 /* MCClient.m */; };
 		92B8515215D338F100F306E4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B8515115D338F100F306E4 /* WebKit.framework */; };
 		92B8515415D3394500F306E4 /* cavetube.html in Resources */ = {isa = PBXBuildFile; fileRef = 92B8515315D3394500F306E4 /* cavetube.html */; };
 		92B8516C15D3C28100F306E4 /* NSString+MCConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B8516B15D3C28100F306E4 /* NSString+MCConverter.m */; };
@@ -95,8 +95,8 @@
 		929DDF1915E2AA44005F115E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		92B682B815E0E21200BF1692 /* MCStickamClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCStickamClient.h; path = StickamClient/MCStickamClient.h; sourceTree = "<group>"; };
 		92B682B915E0E21200BF1692 /* MCStickamClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCStickamClient.m; path = StickamClient/MCStickamClient.m; sourceTree = "<group>"; };
-		92B682BE15E0E2AF00BF1692 /* MCParentClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCParentClient.h; sourceTree = "<group>"; };
-		92B682BF15E0E2AF00BF1692 /* MCParentClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCParentClient.m; sourceTree = "<group>"; };
+		92B682BE15E0E2AF00BF1692 /* MCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCClient.h; sourceTree = "<group>"; };
+		92B682BF15E0E2AF00BF1692 /* MCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCClient.m; sourceTree = "<group>"; };
 		92B8515115D338F100F306E4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		92B8515315D3394500F306E4 /* cavetube.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = cavetube.html; path = CaveTube/cavetube.html; sourceTree = "<group>"; };
 		92B8516915D3C0AD00F306E4 /* MCUserDefaultsKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCUserDefaultsKeys.h; sourceTree = "<group>"; };
@@ -378,8 +378,8 @@
 			isa = PBXGroup;
 			children = (
 				92D6A1E615D2F4C6007F58C8 /* ClientWindowController */,
-				92B682BE15E0E2AF00BF1692 /* MCParentClient.h */,
-				92B682BF15E0E2AF00BF1692 /* MCParentClient.m */,
+				92B682BE15E0E2AF00BF1692 /* MCClient.h */,
+				92B682BF15E0E2AF00BF1692 /* MCClient.m */,
 				92D6A1D715D2EC85007F58C8 /* MCIRCClient */,
 				92D6A1D615D2EC74007F58C8 /* CaveTube */,
 				92B682BD15E0E21A00BF1692 /* StickamClient */,
@@ -521,7 +521,7 @@
 				926DE95015D7AFDD000094B9 /* MCNumereicOnlyTextField.m in Sources */,
 				924901EC15D8535D00BD9633 /* MCUserDefaultsKeys.m in Sources */,
 				92B682BB15E0E21200BF1692 /* MCStickamClient.m in Sources */,
-				92B682C015E0E2B000BF1692 /* MCParentClient.m in Sources */,
+				92B682C015E0E2B000BF1692 /* MCClient.m in Sources */,
 				92E4CEA815E1185700237B10 /* NSColorWell+MCCategory.m in Sources */,
 				92E7672415E2D9D2006104A9 /* YukkuroidRPCClinet.m in Sources */,
 				9283C1BF15E431FA00E3A2CB /* MCUpdatesController.m in Sources */,

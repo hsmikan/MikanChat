@@ -6,17 +6,16 @@
 //  Copyright (c) 2012 hsmikan. All rights reserved.
 //
 
-#import "MCParentClient.h"
+#import "MCClient.h"
 
 
 
-@interface MCParentClient ()
+@interface MCClient ()
 
 @end
 
-@implementation MCParentClient
+@implementation MCClient
 @synthesize delegate        = _delegate;
-
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 //{
 //    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,7 +25,7 @@
 //    
 //    return self;
 //}
-- (id)initWithDelegate:(id<MCClientProtocol>)delegate nibName:(NSString*)nibName {
+- (id)initWithDelegate:(id<MCClientWindowDelegate>)delegate nibName:(NSString*)nibName {
     self = [super initWithNibName:nibName bundle:nil];
     if (self){
         self.delegate = delegate;
@@ -34,20 +33,4 @@
     return self;
 }
 
-- (id)initWithDelegate:(id<MCClientProtocol>)delegate {
-    return nil;
-}
-
-- (BOOL)startChat
-{
-    return NO;
-}
-- (void)endChat
-{
-    return;
-}
-- (BOOL)isJoin
-{
-    return NO;
-}
 @end

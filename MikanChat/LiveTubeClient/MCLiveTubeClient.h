@@ -7,16 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../MCParentClient.h"
+#import "../MCClient.h"
 
 @class WebView;
 
-@interface MCLiveTubeClient : MCParentClient {
+@interface MCLiveTubeClient : MCClient {
     WebView * _webView;
 }
 @property (readonly) BOOL isJoin;
 
-- (id)initWithDelegate:(id<MCClientProtocol>)delegate;
 @property (assign) IBOutlet NSTextField *liveURL;
 @property (assign) IBOutlet NSTableView *messageTBL;
 @property (assign) IBOutlet NSTextField *usernameTF;

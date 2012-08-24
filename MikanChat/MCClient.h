@@ -21,20 +21,23 @@ typedef enum {
 } MCClientEventCode;
 
 
-@protocol MCClientProtocol <NSObject>
+@protocol MCClientWindowDelegate <NSObject>
 - (BOOL)clientGetMessage:(NSString*)message userName:(NSString*)userName;
 - (void)clientEvent:(MCClientEventCode)code message:(NSString*)message;
 @end
 
 
-
-@interface MCParentClient : NSViewController <NSTableViewDataSource,NSTableViewDelegate> {
-    NSMutableArray * _messageList;
-}
-@property (assign) id <MCClientProtocol>        delegate;
-- (id)initWithDelegate:(id<MCClientProtocol>)delegate nibName:(NSString*)nibName;
-- (id)initWithDelegate:(id<MCClientProtocol>)delegate;
+@protocol MCClientDelegate <NSObject,NSTableViewDataSource,NSTableViewDelegate>
+@required
+- (id)initWithDelegate:(id<MCClientDelegate>)delegate;
 - (BOOL)startChat;
 - (void)endChat;
 - (BOOL)isJoin;
+@end
+
+@interface MCClient : NSViewController {
+    NSMutableArray * _messageList;
+}
+@property (assign) id <MCClientWindowDelegate>        delegate;
+- (id)initWithDelegate:(id<MCClientWindowDelegate>)delegate nibName:(NSString*)nibName;
 @end

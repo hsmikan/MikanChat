@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../MCParentClient.h"
+#import "../MCClient.h"
 
 @class WebView;
 
 
-@interface MCCaveTubeClient : MCParentClient {
+@interface MCCaveTubeClient : MCClient <MCClientDelegate> {
     WebView * _webView;
 }
 @property (assign) IBOutlet NSButton *isReadCommentNumber;
@@ -22,7 +22,5 @@
 - (IBAction)sendMessage:(id)sender;
 
 @property (readonly) BOOL isJoin;
-@property (assign,readwrite) id <MCClientProtocol> delegate;
-- (id)initWithDelegate:(id<MCClientProtocol>)delegate;
 
 @end

@@ -64,7 +64,7 @@ typedef enum {
 
 
 
-- (id)initWithDelegate:(id<MCClientProtocol>)delegate {
+- (id)initWithDelegate:(id<MCClientWindowDelegate>)delegate {
     self = [super initWithDelegate:delegate nibName:NIBNAME];
     if (self){
         _messageList = [[NSMutableArray alloc] init];

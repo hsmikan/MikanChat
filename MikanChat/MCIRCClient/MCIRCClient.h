@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../MCParentClient.h"
+#import "../MCClient.h"
 
 @class MCIRCProtocol;
 
-@interface MCIRCClient : MCParentClient {
+@interface MCIRCClient : MCClient <MCClientDelegate> {
     MCIRCProtocol  * _irc;
     NSMutableArray * _nameList;
     NSMutableArray * _consoleLog;
@@ -31,5 +31,4 @@
 @property (assign) IBOutlet NSTableView *messageTBL;
 @property (assign) IBOutlet NSTableView *nameListTBL;
 - (IBAction)sendMessage:(id)sender;
-- (id)initWithDelegate:(id<MCClientProtocol>)delegate;
 @end
