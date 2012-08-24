@@ -10,8 +10,20 @@ MikanChat
 
 開発状況/予定
 -----------
-* 開発中
-* LiveTubeは気が向いたら・・・
+* エラー処理の確認／バグ探し。みなさんからのご報告を待っています(^_^;)
+
+
+
+License
+-------
+Copyright (c) 2012 hsmikan
+
+The MIT License.
+<http://www.opensource.org/licenses/mit-license.php>
+
+* CONTAINS
+ * [RegexKitLite](http://regexkit.sourceforge.net/RegexKitLite/)  Copyright (c) 2008-2010, John Engelhart
+ * [YukkuroidRPCClient](http://www.yukkuroid.com/yukkuroid/index.html)  Copyright 2011 Cisco Systems. All rights reserved.
 
 
 
@@ -23,7 +35,8 @@ Mac用チャットブラウザ／コメント読み上げアプリケーショ�
 * IRC(Ustreamでも採用されているチャットシステム)
 * [cavetube](http://gae.cavelis.net/)
 * [STICKAM JAPAN](http://www.stickam.jp)
-* [Livetube](http://livetube.cc/)（予定）
+* [Livetube](http://livetube.cc/)
+* 他サービスへの対応は要相談
 
 
 
@@ -50,23 +63,5 @@ Mac用チャットブラウザ／コメント読み上げアプリケーショ�
 * [SayKotoeri](https://sites.google.com/site/nicohemus/home/saykotoeri) ※ SayKotoeriを利用するには[SayKana](http://www.a-quest.com/quickware/saykana/)も必要になります。
 * sayコマンドの Kyokoボイス。『mac say 日本語』で検索してみてください。
 * [ゆっくろいど](http://www.yukkuroid.com/yukkuroid/index.html)
- * 事前に起動しておくことをおすすめします。
- * 音声再生デバイス選択機能は利用できません。
-
-
-
-
-
------
------
-License
--------
-Copyright (c) 2012 hsmikan
-
-The MIT License.
-<http://www.opensource.org/licenses/mit-license.php>
-
-* CONTAINS
- * [RegexKitLite](http://regexkit.sourceforge.net/RegexKitLite/)  Copyright (c) 2008-2010, John Engelhart
- * [YukkuroidRPCClient](http://www.yukkuroid.com/yukkuroid/index.html)  Copyright 2011 Cisco Systems. All rights reserved.
-
+ * ゆっくろいどは事前に起動しておくことをおすすめします。
+ * ゆっくろいどを利用の際は、音声再生デバイス選択機能は利用できません。

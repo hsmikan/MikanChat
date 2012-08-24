@@ -7,17 +7,20 @@
     var eventCode = {
         message : 0,
         firstLoad : 1,
+        failedGetInfo : 2,
+        test : 1000
     };
-    var channelID = "aaaacoks47bcc";
-    var loadedCommentCount = 2390;
+    var isJoin = false;
+    var channelID = "";
+    var currentCommentNum = 0;
+    var loadedCommentCount = 0;
     var void_cache = 1;
-    var loadComments = function(isFirstLoad){
+    var firstLoaded = new Array();
+    var loadComments = function(){
         $.ajax({
             url : "http://livetube.cc/stream/" + channelID + ".comments." + loadedCommentCount + "?void=" + (++void_cache),
             type : 'get',
             success : function(data,transport){
-                var loaded = new Array();
-                
                 /*
                 <div style="background-color: #eee;">
                   <div style="margin-top: 6px;">
@@ -36,13 +39,17 @@
                 </div>
                 </div>
                 */
+                var lastNumber = 0;
+                var loaded = new Array();
                 $(data).each(function(i){
                     var ret = {};
                     
                     var commentDiv = $("div",this);
                     
                     var img = commentDiv.children("img");
-                    if (img !== undefined) {
+                    if (img === undefined) {
+                    }
+                    else {
                         ret.image = "http://livetube.cc" + img.attr("src");
                     }
                     
@@ -55,45 +62,104 @@
                     }
                     
                     var spans = commentDiv.children("span");
-                    ret.time = $(spans[0]).text();
-                    ret.message = $(spans[1]).text();
+                    ret.time = $(spans[1]).text();
+                    ret.message = $(spans[2]).text();
                     
                     ++loadedCommentCount;
                     
-                    console.log(ret);
-                    if (isFirstLoad) {
-                        loaded.push(ret);
+                    loaded.push(ret);
+                    lastNumber = ret.commentNum
+                });
+                if (loaded.length) {
+                    if (currentCommentNum > lastNumber) {
+                        [].push.apply(firstLoaded, loaded);
+                    }
+                    else if (currentCommentNum == lastNumber) {
+                        if (isJoin)
+                            window.app.ltevent(eventCode.firstLoad,firstLoaded);
+                        firstLoaded.length = 0;
                     }
                     else {
-                        //app.lvevent(eventCode.message,ret);
+                        window.app.ltevent(eventCode.message,loaded);
                     }
-                });
-                
-                if (loaded.length) {
-                    //app.lvevent(eventCode.firstLoad,loaded);
+                }
+            },//success
+            complete : function(XMLHttpRequest, textStatus) {
+                if (isJoin) {
+                    if (textStatus == 'success') {
+                        loadComments();
+                    }
+                    else {
+                        window.app.ltevent(eventCode.failedGetInfo,null);
+                    }
                 }
             }
-        });
+        });//ajax
         ++void_cache;
     };// loadComments
     
     
-    var enterChannel = function(liveURL){
-        channelID = "";
+    var enterChannel = function(liveName){
+        $.ajax({
+            url : 'http://livetube.cc/index.live.json',
+            success : function(json){
+                var isFound = false;
+                /*
+                {
+                "id": "idstrings",
+                "link": "URL deleted prefix (http://litube.cc/)",
+                "author": "author name",
+                "title": "live title",
+                "viewing": 2,
+                "view": 2,
+                "comments": 2,
+                "created": "Fri, 24 Aug 2012 00:51:17 GMT",
+                "tags":         [
+                    "hoge",
+                    "fuga"
+                ]
+                },
+                */
+                for (var i=0;i<json.length;i++) {
+                    if (liveName == json[i].link) {
+                        channelID = json[i].id;
+                        isFound = true;
+                        currentCommentNum = json[i].comments;
+                        break;
+                    }
+                }
+                if (isFound) {
+                    loadComments();
+                }
+                else {
+                    window.app.ltevent(eventCode.failedGetInfo,null);
+                }
+            },//success
+            complete : function(XMLHttpRequest, textStatus){
+                if (textStatus == 'success') {
+                    isJoin = true;
+                }
+            },//complete
+            error : function(XMLHttpRequest, textStatus, errorThrown) {
+                window.app.ltevent(eventCode.failedGetInfo,null);
+            }
+        });//$.ajax
+    };
+    var exitChannel = function () {
+        isJoin = false;
     };
     
-    
     var postComment = function(name,message) {
-        $.ajax({
-            url : 'http://livetube.cc/stream/' + channelID + '.comments',
-            type : 'post',
-            data : {
-                name : name,/* name | comment_name */
-                c : message/* c | */
-            },
-            success : function(rec){
-            }
-        });
+//        $.ajax({
+//            url : 'http://livetube.cc/stream/' + channelID + '.comments',
+//            type : 'post',
+//            data : {
+//                name : name,/* name | comment_name */
+//                c : message/* c | */
+//            },
+//            success : function(rec){
+//            }
+//        });
     };
     /*
     function PostComment(){

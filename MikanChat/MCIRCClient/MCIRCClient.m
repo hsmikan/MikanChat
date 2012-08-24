@@ -292,6 +292,6 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
         return [_nameList objectAtIndex:row];
     else
         return [[_messageList objectAtIndex:row] objectForKey:[tableColumn identifier]];
-        return nil;
+    return nil;
 }
 @end

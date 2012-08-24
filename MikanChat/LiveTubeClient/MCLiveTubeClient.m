@@ -9,14 +9,18 @@
 #import "MCLiveTubeClient.h"
 #import <WebKit/WebKit.h>
 
+#import "../NSString/NSString+MCRegex.h"
+
 #define NIBNAME @"LiveTube"
 #define JSCallKey @"app"
 #define EVALUATEJS(SCRIPT) [[_webView windowScriptObject] evaluateWebScript:SCRIPT]
 
 
 typedef enum {
-    kMCLVEventMessage,
-    kMCLVEventFirstLoad,
+    kMCLVEventMessage = 0,
+    kMCLVEventFirstLoad = 1,
+    kMCLVEventFailedGetLiveInfo = 2,
+    kMCLVEventTest = 1000
 } MCLVEvent;
 
 @implementation MCLiveTubeClient
@@ -37,6 +41,7 @@ typedef enum {
     self = [super initWithDelegate:delegate nibName:NIBNAME];
     if (self){
         _webView = [[WebView alloc] init];
+        _messageList = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -68,31 +73,25 @@ typedef enum {
  *
  *  Required
  *
- *
- *  TODO: Livetubeコメントしゅうとく。
- *      start : タイマースタート
- *          リフレッシュ感覚
- *          チャットIDのしゅうとく
- *      end : タイマーストップ
- *
  *==============================================================================*/
 
 - (BOOL)startChat {
-    /*
     NSString * url = _liveURL.stringValue;
-    if (!url.length) {
+    if (!url.length || ![url isMatchedByRegex:@"^http://livetube.cc/[^/]+/[^/]+$"]) {
         NSRunAlertPanel(@"Livetube Client", @"不正なURLです。", @"O.K.", nil, nil);
         return NO;
     }
     
-    EVALUATEJS( STRINGFORMAT(@"enterChannel('%@')",url) );
-    */
+    NSString * liveName = [[url componentsSeparatedByString:@"http://livetube.cc/"] objectAtIndex:1];
+    EVALUATEJS( STRINGFORMAT(@"enterChannel('%@')",[liveName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]) );
     _isJoin = YES;
+    _liveURL.stringValue = liveName;
     return YES;
 }
 
 
 - (void)endChat {
+    EVALUATEJS(@"exitChannel()");
     _isJoin = NO;
     return;
 }
@@ -137,49 +136,66 @@ typedef enum {
  *  js - cocoa
  *
  *==============================================================================*/
-- (NSDictionary*)MC_PRIVATE_METHOD_PREPEND(convertPost):(WebScriptObject*)obj {
-    /*
-     image
-     message
-     username
-     commentNum
-     */
-    return [NSDictionary dictionaryWithObjectsAndKeys:
-            [obj valueForKey:@"username"],kMCClientUserNameKey,
-            [obj valueForKey:@"message"],kMCClientMessageKey,
-            [obj valueForKey:@"commentNum"],@"commentNum",
-            [obj valueForKey:@"image"],@"image",
-            nil];
-}
+//- (NSDictionary*)MC_PRIVATE_METHOD_PREPEND(_convertPost):(WebScriptObject*)obj {
+//    return [NSDictionary dictionaryWithObjectsAndKeys:
+//            [obj valueForKey:@"username"],kMCClientUserNameKey,
+//            [obj valueForKey:@"message"],kMCClientMessageKey,
+//            [obj valueForKey:@"commentNum"],@"commentNum",
+//            [obj valueForKey:@"image"],@"image",
+//            nil];
+//}
+//- (NSArray*)MC_PRIVATE_METHOD_PREPEND(convertPost):(WebScriptObject*)obj {
+//    NSMutableArray * convertedArr = [NSMutableArray array];
+//    int i;
+//    int jsArrNum = (int)[[obj valueForKey:@"length"] integerValue];
+//    for (i=0;i<jsArrNum;i++) {
+//        NSDictionary * post =[self MC_PRIVATE_METHOD_PREPEND(_convertPost):[obj webScriptValueAtIndex:i]];
+//        [convertedArr addObject:post];
+//    }
+//    
+//    return convertedArr;
+//}
 
+/*
+ image
+ message
+ username
+ commentNum
+ */
 - (void)MC_PRIVATE_METHOD_PREPEND(getComment):(WebScriptObject *)obj {
-    NSDictionary * msgInfo = [self MC_PRIVATE_METHOD_PREPEND(convertPost):obj];
-    
-    NSString * name = [msgInfo objectForKey:kMCClientUserNameKey];
-    NSString * message = [msgInfo objectForKey:kMCClientMessageKey];
-    
-    [self.delegate clientGetMessage:message userName:name];
-    
-    
-    NSString * dispayName = STRINGFORMAT(@"%@: %@",[msgInfo objectForKey:@"commentNum"],name);
-    [_messageList addObject:[NSDictionary dictionaryWithObjectsAndKeys:
-                             dispayName,kMCClientUserNameKey,
-                             message,kMCClientMessageKey,
-                             nil]];
-    
+    int i;
+    int jsArrNum = (int)[[obj valueForKey:@"length"] integerValue];
+    for (i=0;i<jsArrNum;i++) {
+        NSString * name = [[obj webScriptValueAtIndex:i] valueForKey:@"username"];
+        NSString * message = [[obj webScriptValueAtIndex:i] valueForKey:@"message"];
+        id number = [[obj webScriptValueAtIndex:i] valueForKey:@"commentNum"];
+        [self.delegate clientGetMessage:STRINGFORMAT(@"%@さん、%@",number,message) userName:name];
+        
+        
+        NSString * dispayName = STRINGFORMAT(@"%@: %@",number,name);
+        [_messageList addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                                 dispayName,kMCClientUserNameKey,
+                                 message,kMCClientMessageKey,
+                                 nil]];
+        
+    }
     MCTBLReloadData(_messageTBL, _messageList.count);
-    
 }
 
 - (void)MC_PRIVATE_METHOD_PREPEND(getPosted):(WebScriptObject*)obj {
     NSMutableArray * convertedArr = [NSMutableArray array];
+    
     int i;
     int jsArrNum = (int)[[obj valueForKey:@"length"] integerValue];
+    DLOG(@"count : %d",jsArrNum);
     for (i=0;i<jsArrNum;i++) {
-        NSDictionary * post =[self MC_PRIVATE_METHOD_PREPEND(convertPost):[obj webScriptValueAtIndex:i]];
+        NSString * username = STRINGFORMAT(@"%@: %@",[[obj webScriptValueAtIndex:i] valueForKey:@"commentNum"],[[obj webScriptValueAtIndex:i] valueForKey:@"username"]);
+        NSDictionary * post = [NSDictionary dictionaryWithObjectsAndKeys:
+                               [[obj webScriptValueAtIndex:i] valueForKey:@"message"],kMCClientMessageKey,
+                               username,kMCClientUserNameKey,
+                               nil];
         [convertedArr addObject:post];
     }
-    
     [_messageList addObjectsFromArray:convertedArr];
     MCTBLReloadData(_messageTBL, _messageList.count);
 }
@@ -195,6 +211,14 @@ typedef enum {
             [self MC_PRIVATE_METHOD_PREPEND(getPosted):message];
             break;
             
+        case kMCLVEventFailedGetLiveInfo:
+            _isJoin = NO;
+            [self.delegate clientEvent:kMCClientError message:@"Failed to Get Live Information."];
+            break;
+            
+        case kMCLVEventTest:
+            DLOG(@"test");
+            break;
         default:
             break;
     }
@@ -218,7 +242,7 @@ typedef enum {
 // bridged method name in JS
 //
 + (NSString *)webScriptNameForSelector:(SEL)aSelector {
-    if (aSelector == @selector(MC_PRIVATE_METHOD_PREPEND(cavetubeEvent):message:))
+    if (aSelector == @selector(MC_PRIVATE_METHOD_PREPEND(livetubeEvent):message:))
         return @"ltevent";
     
 	return nil;
@@ -242,14 +266,14 @@ runJavaScriptAlertPanelWithMessage:(NSString *)message
 initiatedByFrame:(WebFrame *)frame
 {
 	DLOG(@"javascript calls alert");
-	NSRunAlertPanel(@"CaveTube", message, @"OK", nil, nil);
+	NSRunAlertPanel(@"Livetube", message, @"OK", nil, nil);
 }
 
 
 
 - (BOOL)webView:(WebView *)sender runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WebFrame *)frame {
 	DLOG(@"javascript calls confirm");
-	NSInteger choice = NSRunAlertPanel(@"CaveTube", message, @"OK", @"Cancel", nil);
+	NSInteger choice = NSRunAlertPanel(@"Livetube", message, @"OK", @"Cancel", nil);
 	return choice == NSAlertDefaultReturn;
 }
 
