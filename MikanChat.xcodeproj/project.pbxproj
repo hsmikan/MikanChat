@@ -62,8 +62,6 @@
 		924305E415D438930018E2EB /* MCTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTableViewDelegate.h; path = TableViewDelegate/MCTableViewDelegate.h; sourceTree = "<group>"; };
 		924305E515D438930018E2EB /* MCTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCTableViewDelegate.m; path = TableViewDelegate/MCTableViewDelegate.m; sourceTree = "<group>"; };
 		924305EC15D44CD10018E2EB /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
-		924305F015D451E60018E2EB /* RegexKitLite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RegexKitLite.h; path = NSString/RegexKitLite.h; sourceTree = "<group>"; };
-		924305F115D451E60018E2EB /* RegexKitLite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RegexKitLite.m; path = NSString/RegexKitLite.m; sourceTree = "<group>"; };
 		9243063015D4BDBD0018E2EB /* NSString+MCRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MCRegex.h"; path = "NSString/NSString+MCRegex.h"; sourceTree = "<group>"; };
 		9243063115D4BDBD0018E2EB /* NSString+MCRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MCRegex.m"; path = "NSString/NSString+MCRegex.m"; sourceTree = "<group>"; };
 		9243063A15D4CB100018E2EB /* MCReadModeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCReadModeTableView.h; path = TableView/MCReadModeTableView.h; sourceTree = "<group>"; };
@@ -220,8 +218,6 @@
 		92B8516D15D3C34F00F306E4 /* NSString */ = {
 			isa = PBXGroup;
 			children = (
-				924305F015D451E60018E2EB /* RegexKitLite.h */,
-				924305F115D451E60018E2EB /* RegexKitLite.m */,
 				92B8516A15D3C28000F306E4 /* NSString+MCConverter.h */,
 				92B8516B15D3C28100F306E4 /* NSString+MCConverter.m */,
 				9243063015D4BDBD0018E2EB /* NSString+MCRegex.h */,
