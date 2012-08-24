@@ -23,6 +23,7 @@
 		9262BE3615D40711007DC7B3 /* MCSoundDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 9262BE3515D40711007DC7B3 /* MCSoundDevice.m */; };
 		9262BE3D15D407EE007DC7B3 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9262BE3C15D407EE007DC7B3 /* CoreAudio.framework */; };
 		926DE95015D7AFDD000094B9 /* MCNumereicOnlyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 926DE94F15D7AFDC000094B9 /* MCNumereicOnlyTextField.m */; };
+		927CC2D615E7C8F60012BA2F /* LiveTube.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927CC2D815E7C8F60012BA2F /* LiveTube.xib */; };
 		9283C1BF15E431FA00E3A2CB /* MCUpdatesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9283C1BD15E431F900E3A2CB /* MCUpdatesController.m */; };
 		9283C1C015E431FA00E3A2CB /* MCUpdatesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9283C1BE15E431FA00E3A2CB /* MCUpdatesController.xib */; };
 		9283C1D315E5555900E3A2CB /* appIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9283C1D215E5555900E3A2CB /* appIcon.icns */; };
@@ -31,7 +32,6 @@
 		92B682C015E0E2B000BF1692 /* MCParentClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B682BF15E0E2AF00BF1692 /* MCParentClient.m */; };
 		92B8515215D338F100F306E4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B8515115D338F100F306E4 /* WebKit.framework */; };
 		92B8515415D3394500F306E4 /* cavetube.html in Resources */ = {isa = PBXBuildFile; fileRef = 92B8515315D3394500F306E4 /* cavetube.html */; };
-		92B8515815D3480300F306E4 /* LiveTube.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B8515715D3480300F306E4 /* LiveTube.xib */; };
 		92B8516C15D3C28100F306E4 /* NSString+MCConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B8516B15D3C28100F306E4 /* NSString+MCConverter.m */; };
 		92BF8C7A15D6C16C00E091E9 /* MCReadModePopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BF8C7915D6C16B00E091E9 /* MCReadModePopUpButton.m */; };
 		92D6A1AA15D2E870007F58C8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D6A1A915D2E870007F58C8 /* Cocoa.framework */; };
@@ -59,10 +59,6 @@
 		922EA40615E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ja; path = ja.lproj/Credits.rtf; sourceTree = "<group>"; };
 		922EA40715E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		922EA40815E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localized.strings; sourceTree = "<group>"; };
-		922EA40A15E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MCIRCView.xib; sourceTree = "<group>"; };
-		922EA40B15E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MCStickamClient.xib; sourceTree = "<group>"; };
-		922EA40C15E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MCClientWindowController.xib; sourceTree = "<group>"; };
-		922EA40D15E3C43D00BD31DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/CaveTubeView.xib; sourceTree = "<group>"; };
 		924305E415D438930018E2EB /* MCTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTableViewDelegate.h; path = TableViewDelegate/MCTableViewDelegate.h; sourceTree = "<group>"; };
 		924305E515D438930018E2EB /* MCTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCTableViewDelegate.m; path = TableViewDelegate/MCTableViewDelegate.m; sourceTree = "<group>"; };
 		924305EC15D44CD10018E2EB /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
@@ -85,6 +81,13 @@
 		9262BE3C15D407EE007DC7B3 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		926DE94E15D7AFDC000094B9 /* MCNumereicOnlyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCNumereicOnlyTextField.h; path = TextField/MCNumereicOnlyTextField.h; sourceTree = "<group>"; };
 		926DE94F15D7AFDC000094B9 /* MCNumereicOnlyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCNumereicOnlyTextField.m; path = TextField/MCNumereicOnlyTextField.m; sourceTree = "<group>"; };
+		927CC2D115E7C8CA0012BA2F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		927CC2D215E7C8D10012BA2F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MCClientWindowController.xib; sourceTree = "<group>"; };
+		927CC2D315E7C8D80012BA2F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/CaveTubeView.xib; sourceTree = "<group>"; };
+		927CC2D415E7C8E20012BA2F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MCIRCView.xib; sourceTree = "<group>"; };
+		927CC2D515E7C8EA0012BA2F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MCStickamClient.xib; sourceTree = "<group>"; };
+		927CC2D715E7C8F60012BA2F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LiveTube.xib; sourceTree = "<group>"; };
+		927CC2D915E7C8FC0012BA2F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/LiveTube.xib; sourceTree = "<group>"; };
 		9283C1BC15E431F900E3A2CB /* MCUpdatesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCUpdatesController.h; path = updates/MCUpdatesController.h; sourceTree = "<group>"; };
 		9283C1BD15E431F900E3A2CB /* MCUpdatesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCUpdatesController.m; path = updates/MCUpdatesController.m; sourceTree = "<group>"; };
 		9283C1BE15E431FA00E3A2CB /* MCUpdatesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCUpdatesController.xib; path = updates/MCUpdatesController.xib; sourceTree = "<group>"; };
@@ -96,7 +99,6 @@
 		92B682BF15E0E2AF00BF1692 /* MCParentClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCParentClient.m; sourceTree = "<group>"; };
 		92B8515115D338F100F306E4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		92B8515315D3394500F306E4 /* cavetube.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = cavetube.html; path = CaveTube/cavetube.html; sourceTree = "<group>"; };
-		92B8515715D3480300F306E4 /* LiveTube.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LiveTube.xib; path = LiveTubeClient/LiveTube.xib; sourceTree = "<group>"; };
 		92B8516915D3C0AD00F306E4 /* MCUserDefaultsKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCUserDefaultsKeys.h; sourceTree = "<group>"; };
 		92B8516A15D3C28000F306E4 /* NSString+MCConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MCConverter.h"; path = "NSString/NSString+MCConverter.h"; sourceTree = "<group>"; };
 		92B8516B15D3C28100F306E4 /* NSString+MCConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MCConverter.m"; path = "NSString/NSString+MCConverter.m"; sourceTree = "<group>"; };
@@ -131,7 +133,6 @@
 		92E4CEA715E1185700237B10 /* NSColorWell+MCCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSColorWell+MCCategory.m"; path = "NSCollorWell/NSColorWell+MCCategory.m"; sourceTree = "<group>"; };
 		92E7672215E2D9D2006104A9 /* YukkuroidRPCClinet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YukkuroidRPCClinet.h; path = Yukkuroid/YukkuroidRPCClinet.h; sourceTree = "<group>"; };
 		92E7672315E2D9D2006104A9 /* YukkuroidRPCClinet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YukkuroidRPCClinet.m; path = Yukkuroid/YukkuroidRPCClinet.m; sourceTree = "<group>"; };
-		92F8ADB315E65EB800248A3F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		92F8ADB415E674ED00248A3F /* livetube.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = livetube.html; path = LiveTubeClient/livetube.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -320,7 +321,7 @@
 		92D6A1D515D2EC6B007F58C8 /* LiveTubeClient */ = {
 			isa = PBXGroup;
 			children = (
-				92B8515715D3480300F306E4 /* LiveTube.xib */,
+				927CC2D815E7C8F60012BA2F /* LiveTube.xib */,
 				92D6A1D215D2EC60007F58C8 /* MCLiveTubeClient.h */,
 				92D6A1D315D2EC60007F58C8 /* MCLiveTubeClient.m */,
 				92F8ADB415E674ED00248A3F /* livetube.html */,
@@ -466,7 +467,7 @@
 				922EA3FD15E3C42400BD31DB /* MCIRCView.xib in Resources */,
 				922EA40015E3C42900BD31DB /* CaveTubeView.xib in Resources */,
 				92B8515415D3394500F306E4 /* cavetube.html in Resources */,
-				92B8515815D3480300F306E4 /* LiveTube.xib in Resources */,
+				927CC2D615E7C8F60012BA2F /* LiveTube.xib in Resources */,
 				924305ED15D44CD10018E2EB /* UserDefaults.plist in Resources */,
 				922EA40315E3C42E00BD31DB /* MCStickamClient.xib in Resources */,
 				929DDF1A15E2AA45005F115E /* README.md in Resources */,
@@ -543,7 +544,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				922EA3FB15E3C41F00BD31DB /* en */,
-				922EA40C15E3C43D00BD31DB /* ja */,
+				927CC2D215E7C8D10012BA2F /* ja */,
 			);
 			name = MCClientWindowController.xib;
 			sourceTree = "<group>";
@@ -552,7 +553,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				922EA3FE15E3C42400BD31DB /* en */,
-				922EA40A15E3C43D00BD31DB /* ja */,
+				927CC2D415E7C8E20012BA2F /* ja */,
 			);
 			name = MCIRCView.xib;
 			path = MCIRCClient;
@@ -562,7 +563,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				922EA40115E3C42900BD31DB /* en */,
-				922EA40D15E3C43D00BD31DB /* ja */,
+				927CC2D315E7C8D80012BA2F /* ja */,
 			);
 			name = CaveTubeView.xib;
 			path = CaveTube;
@@ -572,10 +573,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				922EA40415E3C42E00BD31DB /* en */,
-				922EA40B15E3C43D00BD31DB /* ja */,
+				927CC2D515E7C8EA0012BA2F /* ja */,
 			);
 			name = MCStickamClient.xib;
 			path = StickamClient;
+			sourceTree = "<group>";
+		};
+		927CC2D815E7C8F60012BA2F /* LiveTube.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				927CC2D715E7C8F60012BA2F /* en */,
+				927CC2D915E7C8FC0012BA2F /* ja */,
+			);
+			name = LiveTube.xib;
+			path = LiveTubeClient;
 			sourceTree = "<group>";
 		};
 		92D6A1B215D2E871007F58C8 /* InfoPlist.strings */ = {
@@ -600,7 +611,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				92D6A1BF15D2E871007F58C8 /* en */,
-				92F8ADB315E65EB800248A3F /* ja */,
+				927CC2D115E7C8CA0012BA2F /* ja */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

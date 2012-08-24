@@ -522,7 +522,7 @@
 										</object>
 										<array class="NSMutableArray" key="NSTableColumns">
 											<object class="NSTableColumn" id="856755656">
-												<string key="NSIdentifier">name</string>
+												<string key="NSIdentifier">username</string>
 												<double key="NSWidth">109</double>
 												<double key="NSMinWidth">40</double>
 												<double key="NSMaxWidth">1000</double>
@@ -1108,6 +1108,22 @@ l+OBvuOBmeOBi++8nw</string>
 						<reference key="destination" ref="629586666"/>
 					</object>
 					<int key="connectionID">1021</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">dataSource</string>
+						<reference key="source" ref="711447252"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">1713</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="711447252"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">1714</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2908,7 +2924,7 @@ l+OBvuOBmeOBi++8nw</string>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1712</int>
+			<int key="maxID">1714</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
