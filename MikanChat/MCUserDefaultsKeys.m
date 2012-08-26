@@ -59,3 +59,5 @@ EXTERNED NSString * const kMCIRCRealNameKey     =   @"MCIRCRealName";
 // updates
 //
 EXTERNED NSString * const kMCAutomaaticallyUpdatesKey = @"MCIsAutomaticallyUpdates";
+EXTERNED NSString * const kMCIsUserITunesAPI          = @"MCIsUserITunesAPI";
+

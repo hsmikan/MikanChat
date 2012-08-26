@@ -68,7 +68,7 @@
     
     
     if (_isUpToDate) {
-        [_updateStatement setStringValue:STRINGFORMAT(@"New Version(%@) is available.",_latestVersion)];
+        [_updateStatement setStringValue:STRINGFORMAT(@"New Version : %@ is available.",_latestVersion)];
         [_notesTF setStringValue:_notes];
         [_downloadPageBT setEnabled:YES];
     }
@@ -113,12 +113,11 @@
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     NSString * version = [attributeDict objectForKey:@"version"];
     int build = [[attributeDict objectForKey:@"build"] intValue];
-    DLOG(@"%d:%d",_latestBuild,build);
     if (_latestBuild < build) {
         _latestBuild = build;
         
         [_latestVersion autorelease];
-        _latestVersion = [version copy];
+        _latestVersion = [STRINGFORMAT(@"%@(%d)",version,build) copy];
         
         isUpdateNotes = YES;
         
@@ -131,7 +130,6 @@
     isUpdateNotes = NO;
 }
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
-    DLOG(@"%d:%d",_latestBuild,_currentBuild);
     if (_latestBuild > _currentBuild) {
         _isUpToDate = YES;
     }

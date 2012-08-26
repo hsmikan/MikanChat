@@ -59,3 +59,4 @@ extern NSString * const kMCIRCRealNameKey;
 // updates
 //
 extern NSString * const kMCAutomaaticallyUpdatesKey;
+extern NSString * const kMCIsUserITunesAPI;

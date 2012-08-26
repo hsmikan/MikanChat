@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		922D357D15E9C3430031CEFC /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 922D357C15E9C3430031CEFC /* libicucore.dylib */; };
 		922EA3F515E3C2F900BD31DB /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 922EA3F715E3C2F900BD31DB /* Localized.strings */; };
 		922EA3FA15E3C41F00BD31DB /* MCClientWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922EA3FC15E3C41F00BD31DB /* MCClientWindowController.xib */; };
 		922EA3FD15E3C42400BD31DB /* MCIRCView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922EA3FF15E3C42400BD31DB /* MCIRCView.xib */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		922D357C15E9C3430031CEFC /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		922EA3F615E3C2F900BD31DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
 		922EA3FB15E3C41F00BD31DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MCClientWindowController.xib; sourceTree = "<group>"; };
 		922EA3FE15E3C42400BD31DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MCIRCView.xib; sourceTree = "<group>"; };
@@ -79,13 +81,7 @@
 		9262BE3C15D407EE007DC7B3 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		926DE94E15D7AFDC000094B9 /* MCNumereicOnlyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCNumereicOnlyTextField.h; path = TextField/MCNumereicOnlyTextField.h; sourceTree = "<group>"; };
 		926DE94F15D7AFDC000094B9 /* MCNumereicOnlyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCNumereicOnlyTextField.m; path = TextField/MCNumereicOnlyTextField.m; sourceTree = "<group>"; };
-		927CC2D115E7C8CA0012BA2F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		927CC2D215E7C8D10012BA2F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MCClientWindowController.xib; sourceTree = "<group>"; };
-		927CC2D315E7C8D80012BA2F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/CaveTubeView.xib; sourceTree = "<group>"; };
-		927CC2D415E7C8E20012BA2F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MCIRCView.xib; sourceTree = "<group>"; };
-		927CC2D515E7C8EA0012BA2F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MCStickamClient.xib; sourceTree = "<group>"; };
 		927CC2D715E7C8F60012BA2F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LiveTube.xib; sourceTree = "<group>"; };
-		927CC2D915E7C8FC0012BA2F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/LiveTube.xib; sourceTree = "<group>"; };
 		9283C1BC15E431F900E3A2CB /* MCUpdatesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCUpdatesController.h; path = updates/MCUpdatesController.h; sourceTree = "<group>"; };
 		9283C1BD15E431F900E3A2CB /* MCUpdatesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCUpdatesController.m; path = updates/MCUpdatesController.m; sourceTree = "<group>"; };
 		9283C1BE15E431FA00E3A2CB /* MCUpdatesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCUpdatesController.xib; path = updates/MCUpdatesController.xib; sourceTree = "<group>"; };
@@ -139,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				922D357D15E9C3430031CEFC /* libicucore.dylib in Frameworks */,
 				9262BE3D15D407EE007DC7B3 /* CoreAudio.framework in Frameworks */,
 				92B8515215D338F100F306E4 /* WebKit.framework in Frameworks */,
 				92D6A1AA15D2E870007F58C8 /* Cocoa.framework in Frameworks */,
@@ -257,6 +254,7 @@
 		92D6A1A815D2E870007F58C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				922D357C15E9C3430031CEFC /* libicucore.dylib */,
 				9262BE3C15D407EE007DC7B3 /* CoreAudio.framework */,
 				92B8515115D338F100F306E4 /* WebKit.framework */,
 				92D6A1A915D2E870007F58C8 /* Cocoa.framework */,
@@ -540,7 +538,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				922EA3FB15E3C41F00BD31DB /* en */,
-				927CC2D215E7C8D10012BA2F /* ja */,
 			);
 			name = MCClientWindowController.xib;
 			sourceTree = "<group>";
@@ -549,7 +546,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				922EA3FE15E3C42400BD31DB /* en */,
-				927CC2D415E7C8E20012BA2F /* ja */,
 			);
 			name = MCIRCView.xib;
 			path = MCIRCClient;
@@ -559,7 +555,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				922EA40115E3C42900BD31DB /* en */,
-				927CC2D315E7C8D80012BA2F /* ja */,
 			);
 			name = CaveTubeView.xib;
 			path = CaveTube;
@@ -569,7 +564,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				922EA40415E3C42E00BD31DB /* en */,
-				927CC2D515E7C8EA0012BA2F /* ja */,
 			);
 			name = MCStickamClient.xib;
 			path = StickamClient;
@@ -579,7 +573,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				927CC2D715E7C8F60012BA2F /* en */,
-				927CC2D915E7C8FC0012BA2F /* ja */,
 			);
 			name = LiveTube.xib;
 			path = LiveTubeClient;
@@ -607,7 +600,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				92D6A1BF15D2E871007F58C8 /* en */,
-				927CC2D115E7C8CA0012BA2F /* ja */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

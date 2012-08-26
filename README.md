@@ -44,7 +44,7 @@ Mac用チャットブラウザ／コメント読み上げアプリケーショ�
 システム要件
 ----------
 * Tested on Mac OS X 10.8
- * 10.7ではたぶん動きません。
+ * 10.7にも対応していますが、未検証です。バグやクラッシュがありましたらご報告をお願いいたします。
  * 10.6以前の対応予定はありません。
 
 
@@ -64,3 +64,10 @@ Mac用チャットブラウザ／コメント読み上げアプリケーショ�
 * [ゆっくろいど](http://www.yukkuroid.com/yukkuroid/index.html)
  * ゆっくろいどは事前に起動しておくことをおすすめします。
  * ゆっくろいどを利用の際は、音声再生デバイス選択機能は利用できません。
+ 
+ 
+ 
+Contact
+---------
+* BLOG : [MikanChat](http://www.waterbolt.info/~hsmikan/blog/?page_id=179)
+* Twitter : [@waterbolt_info](http://twitter.com/waterbolt_info)
