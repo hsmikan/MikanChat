@@ -11,7 +11,7 @@
 
 @class WebView;
 
-@interface MCLiveTubeClient : MCClient {
+@interface MCLiveTubeClient : MCClient <MCClientDelegate> {
     WebView * _webView;
 }
 @property (readonly) BOOL isJoin;

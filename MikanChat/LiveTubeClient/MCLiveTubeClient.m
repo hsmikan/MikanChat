@@ -31,7 +31,6 @@ typedef enum {
 @synthesize messageTF   =   _messageTF;
 
 - (void)dealloc {
-    RELEASE(_messageList);
     RELEASE(_webView);
     [super dealloc];
 }
@@ -41,7 +40,6 @@ typedef enum {
     self = [super initWithDelegate:delegate nibName:NIBNAME];
     if (self){
         _webView = [[WebView alloc] init];
-        _messageList = [[NSMutableArray alloc] init];
     }
     return self;
 }

@@ -1,0 +1,155 @@
+<!DOCTYPE html><html><head><title>WEMCastHTML</title><meta charset='utf-8'/></head><body>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+var eventCode = {
+  message : 0,
+  firstLoad : 1
+};
+var isJoin = false;
+var isFirstLoad = true;
+var liveid = null;
+var read_timer = null;
+var enterChannel = function(liveID){
+  liveid = liveID;
+  isJoin = true;
+  read_timer = setInterval( "readEventData()", 10 );
+};
+var exitChannel = function(){
+  isJoin = false;
+};
+
+var postMessage = function(name,message){
+  $("#comment_writer_submitbutton").attr( "disabled", "disabled" );
+  //var data
+  //  = "liveid=" + liveid + "&name=" + name + "&message=" + message;
+  var data = {
+    liveid: liveid,
+    name: name,
+    message: message
+  };
+  
+  $.ajax({
+     type: "POST",
+     url: "/interface/message/writer.php",
+     data: data,
+     cache: false,
+     dataType: "text",
+     async: true,
+     error: function( msg ) {
+     //alert( "書き込みに失敗しました。" );
+     //$("#comment_writer_submitbutton").removeAttr( "disabled" );
+     },
+     success: function( msg ) {
+       var arrayMsg = msg.split( "\n" );
+       if (arrayMsg[0] == "OK") {
+         //clearComment();
+       }
+       else {
+         /*
+         var message = "";
+         for (var i = 1; i < arrayMsg.length; i++) {
+           message += arrayMsg[i] + "\n";
+         }
+         alert(message);
+         */
+       }
+     }
+  });
+};//postCOmment
+
+
+var loadedCount = 0;
+var eventReader = function(){
+ clearInterval( read_timer );
+ var data = {
+   id: liveid,
+   num: loadedCount,
+   reverse: true
+ };
+ $.ajax({
+   type: "GET",
+   url: "http://wmecast.net/interface/message/reader.php",
+   cache: false,
+   dataType: "text",
+   data: data,
+   async: true,
+   timeout: 70000,
+   success: function( msg, type ) {
+     if (msg != "") {
+       var posts = new Array();
+       var array_msg = msg.split("\n");
+       for (var i = 0; i < array_msg.length; i++) {
+         var line = array_msg[i];
+         var array_line = line.split( "<>" );
+         switch( array_line[0] ) {//per event type
+         case "EVT01":/* コメント */
+   /* EVT01
+    <>
+    <div class="comment_row" id="comment_row_1">
+    <span class="comment_num">1: </span>
+    <span class="comment_name"></span>
+    <span class="comment_writerid"></span>
+    <br />
+    <span class="comment_writedate">12/08/25 04:18:08</span>
+    &nbsp;[
+    <span class="comment_function">機能</span>
+    ]
+    <br />
+    <div class="comment_message">もれちゃうよぉ</div>
+      </div>
+      */
+           var post = {};
+           $(array_line[1]).children().each(function(i){
+             $thsi = $(this);
+             switch($thsi.attr("class")) {
+             case "comment_num":
+               post.commentNum = $thsi.text();
+               break;
+             case "comment_name":
+               post.username = $thsi.text();
+               break;
+             case "comment_message":
+               post.message = $thsi.text();
+               break;
+             default:
+               break;
+             }
+           });
+           ++loadedCount;
+           posts.push(post);
+           break;
+         case "EVT02":/* mirrors */
+         case "EVT03":
+         case "EVT04":
+         case "EVT05":/* 配信終了 */
+         case "EVT06":
+         case "EVT07":
+         case "EVT08":
+         default:
+           break;
+         }
+       }//for (var i = 0; i < array_msg.length; i++)
+       if (isJoin) {
+         if (isFirstLoad) {
+           window.app.wmeevent(eventCode.firstLoad,posts);
+           isFirstLoad = false;
+         }
+         else {
+           window.app.wmeevent(eventCode.message,posts);
+         }
+         //read_timer = setInterval( "readEventData()", 10 );
+       }
+     }
+   },//success
+   error: function(msg) {
+     if (isJoin) {
+       //read_timer = setInterval( "readEventData()", 1000 );
+     }
+   }
+ });//ajax
+};//eventRead
+ 
+$(document).ready(function(){
+//if (window.app === undefined) return;
+});
+</script></body></html>

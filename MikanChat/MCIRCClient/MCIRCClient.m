@@ -49,7 +49,6 @@
 	if (self) {
         _irc = [[MCIRCProtocol alloc] initWithDelegate:self];
         _nameList = [[NSMutableArray alloc] init];
-        _messageList = [[NSMutableArray alloc] init];
         _consoleLog  = [[NSMutableArray alloc] init];
 	}
 	return self;
@@ -62,7 +61,6 @@
 - (void)dealloc {
     RELEASE_NIL_ASSIGN(_irc)
     RELEASE_NIL_ASSIGN(_nameList)
-    RELEASE_NIL_ASSIGN(_messageList)
     RELEASE_NIL_ASSIGN(_consoleLog)
     
 	[super dealloc];

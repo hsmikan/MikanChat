@@ -34,6 +34,7 @@
 - (IBAction)openCaveTubeWindow:(id)sender;
 - (IBAction)openLiveTube:(id)sender;
 - (IBAction)openStcikamWIndow:(id)sender;
+- (IBAction)openWMECastWindow:(id)sender;
 - (IBAction)reloadSoundDevices:(id)sender;
 - (IBAction)openUpdates:(id)sender;
 

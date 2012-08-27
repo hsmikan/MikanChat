@@ -31,13 +31,15 @@
 #import "../CaveTube/MCCaveTubeClient.h"
 #import "../LiveTubeClient/MCLiveTubeClient.h"
 #import "../StickamClient/MCStickamClient.h"
+#import "../WMECast/MCWMECastClient.h"
+
 //  ClientName
 //
 #define kCHATWINDOWTITLEIRC @"IRC"
 #define kCHATWINDOWTITLECaveTube @"cavetube"
 #define kCHATWINDOWTITLELiveTube @"LiveTube"
 #define kCHATWINDOWTITLEStickam  @"Stickam"
-
+#define kCHATWINDOWTITLEWMECast  @"WMECast"
 
 
 @interface MCClientWindowController () <MCClientWindowDelegate>
@@ -130,6 +132,9 @@
             clientClass = [MCStickamClient class];
             windowTitle = kCHATWINDOWTITLEStickam;
             break;
+        case kMCClientWMECastIDNumber:
+            clientClass = [MCWMECastClient class];
+            windowTitle = kCHATWINDOWTITLEWMECast;
         default:
             break;
     }

@@ -141,6 +141,7 @@
 - (IBAction)openCaveTubeWindow  :(id)sender { [self MC_PRIVATE_METHOD_PREPEND(openClientWindow):kMCClientCaveTubeIDNumber]; }
 - (IBAction)openLiveTube        :(id)sender { [self MC_PRIVATE_METHOD_PREPEND(openClientWindow):kMCClientLiveTubeIDNumber]; }
 - (IBAction)openStcikamWIndow   :(id)sender { [self MC_PRIVATE_METHOD_PREPEND(openClientWindow):kMCClientStickamIDNumber];}
+- (IBAction)openWMECastWindow   :(id)sender { [self MC_PRIVATE_METHOD_PREPEND(openClientWindow):kMCClientWMECastIDNumber];}
 
 
 //

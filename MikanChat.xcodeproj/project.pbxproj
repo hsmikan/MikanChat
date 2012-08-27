@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		922D357D15E9C3430031CEFC /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 922D357C15E9C3430031CEFC /* libicucore.dylib */; };
+		922D358215E9E42C0031CEFC /* MCWMECastClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 922D358015E9E42B0031CEFC /* MCWMECastClient.m */; };
+		922D358315E9E42C0031CEFC /* MCWMECastClient.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922D358115E9E42B0031CEFC /* MCWMECastClient.xib */; };
+		922D358615E9E52D0031CEFC /* wmecast.html in Resources */ = {isa = PBXBuildFile; fileRef = 922D358515E9E52D0031CEFC /* wmecast.html */; };
 		922EA3F515E3C2F900BD31DB /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 922EA3F715E3C2F900BD31DB /* Localized.strings */; };
 		922EA3FA15E3C41F00BD31DB /* MCClientWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922EA3FC15E3C41F00BD31DB /* MCClientWindowController.xib */; };
 		922EA3FD15E3C42400BD31DB /* MCIRCView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922EA3FF15E3C42400BD31DB /* MCIRCView.xib */; };
@@ -53,6 +56,10 @@
 
 /* Begin PBXFileReference section */
 		922D357C15E9C3430031CEFC /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		922D357F15E9E42B0031CEFC /* MCWMECastClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCWMECastClient.h; path = WMECast/MCWMECastClient.h; sourceTree = "<group>"; };
+		922D358015E9E42B0031CEFC /* MCWMECastClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCWMECastClient.m; path = WMECast/MCWMECastClient.m; sourceTree = "<group>"; };
+		922D358115E9E42B0031CEFC /* MCWMECastClient.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCWMECastClient.xib; path = WMECast/MCWMECastClient.xib; sourceTree = "<group>"; };
+		922D358515E9E52D0031CEFC /* wmecast.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = wmecast.html; path = WMECast/wmecast.html; sourceTree = "<group>"; };
 		922EA3F615E3C2F900BD31DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
 		922EA3FB15E3C41F00BD31DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MCClientWindowController.xib; sourceTree = "<group>"; };
 		922EA3FE15E3C42400BD31DB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MCIRCView.xib; sourceTree = "<group>"; };
@@ -96,7 +103,6 @@
 		92B8516915D3C0AD00F306E4 /* MCUserDefaultsKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCUserDefaultsKeys.h; sourceTree = "<group>"; };
 		92B8516A15D3C28000F306E4 /* NSString+MCConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MCConverter.h"; path = "NSString/NSString+MCConverter.h"; sourceTree = "<group>"; };
 		92B8516B15D3C28100F306E4 /* NSString+MCConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MCConverter.m"; path = "NSString/NSString+MCConverter.m"; sourceTree = "<group>"; };
-		92BF8C6C15D65A6700E091E9 /* MCCaveTubeClientConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MCCaveTubeClientConstants.h; path = CaveTube/MCCaveTubeClientConstants.h; sourceTree = "<group>"; };
 		92BF8C7815D6C16B00E091E9 /* MCReadModePopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCReadModePopUpButton.h; path = PopUpButton/MCReadModePopUpButton.h; sourceTree = "<group>"; };
 		92BF8C7915D6C16B00E091E9 /* MCReadModePopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCReadModePopUpButton.m; path = PopUpButton/MCReadModePopUpButton.m; sourceTree = "<group>"; };
 		92D6A1A515D2E870007F58C8 /* MikanChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MikanChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +151,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		922D358415E9E4310031CEFC /* WMECast */ = {
+			isa = PBXGroup;
+			children = (
+				922D358115E9E42B0031CEFC /* MCWMECastClient.xib */,
+				922D357F15E9E42B0031CEFC /* MCWMECastClient.h */,
+				922D358015E9E42B0031CEFC /* MCWMECastClient.m */,
+				922D358515E9E52D0031CEFC /* wmecast.html */,
+			);
+			name = WMECast;
+			sourceTree = "<group>";
+		};
 		924305E815D438990018E2EB /* TableViewDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,7 +344,6 @@
 			isa = PBXGroup;
 			children = (
 				922EA40215E3C42900BD31DB /* CaveTubeView.xib */,
-				92BF8C6C15D65A6700E091E9 /* MCCaveTubeClientConstants.h */,
 				92D6A1CF15D2EC41007F58C8 /* MCCaveTubeClient.h */,
 				92D6A1D015D2EC41007F58C8 /* MCCaveTubeClient.m */,
 				92B8515315D3394500F306E4 /* cavetube.html */,
@@ -378,6 +394,7 @@
 				92D6A1D615D2EC74007F58C8 /* CaveTube */,
 				92B682BD15E0E21A00BF1692 /* StickamClient */,
 				92D6A1D515D2EC6B007F58C8 /* LiveTubeClient */,
+				922D358415E9E4310031CEFC /* WMECast */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -469,6 +486,8 @@
 				9283C1C015E431FA00E3A2CB /* MCUpdatesController.xib in Resources */,
 				9283C1D315E5555900E3A2CB /* appIcon.icns in Resources */,
 				92F8ADB515E674ED00248A3F /* livetube.html in Resources */,
+				922D358315E9E42C0031CEFC /* MCWMECastClient.xib in Resources */,
+				922D358615E9E52D0031CEFC /* wmecast.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +538,7 @@
 				92E4CEA815E1185700237B10 /* NSColorWell+MCCategory.m in Sources */,
 				92E7672415E2D9D2006104A9 /* YukkuroidRPCClinet.m in Sources */,
 				9283C1BF15E431FA00E3A2CB /* MCUpdatesController.m in Sources */,
+				922D358215E9E42C0031CEFC /* MCWMECastClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

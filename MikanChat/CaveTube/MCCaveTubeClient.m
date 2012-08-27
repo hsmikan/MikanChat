@@ -13,7 +13,6 @@
 
 
 #import "MCCaveTubeClient.h"
-#import "MCCaveTubeClientConstants.h"
 
 #import "../NSString/NSString+MCRegex.h"
 
@@ -97,7 +96,6 @@ typedef enum {
     self = [super initWithDelegate:delegate nibName:NIBNAME];
     if (self) {
         _isJoin = NO;
-        _messageList = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -106,7 +104,6 @@ typedef enum {
 - (void)dealloc {
     EvalJS(Leave);
     [_webView release];
-    [_messageList release];
     
     [super dealloc];
 }

@@ -53,7 +53,6 @@ typedef enum {
 
 
 - (void)dealloc {
-    RELEASE(_messageList);
     if (_isJoin)
         EVALUATEJS(@"exitChat()");
     if (_isAuth)
@@ -67,7 +66,6 @@ typedef enum {
 - (id)initWithDelegate:(id<MCClientWindowDelegate>)delegate {
     self = [super initWithDelegate:delegate nibName:NIBNAME];
     if (self){
-        _messageList = [[NSMutableArray alloc] init];
         _isJoin = NO;
         _isAuth = NO;
     }

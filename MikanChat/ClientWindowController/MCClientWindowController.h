@@ -12,12 +12,13 @@
  MCClients   と   _MCClientIDNum
  の記述は同順にするように！！
  */
-#define MCClinets @"IRC",@"CaveTube",@"LiveTube"
+#define MCClinets @"IRC",@"CaveTube",@"LiveTube",@"WMECast"
 typedef enum {
     kMCClientIRCIDNumber       =   0,
     kMCClientCaveTubeIDNumber  =   1,
     kMCClientLiveTubeIDNumber  =   2,
     kMCClientStickamIDNumber   =   3,
+    kMCClientWMECastIDNumber   =   4,
 } MCClientIDNumber;
 
 

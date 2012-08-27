@@ -29,7 +29,7 @@ typedef enum {
 
 @protocol MCClientDelegate <NSObject,NSTableViewDataSource,NSTableViewDelegate>
 @required
-- (id)initWithDelegate:(id<MCClientDelegate>)delegate;
+- (id)initWithDelegate:(id<MCClientWindowDelegate>)delegate;
 - (BOOL)startChat;
 - (void)endChat;
 - (BOOL)isJoin;

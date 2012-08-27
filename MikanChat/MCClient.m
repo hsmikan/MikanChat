@@ -29,8 +29,14 @@
     self = [super initWithNibName:nibName bundle:nil];
     if (self){
         self.delegate = delegate;
+        _messageList = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
+
+- (void)dealloc {
+    RELEASE(_messageList);
+    [super dealloc];
+}
 @end
