@@ -8,8 +8,6 @@
 
 #import "MCAppDelegate.h"
 
-
-#import "Yukkuroid/YukkuroidRPCClinet.h"
 #import "updates/MCUpdatesController.h"
 
 @implementation MCAppDelegate
@@ -67,7 +65,8 @@
 }
 
 //
-//
+// アプリケーション起動完了
+// 初期化とか
 //
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {

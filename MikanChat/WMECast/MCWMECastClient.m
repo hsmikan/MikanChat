@@ -25,6 +25,7 @@ typedef enum {
 @end
 
 @implementation MCWMECastClient
+@synthesize isJoin = _isJoin;
 @synthesize liveURLTF = _liveURLTF;
 @synthesize messageTBL = _messageTBL;
 @synthesize usernameTF = _usernameTF;
@@ -69,6 +70,7 @@ typedef enum {
 - (BOOL)startChat {
     NSString * liveid = [[_liveURLTF.stringValue componentsSeparatedByString:@"/"] lastObject];
     if ([liveid isMatchedByRegex:@"[0-9a-z]+"]) {
+        _isJoin = YES;
         EVALUATEJS( STRINGFORMAT(@"enterChannel('%@')",liveid) );
         return YES;
     }
@@ -79,6 +81,7 @@ typedef enum {
 }
 
 - (void)endChat {
+    _isJoin = NO;
     EVALUATEJS(@"exitChannel()");
 }
 
@@ -92,6 +95,8 @@ typedef enum {
     
     NSString * name = [_usernameTF stringValue];
     EVALUATEJS( STRINGFORMAT(@"postMessage('%@','%@')",name,message) );
+    
+    [sender setStringValue:@""];
 }
 
 

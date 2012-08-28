@@ -13,6 +13,7 @@
 @interface MCWMECastClient : MCClient<MCClientDelegate> {
     WebView * _webView;
 }
+@property (readonly) BOOL isJoin;
 @property (assign) IBOutlet NSTextField *liveURLTF;
 @property (assign) IBOutlet NSTableView *messageTBL;
 @property (assign) IBOutlet NSTextField *usernameTF;

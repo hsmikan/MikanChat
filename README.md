@@ -35,6 +35,7 @@ Mac用チャットブラウザ／コメント読み上げアプリケーショ�
 * [cavetube](http://gae.cavelis.net/)
 * [STICKAM JAPAN](http://www.stickam.jp)
 * [Livetube](http://livetube.cc/)
+* [WMECast](http://wmecast.net)（未完成）
 * 他サービスへの対応は要相談
 
 

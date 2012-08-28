@@ -30,14 +30,13 @@ var postMessage = function(name,message){
   
   $.ajax({
      type: "POST",
-     url: "/interface/message/writer.php",
+     url: "http://wmecast.net/interface/message/writer.php",
      data: data,
      cache: false,
      dataType: "text",
      async: true,
      error: function( msg ) {
      //alert( "書き込みに失敗しました。" );
-     //$("#comment_writer_submitbutton").removeAttr( "disabled" );
      },
      success: function( msg ) {
        var arrayMsg = msg.split( "\n" );
@@ -137,13 +136,13 @@ var eventReader = function(){
          else {
            window.app.wmeevent(eventCode.message,posts);
          }
-         //read_timer = setInterval( "readEventData()", 10 );
+         read_timer = setInterval( "readEventData()", 10 );
        }
      }
    },//success
    error: function(msg) {
      if (isJoin) {
-       //read_timer = setInterval( "readEventData()", 1000 );
+       read_timer = setInterval( "readEventData()", 1000 );
      }
    }
  });//ajax

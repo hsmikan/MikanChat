@@ -150,16 +150,18 @@
     };
     
     var postComment = function(name,message) {
-//        $.ajax({
-//            url : 'http://livetube.cc/stream/' + channelID + '.comments',
-//            type : 'post',
-//            data : {
-//                name : name,/* name | comment_name */
-//                c : message/* c | */
-//            },
-//            success : function(rec){
-//            }
-//        });
+        $.ajax({
+            url : 'http://livetube.cc/stream/' + channelID + '.comments',
+            type : 'post',
+            data : {
+                name : name,/* name | comment_name */
+                c : message/* c | */
+            },
+            success : function(rec){
+            },
+            error : function(){
+            }
+        });
     };
     /*
     function PostComment(){
@@ -170,7 +172,7 @@
             // new Ajax.Request(
             new Ajax.Updater(
                 "comment_post_feedback",
-                "/stream/aaaacoks47bcc.comments",
+                "/stream/(liveID).comments",
                 {
                     asynchronous : true,
                     parameters : Form.serialize( "comment_form"),
