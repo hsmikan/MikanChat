@@ -10,6 +10,7 @@
 #import "MCReadManager.h"
 #import "../MCUserDefaultsKeys.h"
 #import "../NSString/NSString+MCConverter.h"
+#import "../NSString/NSString+MCRegex.h"
 #import "../SoundDevice/MCSoundDevice.h"
 
 #import "../Yukkuroid/YukkuroidRPCClinet.h"
@@ -388,6 +389,8 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
     else
         trimedReadString = [NSMutableString stringWithString:[readString stringByTrimmingUnvalidCharacters]];
     
+    //URL
+    [trimedReadString setString:[trimedReadString stringByReplacingOccurrencesOfRegex:@"h?ttp://.+ ?" withString:@"ゆーあーるえる"]];
     
     //
     // limit string count
@@ -499,12 +502,15 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
         [YukkuroidRPCClinet setVoiceSpeed:[[task objectForKey:kReadSpeedKey] intValue] setting:0];
         [YukkuroidRPCClinet setVoiceVolume:[[task objectForKey:kReadVolumeKey] intValue] setting:0];
         [YukkuroidRPCClinet setVoiceType:[[task objectForKey:kReadPhontIndexKey] intValue] setting:0];
-        [YukkuroidRPCClinet playSync:0];
+        
+        [YukkuroidRPCClinet pushPlayButton:0];
+        while([YukkuroidRPCClinet isStillPlaying:0]) ;
+        
         [self sound:nil didFinishPlaying:YES];
     }
     else {
         // TODO: warn Yukkuroid is not Running
-        [self sound:nil didFinishPlaying:YES];
+        [self sound:nil didFinishPlaying:NO];
     }
 }
 
@@ -552,9 +558,18 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
 	_isPlaying = NO;
     
     
-    [self performSelector:@selector(MC_PRIVATE_METHOD_PREPEND(playTerminal))
-               withObject:nil
-               afterDelay:(aBool ? kMCReadInterval : 0)];
+    BOOL isYk = [[[_readQueue objectAtIndex:0] objectForKey:kReadIsYukkuroidKey] boolValue];
+    if (isYk) {
+        //
+        // ???: Yukkuroid remove Runloop?
+        //
+        sleep(aBool ? kMCReadInterval : 0);
+        [self MC_PRIVATE_METHOD_PREPEND(playTerminal)];
+    }
+    else
+        [self performSelector:@selector(MC_PRIVATE_METHOD_PREPEND(playTerminal))
+                   withObject:nil
+                   afterDelay:(aBool ? kMCReadInterval : 0)];
 }
 
 @end

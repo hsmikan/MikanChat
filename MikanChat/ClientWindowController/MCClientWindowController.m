@@ -17,6 +17,8 @@
 #import "../PopUpButton/MCReadModePopUpButton.h"
 
 
+#import "../NSString/NSString+MCRegex.h"
+
 //
 // Singleton
 //
@@ -204,6 +206,20 @@
         [reader read:message name:userName modeProperty:readMode];
     }
     
+    
+    
+    if ([df boolForKey:kMCIsEnabledExternalLearn]) {
+        if ([message isMatchedByRegex:@"^教育[ 　].+[=＝].+$"]) {
+            NSArray * dicInfo = [[message substringFromIndex:3] componentsSeparatedByString:@"="];
+            NSUserDefaults * df = [NSUserDefaults standardUserDefaults];
+            NSMutableArray * dic = [NSMutableArray arrayWithArray:[df objectForKey:kMCConvertYomiListKey]];
+            [dic addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                            [dicInfo objectAtIndex:0],kMCConvertYomiListPatternKey,
+                            [dicInfo objectAtIndex:1],kMCConvertYomiListYomiKey,
+                            nil]];
+            [df setObject:dic forKey:kMCConvertYomiListKey];
+        }
+    }
     
     return YES;
 }

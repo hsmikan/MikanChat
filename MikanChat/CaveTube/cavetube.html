@@ -25,7 +25,21 @@ var wso=null;
 //
 // communicate cocoa method
 //
-var joinChannel=function(roomID){$document.trigger('socket_send_join',roomID);};
+var joinChannel=function(roomID){
+    $.ajax({
+        type : 'get',
+        url : "http://gae.cavelis.net/viewedit/get?stream_name="+roomID,
+        data : {'stream_name':roomID},
+        success : function(data){
+            /*
+         {"ret":true,"tags":[],"max_listener":4,"desc":"","author":"hsmikan","title":"読み上げテストがてら","stream_name":"0CA0B306C9F54E5D8825C7B94AF6B4C4","id_visible":false,"anonymous_only":false,"listener":0,"start_time":1346047614907,"comment_num":49,"viewer":11}
+            */
+           if (data.ret === true)
+            wso.cvevent(eventCode.set, data.aurhor + " : " +data.title);
+        }
+    });
+    $document.trigger('socket_send_join',roomID);
+};
 var leaveChannel=function(){$document.trigger('socket_send_leave');};
 var sendMessage=function(username,message){$document.trigger('socket_send_comment',{message:message,username:username});};
 var disconnect=function(){$document.trigger('socket_send_disconnect');};
@@ -77,8 +91,8 @@ $document.ready(function(){
             wso.cvevent(eventCode.unready,null);
         },
         socket_receive_set : function(e,data) {
-            if (data.ret == true)
-                wso.cvevent(eventCode.set,data.title);
+            if (data.ret === true)
+                wso.cvevent(eventCode.set, data.author + " : " + data.title);
         },
         socket_receive_start_entry : function(e,data) {
         },
@@ -117,7 +131,7 @@ $document.ready(function(){
                 name : msgInfo.username,
                 message : msgInfo.message,
                 /* ???: apikeyの習得方法は？ */
-                apikey : ""
+                apikey : "E10BE6A24B3142F9884ED0090F1853A5"
             }));
         },
         socket_send_leave : function(e) {

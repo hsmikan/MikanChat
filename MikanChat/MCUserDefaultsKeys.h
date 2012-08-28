@@ -15,6 +15,7 @@ extern NSString * const kMCReadModeTitleKey;
 extern NSString * const kMCReadModeQueueKey;
 extern NSString * const kMCReadModeStringLimit;
 extern NSString * const kMCReadModeStringLimitSuffix;
+extern NSString * const kMCIsEnabledExternalLearn;
 //
 // ReradMode
 //

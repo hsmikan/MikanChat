@@ -14,6 +14,7 @@ EXTERNED NSString * const kMCReadModeTitleKey       =   @"MCReadModeTitle";
 EXTERNED NSString * const kMCReadModeQueueKey       =   @"MCReadModeQueue";
 EXTERNED NSString * const kMCReadModeStringLimit    =   @"MCReadModeStringLimit";
 EXTERNED NSString * const kMCReadModeStringLimitSuffix = @"MCReadModeStringLimitSuffix";
+EXTERNED NSString * const kMCIsEnabledExternalLearn =   @"MCIsEnabledExternalLearn";
 
 //
 // ReadMode

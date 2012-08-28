@@ -150,8 +150,6 @@ typedef enum {
 
 - (void)endChat {
     EvalJS(Leave);
-    [self MC_PRIVATE_METHOD_PREPEND(endChat)];
-//    [_webView reload:self];
 }
 
 
@@ -280,6 +278,7 @@ typedef enum {
         case kMCCVEventReady:
             break;
         case kMCCVEventUnready:
+            [self MC_PRIVATE_METHOD_PREPEND(endChat)];
             break;
         case kMCCVEventSet:
             [_liveURLTF setStringValue:message];
