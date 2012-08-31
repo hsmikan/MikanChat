@@ -32,6 +32,7 @@
 @property (assign) IBOutlet NSColorWell *commentColorWell;
 @property (assign) IBOutlet NSPopUpButton *fontPBT;
 @property (assign) IBOutlet NSPopUpButton *fontSizePBT;
+- (IBAction)setNickname:(id)sender;
 - (IBAction)sendMessage:(id)sender;
 
 @property (readonly) BOOL isJoin;

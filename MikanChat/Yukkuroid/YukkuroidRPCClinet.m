@@ -16,7 +16,6 @@
 
 +(NSDistantObject *)getYukProxy{
     NSDistantObject * proxy = [NSConnection rootProxyForConnectionWithRegisteredName:@"com.yukkuroid.rpc" host:@""];
-    [proxy setProtocolForProxy:@protocol(YukkuroidProtocol)];
     return proxy;
 }
 

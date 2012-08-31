@@ -1116,6 +1116,14 @@ l+OBvuOBmeOBi++8nw</string>
 					<int key="connectionID">1715</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">setNickname:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="133050907"/>
+					</object>
+					<int key="connectionID">1719</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: values.MCStickamLiveURLSAVE</string>
 						<reference key="source" ref="670831387"/>
@@ -2952,7 +2960,7 @@ l+OBvuOBmeOBi++8nw</string>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1718</int>
+			<int key="maxID">1719</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

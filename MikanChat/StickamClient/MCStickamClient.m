@@ -138,15 +138,13 @@ typedef enum {
 
 - (BOOL)startChat {
     NSString * url = _liveURLTF.stringValue;
-    NSString * nickname = _nicknameTF.stringValue;
-    NSString * joinScript = nil;
-    
     if (url.length==0 || ![url isMatchedByRegex:@"^http://www.stickam.jp/profile/[a-z0-9_]+$"]) {
         NSRunAlertPanel(@"Stickam", @"Invalid URL.", @"O.K.", nil, nil);
         return NO;
     }
     
-    
+    NSString * nickname = _nicknameTF.stringValue;
+    NSString * joinScript = nil;
     if (nickname.length)
         joinScript = STRINGFORMAT(@"joinChat('%@','%@');",url,nickname);
     else {
@@ -170,7 +168,15 @@ typedef enum {
 
 
 
+- (IBAction)setNickname:(id)sender {
+    NSString * name = [sender stringValue];
+    if (name.length) {
+        EVALUATEJS( STRINGFORMAT( @"setNickname('%@')",name) );
+    }
+}
+
 - (IBAction)sendMessage:(id)sender {
+    DLOG(@"post");
     NSString * message = [sender stringValue];
     
     if (message.length) {
@@ -185,7 +191,7 @@ typedef enum {
          underline	下線をつけるか	true,false
          */
         // var post = function(text, font, size, color, bold, italic, underline){roomSay(text, font, size, color, bold, italic, underline)};
-        EVALUATEJS(STRINGFORMAT(@"post(%@,%@,%@,%@,%@,%@,%@)",
+        EVALUATEJS(STRINGFORMAT(@"post('%@','%@',%@,'%@',%@,%@,%@)",
                                 /* message */       message,
                                 /* font */          [[_fontPBT selectedItem] title],
                                 /* font size */     [[_fontSizePBT selectedItem] title],

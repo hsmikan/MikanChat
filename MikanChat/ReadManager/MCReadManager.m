@@ -554,11 +554,11 @@ NSArray * MC_PRIVATE_METHOD_PREPEND(readSystemNameList)() {
     
 	[snd autorelease];
     
+    BOOL isYk = [[[_readQueue objectAtIndex:0] objectForKey:kReadIsYukkuroidKey] boolValue];
 	[_readQueue removeObjectAtIndex:0];
 	_isPlaying = NO;
     
     
-    BOOL isYk = [[[_readQueue objectAtIndex:0] objectForKey:kReadIsYukkuroidKey] boolValue];
     if (isYk) {
         //
         // ???: Yukkuroid remove Runloop?
