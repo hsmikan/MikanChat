@@ -195,6 +195,8 @@ typedef enum {
                                 /* is underline */  ([_isUnderlineCommentBT state] ? @"true" : @"false")
                                 ));
     }
+    
+    [sender setStringValue:@""];
 }
 
 

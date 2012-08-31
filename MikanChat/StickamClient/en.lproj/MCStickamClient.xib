@@ -2,7 +2,7 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1070</int>
-		<string key="IBDocument.SystemVersion">12A269</string>
+		<string key="IBDocument.SystemVersion">12B19</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
 		<string key="IBDocument.AppKitVersion">1187</string>
 		<string key="IBDocument.HIToolboxVersion">624.00</string>
@@ -30,6 +30,7 @@
 			<string>NSTableView</string>
 			<string>NSTextField</string>
 			<string>NSTextFieldCell</string>
+			<string>NSUserDefaultsController</string>
 			<string>NSView</string>
 			<string>NSWindowTemplate</string>
 			<string>WebView</string>
@@ -249,6 +250,7 @@
 						<string key="NSFrame">{{303, 29}, {57, 26}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSPopUpButtonCell" key="NSCell" id="640043246">
 							<int key="NSCellFlags">-2076180416</int>
@@ -941,6 +943,7 @@ l+OBvuOBmeOBi++8nw</string>
 							<string key="NSFrame">{{300, 13}, {75, 32}}</string>
 							<reference key="NSSuperview" ref="654502295"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="843264373">
@@ -969,6 +972,9 @@ l+OBvuOBmeOBi++8nw</string>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">NO</bool>
+			</object>
+			<object class="NSUserDefaultsController" id="306674501">
+				<bool key="NSSharedInstance">YES</bool>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -1078,14 +1084,6 @@ l+OBvuOBmeOBi++8nw</string>
 					<int key="connectionID">1002</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">sendMessage:</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="242800126"/>
-					</object>
-					<int key="connectionID">1003</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">fontSizePBT</string>
 						<reference key="source" ref="1001"/>
@@ -1108,6 +1106,30 @@ l+OBvuOBmeOBi++8nw</string>
 						<reference key="destination" ref="629586666"/>
 					</object>
 					<int key="connectionID">1021</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">sendMessage:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="242800126"/>
+					</object>
+					<int key="connectionID">1715</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.MCStickamLiveURLSAVE</string>
+						<reference key="source" ref="670831387"/>
+						<reference key="destination" ref="306674501"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="670831387"/>
+							<reference key="NSDestination" ref="306674501"/>
+							<string key="NSLabel">value: values.MCStickamLiveURLSAVE</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.MCStickamLiveURLSAVE</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1718</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -2703,6 +2725,11 @@ l+OBvuOBmeOBi++8nw</string>
 						<reference key="object" ref="690178004"/>
 						<reference key="parent" ref="654502295"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1716</int>
+						<reference key="object" ref="306674501"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -2813,6 +2840,7 @@ l+OBvuOBmeOBi++8nw</string>
 				<string key="1710.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1711.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1712.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1716.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="596.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="NO" key="596.NSWindowTemplate.visibleAtLaunch"/>
 				<array key="597.IBNSViewMetadataConstraints">
@@ -2924,21 +2952,21 @@ l+OBvuOBmeOBi++8nw</string>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1714</int>
+			<int key="maxID">1718</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
-					<string key="className">MCParentClient</string>
+					<string key="className">MCClient</string>
 					<string key="superclassName">NSViewController</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/MCParentClient.h</string>
+						<string key="minorKey">./Classes/MCClient.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">MCStickamClient</string>
-					<string key="superclassName">MCParentClient</string>
+					<string key="superclassName">MCClient</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="login:">id</string>
 						<string key="noLogin:">id</string>
