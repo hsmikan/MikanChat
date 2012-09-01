@@ -417,6 +417,7 @@ if ( [self.delegate respondsToSelector:@selector(IRCEventOccured:withObject:)] )
 			//
 			NSMutableString *msg = [NSMutableString string];
 			for (int i=3; i<[rec count]; i++) {
+                DLOG(@"\t\t\tmarged : %@",[rec objectAtIndex:i]);
 				[msg appendFormat:@"%@ ",[rec objectAtIndex:i]];
 			}
 			//[NSMutableString stringWithString:SPLIT(retStrFromIRC,@":",2)];
@@ -505,7 +506,7 @@ if ( [self.delegate respondsToSelector:@selector(IRCEventOccured:withObject:)] )
 
 #pragma mark handleRecv Main of this class
 -(void)handleRecv:(NSString *)retStrFromIRC{
-	
+	DLOG(@"raw data : %@",retStrFromIRC);
 	NSArray* fTrim = [NSArray arrayWithArray:[retStrFromIRC componentsSeparatedByString:@" "]];
 	
 	/***** fTrim index 0 *****/

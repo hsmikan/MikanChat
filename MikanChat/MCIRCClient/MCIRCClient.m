@@ -146,14 +146,16 @@
     if (!message.length) return;
     
     if ( [message hasPrefix:kMCIRCSendRawPrefix] )
-        [_irc send:message];
-    else
+        [_irc send:[message substringFromIndex:1]];
+    else {
         [_irc sendToChannelWithOperator:kIRCSendOperaterPRIVMSG message:message];
-    
-    [_messageList addObject:[NSDictionary dictionaryWithObjectsAndKeys:
-                            message,kMCIRCMessageTBLMessageColumnID,
-                            @"ME",kMCIRCMessageTBLMessageColumnID,
-                            nil]];
+        
+        [_messageList addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                                 message,kMCIRCMessageTBLMessageColumnID,
+                                 @"ME",kMCIRCMessageTBLUserNameCollumnID,
+                                 nil]];
+        MCTBLReloadData(_messageTBL, _messageList.count);
+    }
     
     [sender setStringValue:@""];
 }
@@ -210,12 +212,13 @@
             //[CCBIRCIPDictionary setObject:[object objectForKey:@"IP"] forKey:[object objectForKey:@"name"]];
             break;
             
-        case IRCModeChanged:
-            [[[_nameListTBL tableColumnWithIdentifier:kMCIRCNameListColumnID] headerCell] setStringValue:object];
+        case IRCModeChanged:;
+            NSTableHeaderCell * header = [[_nameListTBL tableColumnWithIdentifier:kMCIRCNameListColumnID] headerCell];
+            [header  setStringValue:object];
             break;
             
         case IRCTopicChanged:
-            //[_topicTF setStringValue:object];
+            [_topicTF setStringValue:object];
             break;
             
         case IRCMessageUpdate:;

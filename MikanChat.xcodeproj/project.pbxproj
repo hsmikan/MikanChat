@@ -31,6 +31,7 @@
 		9283C1BF15E431FA00E3A2CB /* MCUpdatesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9283C1BD15E431F900E3A2CB /* MCUpdatesController.m */; };
 		9283C1C015E431FA00E3A2CB /* MCUpdatesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9283C1BE15E431FA00E3A2CB /* MCUpdatesController.xib */; };
 		929DDF1A15E2AA45005F115E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 929DDF1915E2AA44005F115E /* README.md */; };
+		92A950E315F22BA800A64921 /* MCSoundDeviceColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A950E215F22BA800A64921 /* MCSoundDeviceColumn.m */; };
 		92B682BB15E0E21200BF1692 /* MCStickamClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B682B915E0E21200BF1692 /* MCStickamClient.m */; };
 		92B682C015E0E2B000BF1692 /* MCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B682BF15E0E2AF00BF1692 /* MCClient.m */; };
 		92B8515215D338F100F306E4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B8515115D338F100F306E4 /* WebKit.framework */; };
@@ -93,6 +94,8 @@
 		9283C1BD15E431F900E3A2CB /* MCUpdatesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCUpdatesController.m; path = updates/MCUpdatesController.m; sourceTree = "<group>"; };
 		9283C1BE15E431FA00E3A2CB /* MCUpdatesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCUpdatesController.xib; path = updates/MCUpdatesController.xib; sourceTree = "<group>"; };
 		929DDF1915E2AA44005F115E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		92A950E115F22BA800A64921 /* MCSoundDeviceColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCSoundDeviceColumn.h; path = TableView/MCSoundDeviceColumn.h; sourceTree = "<group>"; };
+		92A950E215F22BA800A64921 /* MCSoundDeviceColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCSoundDeviceColumn.m; path = TableView/MCSoundDeviceColumn.m; sourceTree = "<group>"; };
 		92B682B815E0E21200BF1692 /* MCStickamClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCStickamClient.h; path = StickamClient/MCStickamClient.h; sourceTree = "<group>"; };
 		92B682B915E0E21200BF1692 /* MCStickamClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCStickamClient.m; path = StickamClient/MCStickamClient.m; sourceTree = "<group>"; };
 		92B682BE15E0E2AF00BF1692 /* MCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCClient.h; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 				9243063B15D4CB110018E2EB /* MCReadModeTableView.m */,
 				9243064115D4D6500018E2EB /* MCPhontColumn.h */,
 				9243064215D4D6500018E2EB /* MCPhontColumn.m */,
+				92A950E115F22BA800A64921 /* MCSoundDeviceColumn.h */,
+				92A950E215F22BA800A64921 /* MCSoundDeviceColumn.m */,
 			);
 			name = TableView;
 			sourceTree = "<group>";
@@ -539,6 +544,7 @@
 				92E7672415E2D9D2006104A9 /* YukkuroidRPCClinet.m in Sources */,
 				9283C1BF15E431FA00E3A2CB /* MCUpdatesController.m in Sources */,
 				922D358215E9E42C0031CEFC /* MCWMECastClient.m in Sources */,
+				92A950E315F22BA800A64921 /* MCSoundDeviceColumn.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@ MikanChat
 開発状況/予定
 -----------
 * エラー処理の確認／バグ探し。みなさんからのご報告を待っています(^_^;)
+* LivetubeとWMECastは他に比べると対応が進んでいない上に未検証状態です。
 
 
 
@@ -76,9 +77,10 @@ Mac用チャットブラウザ／コメント読み上げアプリケーショ�
 * [ゆっくろいど](http://www.yukkuroid.com/yukkuroid/index.html)
  * ゆっくろいどは事前に起動しておくことをおすすめします。
  * ゆっくろいどを利用の際は、音声再生デバイス選択機能は利用できません。
- 
- 
- 
+
+
+
+
 Contact
 ---------
 * BLOG : [MikanChat](http://www.waterbolt.info/~hsmikan/blog/?page_id=179)

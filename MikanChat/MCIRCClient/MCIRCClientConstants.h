@@ -10,8 +10,8 @@
 #define kMCIRCNameListColumnID @"MCIRCNameListColumn"
 
 #define kMCIRCMessageListTBLID @"MCIRCMessageList"
-#define kMCIRCMessageTBLUserNameCollumnID @"MCIRCMessageUserNameColumn"
-#define kMCIRCMessageTBLMessageColumnID @"MCIRCMessageTBLMessageColumn"
+#define kMCIRCMessageTBLUserNameCollumnID @"username"
+#define kMCIRCMessageTBLMessageColumnID @"message"
 
 
 #define kMCIRCSendRawPrefix @"/"

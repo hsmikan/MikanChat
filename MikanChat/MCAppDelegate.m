@@ -147,7 +147,8 @@
 // reload devices
 //
 - (IBAction)reloadSoundDevices:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:kMCReadModeSystemDeviceUpdateNotification object:nil];
+    NSNotificationCenter * nc = [NSNotificationCenter defaultCenter];
+    [nc postNotificationName:kMCReadModeSystemDeviceUpdateNotification object:nil];
 }
 
 - (IBAction)openUpdates:(id)sender {

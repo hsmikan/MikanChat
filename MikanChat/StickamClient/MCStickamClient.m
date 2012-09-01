@@ -176,7 +176,6 @@ typedef enum {
 }
 
 - (IBAction)sendMessage:(id)sender {
-    DLOG(@"post");
     NSString * message = [sender stringValue];
     
     if (message.length) {

@@ -58,6 +58,7 @@
       modeList = [df objectForKey:operateKey];
     
     
+    // FIXME: 本当は setObject のところで操作したい
     if (COMPARESTRING([tableColumn identifier], kMCReadModeSystemIndexKey)) {
         //
         // isYukkuroid
