@@ -62,3 +62,11 @@ EXTERNED NSString * const kMCIRCRealNameKey     =   @"MCIRCRealName";
 EXTERNED NSString * const kMCAutomaaticallyUpdatesKey = @"MCIsAutomaticallyUpdates";
 EXTERNED NSString * const kMCIsUserITunesAPI          = @"MCIsUserITunesAPI";
 
+//
+// scroll
+//
+EXTERNED NSString * const kMCScrollViewFontSize     = @"MCScrollViewFontSize";
+EXTERNED NSString * const kMCScrollViewFontColor    = @"MCScrollViewFontColor";
+EXTERNED NSString * const kMCScrollViewFontDuration = @"MCScrollViewDuration";
+EXTERNED NSString * const kMCScrollViewBGColor      = @"MCScrollViewBGColor";
+EXTERNED NSString * const kMCScrollViewBGAlpha      = @"MCScrollViewBGAlpha";

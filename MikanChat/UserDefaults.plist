@@ -47,5 +47,11 @@
 	</array>
 	<key>MCIgnoreList</key>
 	<array/>
+	<key>MCScrollViewFontSize</key>
+	<integer>13</integer>
+	<key>MCScrollViewDuration</key>
+	<integer>5</integer>
+	<key>MCScrollViewBGAlpha</key>
+	<integer>50</integer>
 </dict>
 </plist>

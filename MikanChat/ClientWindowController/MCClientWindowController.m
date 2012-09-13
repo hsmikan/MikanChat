@@ -49,7 +49,9 @@
 @end
 
 @implementation MCClientWindowController
+@synthesize delegate = _delegate;
 @synthesize toggleBT = _toggleBT;
+@synthesize isScrollViewBT = _isScrollViewBT;
 @synthesize readModePB = _readModePB;
 @synthesize isReadCB = _isReadCB;
 
@@ -187,6 +189,11 @@
     
     if (isIgnore) return NO;
     
+    
+    
+    if (_isScrollViewBT.state) {
+        [self.delegate receiveComment:message];
+    }
     
     
     if ([_isReadCB isEnabled] && [_isReadCB state]) {

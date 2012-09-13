@@ -61,3 +61,13 @@ extern NSString * const kMCIRCRealNameKey;
 //
 extern NSString * const kMCAutomaaticallyUpdatesKey;
 extern NSString * const kMCIsUserITunesAPI;
+
+
+//
+// scroll
+//
+extern NSString * const kMCScrollViewFontSize;
+extern NSString * const kMCScrollViewFontColor;
+extern NSString * const kMCScrollViewFontDuration;
+extern NSString * const kMCScrollViewBGColor;
+extern NSString * const kMCScrollViewBGAlpha;

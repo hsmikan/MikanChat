@@ -7,8 +7,28 @@
 //
 
 #import "MCAppDelegate.h"
+#import "MCUserDefaultsKeys.h"
+
+#import "NSString/NSString+MCRegex.h"
+
+#import "ClientWindowController/MCClientWindowController.h"
+
+#import "SoundDevice/MCSoundDevice.h"
+#import "ReadManager/MCReadManager.h"
+
+#import "TableView/MCReadModeTableView.h"
+#import "PopUpButton/MCReadModePopUpButton.h"
 
 #import "updates/MCUpdatesController.h"
+#import "MCScrollViewWindowController/MCScrollViewWindowController.h"
+
+
+#import "NSUserDefaults+myColorSuports/NSUserDefaults+myColorSupport.h"
+
+
+@interface MCAppDelegate () <MCClientWindowControllerDelegate>
+
+@end
 
 @implementation MCAppDelegate
 #pragma mark -
@@ -19,6 +39,8 @@
  *  Outlets
  *
  *==============================================================================*/
+@synthesize scrollFontColorWell = _scrollFontColorWell;
+@synthesize scrollBackgroundColorWell = _scrollBackgroundColorWell;
 @synthesize ignoreTBL           =   _ignoreTBL;
 @synthesize ignoreTypePB        =   _ignoreTypePB;
 @synthesize ignoreContentTF     =   _ignoreContentTF;
@@ -76,12 +98,23 @@
     //
     if ( [df boolForKey:kMCAutomaaticallyUpdatesKey]) {
         MCUpdatesController * updates = [[MCUpdatesController alloc] init];
-        if ( updates.isUpToDate )
+        if ( updates.isUpToDate ) {
             [updates showWindow:self];
-        else
+        }
+        else {
             [updates release];
+        }
     }
     
+    _scrollFontColorWell.color = [df colorForKey:kMCScrollViewFontColor];
+    _scrollBackgroundColorWell.color = [df colorForKey:kMCScrollViewBGColor];
+    
+    _scrollController = [[MCScrollViewWindowController alloc] init];
+    [_scrollController changeBackgroundColor:_scrollBackgroundColorWell.color];
+    /*
+    [_scrollController showWindow:self];
+    [self receiveComment:@"test"];
+     */
 }
 
 
@@ -90,7 +123,7 @@
 #pragma mark Finalize
 /*==============================================================================
  *
- *  Finalization
+ *  Deallocate
  *
  *==============================================================================*/
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender { return NO; }
@@ -108,6 +141,11 @@
 // 終了処理
 //
 - (void)applicationWillTerminate:(NSNotification *)notification {
+    NSUserDefaults * df = [NSUserDefaults standardUserDefaults];
+    [df setColor:_scrollBackgroundColorWell.color forKey:kMCScrollViewBGColor];
+    [df setColor:_scrollFontColorWell.color forKey:kMCScrollViewFontColor];
+    
+    [_scrollController release];
 }
 
 
@@ -118,6 +156,10 @@
 
 - (IBAction)openMainWindow:(id)sender {
     [_window makeKeyAndOrderFront:self];
+}
+
+- (IBAction)openHelpPage:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.waterbolt.info/apps/MikanChat/help/"]];
 }
 
 
@@ -155,6 +197,33 @@
     MCUpdatesController * updates = [[MCUpdatesController alloc] init];
     [updates showWindow:self];
 }
+
+
+
+#pragma mark -
+#pragma mark Scroll View
+/*==============================================================================
+ *
+ *  Scroll View
+ *
+ *==============================================================================*/
+//
+// TODO: 後の拡張の可能性を考慮して、イベントタイプも用意しておいたほうがよい？
+//  ・コメントをスクロールさせる
+//  ・hogehoge
+//
+- (void)receiveComment:(NSString *)comment {//event:(int)event{
+    NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
+    
+    if (![[_scrollController window] isVisible]) [_scrollController showWindow:self];
+        
+    [_scrollController scrollString:comment attributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                        [NSNumber numberWithFloat:[df floatForKey:kMCScrollViewFontSize]],HSMScrollViewerFontSize,
+                                                        [NSNumber numberWithFloat:[df floatForKey:kMCScrollViewFontDuration]],HSMScrollViewerDuration,
+                                                        [_scrollFontColorWell color],HSMScrollViewerFontColor,
+                                                        nil]];
+}
+
 
 
 
@@ -363,5 +432,33 @@
     [df setObject:update forKey:kMCIgnoreListKey];
     
     [_ignoreTBL reloadData];
+}
+
+
+
+
+#pragma mark -
+#pragma mark Scroll
+/*==============================================================================
+ *
+ *  Scroll
+ *
+ *==============================================================================*/
+
+- (IBAction)openScrollViewer:(id)sender {
+    [_scrollController showWindow:self];
+}
+
+- (IBAction)changeScrollViewBGCL:(id)sender {
+    [_scrollController changeBackgroundColor:_scrollBackgroundColorWell.color];
+}
+
+- (IBAction)lockScrollViewer:(id)sender {
+    [_scrollController lockWindow];
+}
+
+- (IBAction)unlockScrollViewer:(id)sender {
+    [_scrollController unlockWindow];
+    [_scrollController showWindow:self];
 }
 @end

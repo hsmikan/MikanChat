@@ -7,25 +7,21 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "MCUserDefaultsKeys.h"
 
-#import "NSString/NSString+MCRegex.h"
+@class MCReadModePopUpButton;
+@class MCScrollViewWindowController;
 
-#import "ClientWindowController/MCClientWindowController.h"
-
-#import "SoundDevice/MCSoundDevice.h"
-#import "ReadManager/MCReadManager.h"
-
-#import "TableView/MCReadModeTableView.h"
-#import "PopUpButton/MCReadModePopUpButton.h"
-
-@interface MCAppDelegate : NSObject <NSApplicationDelegate>
+@interface MCAppDelegate : NSObject <NSApplicationDelegate> {
+    MCScrollViewWindowController * _scrollController;
+}
 
 @property (assign) IBOutlet NSWindow *window;
 //
 // General
 //
 - (IBAction)openMainWindow:(id)sender;
+- (IBAction)openHelpPage:(id)sender;
+
 
 //
 // Toolbar
@@ -69,4 +65,10 @@
 - (IBAction)addNewIgnore:(id)sender;
 - (IBAction)deleteIgnore:(id)sender;
 
+@property (assign) IBOutlet NSColorWell *scrollFontColorWell;
+@property (assign) IBOutlet NSColorWell *scrollBackgroundColorWell;
+- (IBAction)openScrollViewer:(id)sender;
+- (IBAction)changeScrollViewBGCL:(id)sender;
+- (IBAction)lockScrollViewer:(id)sender;
+- (IBAction)unlockScrollViewer:(id)sender;
 @end

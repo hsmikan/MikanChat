@@ -22,15 +22,22 @@ typedef enum {
 } MCClientIDNumber;
 
 
+#define MCClientID
+@protocol MCClientWindowControllerDelegate <NSObject>
+- (void)receiveComment:(NSString*)comment;
+@end
+
 @interface MCClientWindowController : NSWindowController {
     id _clientController;
 }
+@property (assign) id <MCClientWindowControllerDelegate> delegate;
 //
 //  Toolbar
 //
 @property (assign) IBOutlet NSPopUpButton *readModePB;
 @property (assign) IBOutlet NSButton *isReadCB;
 @property (assign) IBOutlet NSButton *toggleBT;
+@property (assign) IBOutlet NSButton *isScrollViewBT;
 - (IBAction)toggleChat:(NSToolbarItem *)sender;
 
 - (void)showWindow:(id)sender DEPRECATED_ATTRIBUTE;

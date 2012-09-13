@@ -23,6 +23,10 @@
 		9243064315D4D6500018E2EB /* MCPhontColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243064215D4D6500018E2EB /* MCPhontColumn.m */; };
 		9243064915D4DA500018E2EB /* MCExpansionSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243064815D4DA4F0018E2EB /* MCExpansionSlider.m */; };
 		9243065615D565B90018E2EB /* MCIRCProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243065515D565B90018E2EB /* MCIRCProtocol.m */; };
+		92450EAB1601DA5600A9D94E /* MCScrollViewWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92450EA91601DA5600A9D94E /* MCScrollViewWindowController.m */; };
+		92450EAC1601DA5600A9D94E /* MCScrollViewWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92450EAA1601DA5600A9D94E /* MCScrollViewWindowController.xib */; };
+		92450EB01601DBBC00A9D94E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92450EAF1601DBBC00A9D94E /* QuartzCore.framework */; };
+		92450EB61601ED0C00A9D94E /* NSUserDefaults+myColorSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 92450EB51601ED0C00A9D94E /* NSUserDefaults+myColorSupport.m */; };
 		924901EC15D8535D00BD9633 /* MCUserDefaultsKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 924901EB15D8535D00BD9633 /* MCUserDefaultsKeys.m */; };
 		9262BE3615D40711007DC7B3 /* MCSoundDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 9262BE3515D40711007DC7B3 /* MCSoundDevice.m */; };
 		9262BE3D15D407EE007DC7B3 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9262BE3C15D407EE007DC7B3 /* CoreAudio.framework */; };
@@ -83,6 +87,12 @@
 		9243065415D565B90018E2EB /* MCIRCProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCIRCProtocol.h; path = MCIRCClient/MCIRCProtocol.h; sourceTree = "<group>"; };
 		9243065515D565B90018E2EB /* MCIRCProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCIRCProtocol.m; path = MCIRCClient/MCIRCProtocol.m; sourceTree = "<group>"; };
 		9243065715D574860018E2EB /* MCIRCClientConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MCIRCClientConstants.h; path = MCIRCClient/MCIRCClientConstants.h; sourceTree = "<group>"; };
+		92450EA81601DA5600A9D94E /* MCScrollViewWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCScrollViewWindowController.h; path = MCScrollViewWindowController/MCScrollViewWindowController.h; sourceTree = "<group>"; };
+		92450EA91601DA5600A9D94E /* MCScrollViewWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCScrollViewWindowController.m; path = MCScrollViewWindowController/MCScrollViewWindowController.m; sourceTree = "<group>"; };
+		92450EAA1601DA5600A9D94E /* MCScrollViewWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCScrollViewWindowController.xib; path = MCScrollViewWindowController/MCScrollViewWindowController.xib; sourceTree = "<group>"; };
+		92450EAF1601DBBC00A9D94E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		92450EB41601ED0C00A9D94E /* NSUserDefaults+myColorSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+myColorSupport.h"; path = "NSUserDefaults+myColorSuports/NSUserDefaults+myColorSupport.h"; sourceTree = "<group>"; };
+		92450EB51601ED0C00A9D94E /* NSUserDefaults+myColorSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+myColorSupport.m"; path = "NSUserDefaults+myColorSuports/NSUserDefaults+myColorSupport.m"; sourceTree = "<group>"; };
 		924901EB15D8535D00BD9633 /* MCUserDefaultsKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCUserDefaultsKeys.m; sourceTree = "<group>"; };
 		9262BE3415D40711007DC7B3 /* MCSoundDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCSoundDevice.h; path = SoundDevice/MCSoundDevice.h; sourceTree = "<group>"; };
 		9262BE3515D40711007DC7B3 /* MCSoundDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCSoundDevice.m; path = SoundDevice/MCSoundDevice.m; sourceTree = "<group>"; };
@@ -144,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92450EB01601DBBC00A9D94E /* QuartzCore.framework in Frameworks */,
 				922D357D15E9C3430031CEFC /* libicucore.dylib in Frameworks */,
 				9262BE3D15D407EE007DC7B3 /* CoreAudio.framework in Frameworks */,
 				92B8515215D338F100F306E4 /* WebKit.framework in Frameworks */,
@@ -194,6 +205,16 @@
 				9243064815D4DA4F0018E2EB /* MCExpansionSlider.m */,
 			);
 			name = ExpansionSlider;
+			sourceTree = "<group>";
+		};
+		92450EAE1601DA5B00A9D94E /* MCScrollViewWindowController */ = {
+			isa = PBXGroup;
+			children = (
+				92450EA81601DA5600A9D94E /* MCScrollViewWindowController.h */,
+				92450EA91601DA5600A9D94E /* MCScrollViewWindowController.m */,
+				92450EAA1601DA5600A9D94E /* MCScrollViewWindowController.xib */,
+			);
+			name = MCScrollViewWindowController;
 			sourceTree = "<group>";
 		};
 		9262BE3815D40717007DC7B3 /* SoundDevice */ = {
@@ -276,6 +297,7 @@
 		92D6A1A815D2E870007F58C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92450EAF1601DBBC00A9D94E /* QuartzCore.framework */,
 				922D357C15E9C3430031CEFC /* libicucore.dylib */,
 				9262BE3C15D407EE007DC7B3 /* CoreAudio.framework */,
 				92B8515115D338F100F306E4 /* WebKit.framework */,
@@ -304,6 +326,9 @@
 				924901EB15D8535D00BD9633 /* MCUserDefaultsKeys.m */,
 				92D6A1BB15D2E871007F58C8 /* MCAppDelegate.h */,
 				92D6A1BC15D2E871007F58C8 /* MCAppDelegate.m */,
+				92450EB41601ED0C00A9D94E /* NSUserDefaults+myColorSupport.h */,
+				92450EB51601ED0C00A9D94E /* NSUserDefaults+myColorSupport.m */,
+				92450EAE1601DA5B00A9D94E /* MCScrollViewWindowController */,
 				9283C1C215E431FF00E3A2CB /* updates */,
 				92D6A20615D32145007F58C8 /* Client */,
 				92D6A1EF15D2F67F007F58C8 /* ReadManager */,
@@ -493,6 +518,7 @@
 				922D358315E9E42C0031CEFC /* MCWMECastClient.xib in Resources */,
 				922D358615E9E52D0031CEFC /* wmecast.html in Resources */,
 				92F8AD3715EBCBB300364B46 /* appIcon.icns in Resources */,
+				92450EAC1601DA5600A9D94E /* MCScrollViewWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +571,8 @@
 				9283C1BF15E431FA00E3A2CB /* MCUpdatesController.m in Sources */,
 				922D358215E9E42C0031CEFC /* MCWMECastClient.m in Sources */,
 				92A950E315F22BA800A64921 /* MCSoundDeviceColumn.m in Sources */,
+				92450EAB1601DA5600A9D94E /* MCScrollViewWindowController.m in Sources */,
+				92450EB61601ED0C00A9D94E /* NSUserDefaults+myColorSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,6 +713,11 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/Archives/2012-09-13/HSMScrollViewer 9-13-12 3.55 PM 2.xcarchive/Products/Library/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MikanChat/MikanChat-Prefix.pch";
 				INFOPLIST_FILE = "MikanChat/MikanChat-Info.plist";
@@ -700,6 +733,11 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/Archives/2012-09-13/HSMScrollViewer 9-13-12 3.55 PM 2.xcarchive/Products/Library/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MikanChat/MikanChat-Prefix.pch";
 				INFOPLIST_FILE = "MikanChat/MikanChat-Info.plist";
