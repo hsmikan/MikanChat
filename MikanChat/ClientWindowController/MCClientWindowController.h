@@ -31,6 +31,7 @@ typedef enum {
     id _clientController;
 }
 @property (assign) id <MCClientWindowControllerDelegate> delegate;
+- (id)initWithDelegate:(id<MCClientWindowControllerDelegate>)delegate;
 //
 //  Toolbar
 //

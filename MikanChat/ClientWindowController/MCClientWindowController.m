@@ -54,6 +54,13 @@
 @synthesize isScrollViewBT = _isScrollViewBT;
 @synthesize readModePB = _readModePB;
 @synthesize isReadCB = _isReadCB;
+- (id)initWithDelegate:(id<MCClientWindowControllerDelegate>)delegate {
+    self = [super initWithWindowNibName:@"MCClientWindowController"];
+    if (self) {
+        self.delegate = delegate;
+    }
+    return self;
+}
 
 - (id)init {
     self = [super initWithWindowNibName:@"MCClientWindowController"];

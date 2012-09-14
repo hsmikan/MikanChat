@@ -175,7 +175,7 @@
 // open Client Window
 //
 - (void)MC_PRIVATE_METHOD_PREPEND(openClientWindow):(MCClientIDNumber)idnum {
-    MCClientWindowController * client = [[MCClientWindowController alloc] init];
+    MCClientWindowController * client = [[MCClientWindowController alloc] initWithDelegate:self];
     [client showWindow:self clientIDNumber:idnum];
 }
 - (IBAction)openIRCWindow       :(id)sender { [self MC_PRIVATE_METHOD_PREPEND(openClientWindow):kMCClientIRCIDNumber]; }
