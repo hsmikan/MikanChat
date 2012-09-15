@@ -8,23 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-/*
- MCClients   と   _MCClientIDNum
- の記述は同順にするように！！
- */
-#define MCClinets @"IRC",@"CaveTube",@"LiveTube",@"WMECast"
-typedef enum {
-    kMCClientIRCIDNumber       =   0,
-    kMCClientCaveTubeIDNumber  =   1,
-    kMCClientLiveTubeIDNumber  =   2,
-    kMCClientStickamIDNumber   =   3,
-    kMCClientWMECastIDNumber   =   4,
-} MCClientIDNumber;
+#import "../MCClient.h"
 
-
-#define MCClientID
 @protocol MCClientWindowControllerDelegate <NSObject>
-- (void)receiveComment:(NSString*)comment;
+- (void)receiveComment:(NSString*)comment clientID:(MCClientIDNumber)client;
 @end
 
 @interface MCClientWindowController : NSWindowController {

@@ -237,7 +237,8 @@ typedef enum {
     // upsteam - delegate
     //
     [self.delegate clientGetMessage:[postinfo objectForKey:kMCClientMessageKey]
-                       userName:[postinfo objectForKey:kMCCavetubeUserNameForReadingKey]];
+                       userName:[postinfo objectForKey:kMCCavetubeUserNameForReadingKey]
+                            clienID:kMCClientCaveTubeIDNumber];
 }
 - (void)MC_PRIVATE_METHOD_PREPEND(addNewPosts):(WebScriptObject *)posts {
     NSArray * postarr = [self MC_PRIVATE_METHOD_PREPEND(convertedPosts):posts];

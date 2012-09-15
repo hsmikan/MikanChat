@@ -394,7 +394,7 @@ initiatedByFrame:(WebFrame *)frame{
     NSString * message = [webObj valueForKey:@"text"];
     NSString * nickname = [webObj valueForKey:@"nickname"];
     
-    if (![self.delegate clientGetMessage:message userName:nickname])
+    if (![self.delegate clientGetMessage:message userName:nickname clienID:kMCClientStickamIDNumber])
         return;
     
     

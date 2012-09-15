@@ -224,7 +224,7 @@
         case IRCMessageUpdate:;
             NSString * username = [object objectAtIndex:0];
             NSString * message  = [object objectAtIndex:1];
-            if ([self.delegate clientGetMessage:message userName:username]) {
+            if ([self.delegate clientGetMessage:message userName:username clienID:kMCClientIRCIDNumber]) {
                 [_messageList addObject:[NSDictionary dictionaryWithObjectsAndKeys:
                                         username,kMCClientUserNameKey,
                                         message,kMCClientMessageKey,

@@ -167,7 +167,7 @@ typedef enum {
         NSString * name = [[obj webScriptValueAtIndex:i] valueForKey:@"username"];
         NSString * message = [[obj webScriptValueAtIndex:i] valueForKey:@"message"];
         id number = [[obj webScriptValueAtIndex:i] valueForKey:@"commentNum"];
-        [self.delegate clientGetMessage:STRINGFORMAT(@"%@さん、%@",number,message) userName:name];
+        [self.delegate clientGetMessage:STRINGFORMAT(@"%@さん、%@",number,message) userName:name clienID:kMCClientLiveTubeIDNumber];
         
         
         NSString * dispayName = STRINGFORMAT(@"%@: %@",number,name);

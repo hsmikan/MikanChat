@@ -135,7 +135,7 @@ typedef enum {
                                  message,kMCClientMessageKey,
                                  name,kMCClientUserNameKey,
                                  nil]];
-        [self.delegate clientGetMessage:message userName:name];
+        [self.delegate clientGetMessage:message userName:name clienID:kMCClientWMECastIDNumber];
     }
     MCTBLReloadData(_messageTBL, _messageList.count);
 }

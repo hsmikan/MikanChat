@@ -222,7 +222,7 @@ CGFloat getNextRow(CALayer const * rootLayer, CGFloat const strHeight,NSSize con
          NSMiniaturizableWindowMask  = 4,  // 最小化ボタンを持つ
          NSResizableWindowMask       = 8   // リサイズボックスを持つ
          */
-        [win setStyleMask:NSTitledWindowMask |  NSResizableWindowMask];
+        [win setStyleMask:(NSTitledWindowMask |  NSResizableWindowMask | NSClosableWindowMask)];
         
         /*
          NSNormalWindowLevel

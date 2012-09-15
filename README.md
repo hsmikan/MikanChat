@@ -80,8 +80,11 @@ Mac用チャットブラウザ／コメント読み上げアプリケーショ�
 
 
 
+Download
+----------
+* アプリケーションのダウンロードは[こちら](http://www.waterbolt.info/~hsmikan/blog/?page_id=179)
 
 Contact
 ---------
-* BLOG : [MikanChat](http://www.waterbolt.info/~hsmikan/blog/?page_id=179)
+* BLOG : [MikanChat](http://www.waterbolt.info/~hsmikan/blog/)
 * Twitter : [@waterbolt_info](http://twitter.com/waterbolt_info)

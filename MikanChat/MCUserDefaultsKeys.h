@@ -68,6 +68,10 @@ extern NSString * const kMCIsUserITunesAPI;
 //
 extern NSString * const kMCScrollViewFontSize;
 extern NSString * const kMCScrollViewFontColor;
+extern NSString * const kMCScrollViewFontColorCT;
+extern NSString * const kMCScrollViewFontColorLT;
+extern NSString * const kMCScrollViewFontColorST;
+extern NSString * const kMCScrollViewFontColorWME;
 extern NSString * const kMCScrollViewFontDuration;
 extern NSString * const kMCScrollViewBGColor;
 extern NSString * const kMCScrollViewBGAlpha;

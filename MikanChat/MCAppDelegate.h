@@ -66,6 +66,10 @@
 - (IBAction)deleteIgnore:(id)sender;
 
 @property (assign) IBOutlet NSColorWell *scrollFontColorWell;
+@property (assign) IBOutlet NSColorWell *scrollFontColorWellCT;
+@property (assign) IBOutlet NSColorWell *scrollFontColorWellLT;
+@property (assign) IBOutlet NSColorWell *scrollFontColorWellST;
+@property (assign) IBOutlet NSColorWell *scrollFontColorWellWME;
 @property (assign) IBOutlet NSColorWell *scrollBackgroundColorWell;
 - (IBAction)openScrollViewer:(id)sender;
 - (IBAction)changeScrollViewBGCL:(id)sender;

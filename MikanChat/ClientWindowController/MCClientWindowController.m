@@ -8,8 +8,6 @@
 
 #import "MCClientWindowController.h"
 
-#import "../MCClient.h"
-
 
 #import "../MCUserDefaultsKeys.h"
 #import "../NSString/NSString+MCConverter.h"
@@ -168,7 +166,7 @@
  *  ClientDelegate
  *
  *==============================================================================*/
-- (BOOL)clientGetMessage:(NSString *)message userName:(NSString *)userName {
+- (BOOL)clientGetMessage:(NSString *)message userName:(NSString *)userName clienID:(MCClientIDNumber)client{
     BOOL isIgnore = NO;
     
     NSUserDefaults * df = [NSUserDefaults standardUserDefaults];
@@ -199,7 +197,7 @@
     
     
     if (_isScrollViewBT.state) {
-        [self.delegate receiveComment:message];
+        [self.delegate receiveComment:message clientID:client];
     }
     
     

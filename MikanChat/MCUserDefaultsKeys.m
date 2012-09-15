@@ -67,6 +67,10 @@ EXTERNED NSString * const kMCIsUserITunesAPI          = @"MCIsUserITunesAPI";
 //
 EXTERNED NSString * const kMCScrollViewFontSize     = @"MCScrollViewFontSize";
 EXTERNED NSString * const kMCScrollViewFontColor    = @"MCScrollViewFontColor";
+EXTERNED NSString * const kMCScrollViewFontColorCT  = @"MCScrollViewFontColorCT";
+EXTERNED NSString * const kMCScrollViewFontColorLT  = @"MCScrollViewFontColorLT";
+EXTERNED NSString * const kMCScrollViewFontColorST  = @"MCScrollViewFontColorST";
+EXTERNED NSString * const kMCScrollViewFontColorWME = @"MCScrollViewFontColorWME";
 EXTERNED NSString * const kMCScrollViewFontDuration = @"MCScrollViewDuration";
 EXTERNED NSString * const kMCScrollViewBGColor      = @"MCScrollViewBGColor";
 EXTERNED NSString * const kMCScrollViewBGAlpha      = @"MCScrollViewBGAlpha";

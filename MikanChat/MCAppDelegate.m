@@ -40,6 +40,10 @@
  *
  *==============================================================================*/
 @synthesize scrollFontColorWell = _scrollFontColorWell;
+@synthesize scrollFontColorWellCT = _scrollFontColorWellCT;
+@synthesize scrollFontColorWellLT = _scrollFontColorWellLT;
+@synthesize scrollFontColorWellST = _scrollFontColorWellST;
+@synthesize scrollFontColorWellWME = _scrollFontColorWellWME;
 @synthesize scrollBackgroundColorWell = _scrollBackgroundColorWell;
 @synthesize ignoreTBL           =   _ignoreTBL;
 @synthesize ignoreTypePB        =   _ignoreTypePB;
@@ -107,6 +111,11 @@
     }
     
     _scrollFontColorWell.color = [df colorForKey:kMCScrollViewFontColor];
+    _scrollFontColorWellCT.color = [df colorForKey:kMCScrollViewFontColorCT];
+    _scrollFontColorWellLT.color = [df colorForKey:kMCScrollViewFontColorLT];
+    _scrollFontColorWellST.color = [df colorForKey:kMCScrollViewFontColorST];
+    _scrollFontColorWellWME.color = [df colorForKey:kMCScrollViewFontColorWME];
+    
     _scrollBackgroundColorWell.color = [df colorForKey:kMCScrollViewBGColor];
     
     _scrollController = [[MCScrollViewWindowController alloc] init];
@@ -144,6 +153,10 @@
     NSUserDefaults * df = [NSUserDefaults standardUserDefaults];
     [df setColor:_scrollBackgroundColorWell.color forKey:kMCScrollViewBGColor];
     [df setColor:_scrollFontColorWell.color forKey:kMCScrollViewFontColor];
+    [df setColor:_scrollFontColorWellCT.color forKey:kMCScrollViewFontColorCT];
+    [df setColor:_scrollFontColorWellLT.color forKey:kMCScrollViewFontColorLT];
+    [df setColor:_scrollFontColorWellST.color forKey:kMCScrollViewFontColorST];
+    [df setColor:_scrollFontColorWellWME.color forKey:kMCScrollViewFontColorWME];
     
     [_scrollController release];
 }
@@ -207,20 +220,39 @@
  *  Scroll View
  *
  *==============================================================================*/
-//
-// TODO: 後の拡張の可能性を考慮して、イベントタイプも用意しておいたほうがよい？
 //  ・コメントをスクロールさせる
 //  ・hogehoge
 //
-- (void)receiveComment:(NSString *)comment {//event:(int)event{
+- (void)receiveComment:(NSString *)comment clientID:(MCClientIDNumber)client {
     NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
     
     if (![[_scrollController window] isVisible]) [_scrollController showWindow:self];
-        
+    
+    NSColor *fontcolor = nil;
+    switch (client) {
+        case kMCClientIRCIDNumber:
+            fontcolor = [_scrollFontColorWell color];
+            break;
+        case kMCClientCaveTubeIDNumber:
+            fontcolor = [_scrollFontColorWellCT color];
+            break;
+        case kMCClientLiveTubeIDNumber:
+            fontcolor = [_scrollFontColorWellLT color];
+            break;
+        case kMCClientStickamIDNumber:
+            fontcolor = [_scrollFontColorWellST color];
+            break;
+        case kMCClientWMECastIDNumber:
+            fontcolor = [_scrollFontColorWellWME color];
+            break;
+        default:
+            break;
+    }
+    if (fontcolor != nil)
     [_scrollController scrollString:comment attributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                         [NSNumber numberWithFloat:[df floatForKey:kMCScrollViewFontSize]],HSMScrollViewerFontSize,
                                                         [NSNumber numberWithFloat:[df floatForKey:kMCScrollViewFontDuration]],HSMScrollViewerDuration,
-                                                        [_scrollFontColorWell color],HSMScrollViewerFontColor,
+                                                        fontcolor,HSMScrollViewerFontColor,
                                                         nil]];
 }
 
