@@ -63,7 +63,10 @@
 - (id)init {
     self = [super initWithWindowNibName:@"MCClientWindowController"];
     if (self) {
-        
+        NSNotificationCenter * nfc = [NSNotificationCenter defaultCenter];
+        [nfc addObserver:self selector:@selector(MC_PRIVATE_METHOD_PREPEND(readModePBUpdated))
+                    name:kMCReadModePBNotficationKey object:nil];
+
     }
     return self;
 }
@@ -82,9 +85,7 @@
     [super windowDidLoad];
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-    NSNotificationCenter * nfc = [NSNotificationCenter defaultCenter];
-    [nfc addObserver:self selector:@selector(MC_PRIVATE_METHOD_PREPEND(readModePBUpdated))
-                name:kMCReadModePBNotficationKey object:nil];
+    [self MC_PRIVATE_METHOD_PREPEND(readModePBUpdated)];
 }
 
 

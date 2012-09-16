@@ -22,7 +22,7 @@ CABasicAnimation * createAnimation(CALayer const * rootLayer,CGFloat const durat
 CGFloat getNextRow(CALayer const * rootLayer, CGFloat const strHeight,NSSize const viewSize );
 
 - (void)scrollString:(NSString *)string attributes:(NSDictionary *)attributes;
-- (void)changeBackgroundColor;
+- (void)changeBackgroundColor:(NSColor*)color;
 @end
 
 

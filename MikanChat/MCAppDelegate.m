@@ -110,14 +110,21 @@
         }
     }
     
-    _scrollFontColorWell.color = [df colorForKey:kMCScrollViewFontColor];
-    _scrollFontColorWellCT.color = [df colorForKey:kMCScrollViewFontColorCT];
-    _scrollFontColorWellLT.color = [df colorForKey:kMCScrollViewFontColorLT];
-    _scrollFontColorWellST.color = [df colorForKey:kMCScrollViewFontColorST];
-    _scrollFontColorWellWME.color = [df colorForKey:kMCScrollViewFontColorWME];
+    //
+    // Restore
+    //
+#define CHECK_NOT_NIL(X,Y) if ( [df colorForKey:(Y)] ) (X).color = [df colorForKey:(Y)]
+    CHECK_NOT_NIL(_scrollFontColorWell,kMCScrollViewFontColor);
+    CHECK_NOT_NIL(_scrollFontColorWellCT,kMCScrollViewFontColorCT);
+    CHECK_NOT_NIL(_scrollFontColorWellLT,kMCScrollViewFontColorLT);
+    CHECK_NOT_NIL(_scrollFontColorWellST,kMCScrollViewFontColorST);
+    CHECK_NOT_NIL(_scrollFontColorWellWME,kMCScrollViewFontColorWME);
     
-    _scrollBackgroundColorWell.color = [df colorForKey:kMCScrollViewBGColor];
+    CHECK_NOT_NIL(_scrollBackgroundColorWell,kMCScrollViewBGColor);
     
+    //
+    // allocate ScrollViewer
+    //
     _scrollController = [[MCScrollViewWindowController alloc] init];
     [_scrollController changeBackgroundColor:_scrollBackgroundColorWell.color];
     /*
@@ -142,14 +149,10 @@
 //
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
     //TODO: クライアントの起動状況の確認
-    return NSTerminateNow;
-}
-
-
-//
-// 終了処理
-//
-- (void)applicationWillTerminate:(NSNotification *)notification {
+    
+    //
+    // Save
+    //
     NSUserDefaults * df = [NSUserDefaults standardUserDefaults];
     [df setColor:_scrollBackgroundColorWell.color forKey:kMCScrollViewBGColor];
     [df setColor:_scrollFontColorWell.color forKey:kMCScrollViewFontColor];
@@ -158,6 +161,17 @@
     [df setColor:_scrollFontColorWellST.color forKey:kMCScrollViewFontColorST];
     [df setColor:_scrollFontColorWellWME.color forKey:kMCScrollViewFontColorWME];
     
+    return NSTerminateNow;
+}
+
+
+//
+// 終了処理
+//
+- (void)applicationWillTerminate:(NSNotification *)notification {
+    //
+    // deallocate
+    //
     [_scrollController release];
 }
 

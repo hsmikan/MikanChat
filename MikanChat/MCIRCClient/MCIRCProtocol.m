@@ -415,12 +415,14 @@ if ( [self.delegate respondsToSelector:@selector(IRCEventOccured:withObject:)] )
 			//
 			// create message part of received strings(nsarray * rec)
 			//
+            /*
 			NSMutableString *msg = [NSMutableString string];
 			for (int i=3; i<[rec count]; i++) {
                 DLOG(@"\t\t\tmarged : %@",[rec objectAtIndex:i]);
 				[msg appendFormat:@"%@ ",[rec objectAtIndex:i]];
 			}
 			//[NSMutableString stringWithString:SPLIT(retStrFromIRC,@":",2)];
+            /*
 			[msg deleteCharactersInRange:NSMakeRange(0, 1)];
             if ([msg hasSuffix:@"\n"]) {
                 [msg deleteCharactersInRange:NSMakeRange(msg.length-1, 1)];
@@ -428,10 +430,12 @@ if ( [self.delegate respondsToSelector:@selector(IRCEventOccured:withObject:)] )
             if ([msg hasSuffix:@"\r"]) {
                 [msg deleteCharactersInRange:NSMakeRange(msg.length-1, 1)];
             }
-            [msg replaceOccurrencesOfRegex:@"(\\r)?(\\n)?$" withString:@""];
+            //[msg replaceOccurrencesOfRegex:@"(\\r)?(\\n)?$" withString:@""];
+             */
             // TODO: delete check
             
-            
+            NSString * msg = [string stringByReplacingOccurrencesOfRegex:STRINGFORMAT(@"^:.*PRIVMSG #.* :") withString:@""];
+            DLOG(@"\n\n\n\n%@\n\n%@\n\n\n\n",string,msg);
 			// print msg log
 			DLOG(@"\t\tIRCFLAG_MSGLOG is YES.");
 			IRCEVENT(IRCMessageUpdate,([NSArray arrayWithObjects:nameForIP,msg,nil]));
