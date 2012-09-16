@@ -74,3 +74,4 @@ EXTERNED NSString * const kMCScrollViewFontColorWME = @"MCScrollViewFontColorWME
 EXTERNED NSString * const kMCScrollViewFontDuration = @"MCScrollViewDuration";
 EXTERNED NSString * const kMCScrollViewBGColor      = @"MCScrollViewBGColor";
 EXTERNED NSString * const kMCScrollViewBGAlpha      = @"MCScrollViewBGAlpha";
+EXTERNED NSString * const kMCScrollViewIsShowBorder = @"MCScrollViewIsShowBorder";

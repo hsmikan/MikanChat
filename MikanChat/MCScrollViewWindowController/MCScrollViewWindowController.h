@@ -21,6 +21,7 @@
 - (void)unlockWindow;
 - (void)scrollString:(NSString *)string attributes:(NSDictionary *)attributes;
 - (void)changeBackgroundColor:(NSColor*)color;
+- (void)setIsShowBorder:(BOOL)isShow;
 
 //
 // initだけを使うようにしたい

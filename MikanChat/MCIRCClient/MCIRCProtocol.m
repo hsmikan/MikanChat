@@ -434,7 +434,7 @@ if ( [self.delegate respondsToSelector:@selector(IRCEventOccured:withObject:)] )
              */
             // TODO: delete check
             
-            NSString * msg = [string stringByReplacingOccurrencesOfRegex:STRINGFORMAT(@"^:.*PRIVMSG #.* :") withString:@""];
+            NSString * msg = [string stringByReplacingOccurrencesOfRegex:STRINGFORMAT(@":.*PRIVMSG #.* :") withString:@""];
             DLOG(@"\n\n\n\n%@\n\n%@\n\n\n\n",string,msg);
 			// print msg log
 			DLOG(@"\t\tIRCFLAG_MSGLOG is YES.");

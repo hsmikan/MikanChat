@@ -127,6 +127,7 @@
     //
     _scrollController = [[MCScrollViewWindowController alloc] init];
     [_scrollController changeBackgroundColor:_scrollBackgroundColorWell.color];
+    [_scrollController setIsShowBorder:[df boolForKey:kMCScrollViewIsShowBorder]];
     /*
     [_scrollController showWindow:self];
     [self receiveComment:@"test"];
@@ -506,5 +507,9 @@
 - (IBAction)unlockScrollViewer:(id)sender {
     [_scrollController unlockWindow];
     [_scrollController showWindow:self];
+}
+
+- (IBAction)scrollViewerShowBorder:(id)sender {
+    [_scrollController setIsShowBorder:(BOOL)[sender state]];
 }
 @end

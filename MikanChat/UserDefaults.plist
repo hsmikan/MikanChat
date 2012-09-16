@@ -53,5 +53,7 @@
 	<integer>5</integer>
 	<key>MCScrollViewBGAlpha</key>
 	<integer>50</integer>
+	<key>MCScrollViewIsShowBorder</key>
+	<false/>
 </dict>
 </plist>

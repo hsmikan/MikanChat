@@ -75,3 +75,4 @@ extern NSString * const kMCScrollViewFontColorWME;
 extern NSString * const kMCScrollViewFontDuration;
 extern NSString * const kMCScrollViewBGColor;
 extern NSString * const kMCScrollViewBGAlpha;
+extern NSString * const kMCScrollViewIsShowBorder;

@@ -75,4 +75,5 @@
 - (IBAction)changeScrollViewBGCL:(id)sender;
 - (IBAction)lockScrollViewer:(id)sender;
 - (IBAction)unlockScrollViewer:(id)sender;
+- (IBAction)scrollViewerShowBorder:(id)sender;
 @end

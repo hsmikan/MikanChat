@@ -23,6 +23,8 @@ CGFloat getNextRow(CALayer const * rootLayer, CGFloat const strHeight,NSSize con
 
 - (void)scrollString:(NSString *)string attributes:(NSDictionary *)attributes;
 - (void)changeBackgroundColor:(NSColor*)color;
+- (void)setBorderWidth:(CGFloat)width;
+- (CGFloat)borderWidth;
 @end
 
 
@@ -118,18 +120,20 @@ CGFloat getNextRow(CALayer const * rootLayer, CGFloat const strHeight,NSSize con
     [textLayer addAnimation:movingAnimation forKey:@"moveingAnimation"];
     [self performSelector:@selector(removeTextLayer:)
                withObject:textLayer
-               afterDelay:duration-0.2];
+               afterDelay:calduration-0.2];
 }
 
 
 
 
 CABasicAnimation * createAnimation(CALayer const * rootLayer,CGFloat const duration,NSSize const stringSize,NSSize const viewSize) {
+    DLOG(@"string %f %f\nview %f %f",stringSize.width,stringSize.height,viewSize.width,viewSize.height);
     CGFloat rowShouldBeDraw = getNextRow(rootLayer, stringSize.height, viewSize);
     CABasicAnimation *movingAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
-      movingAnimation.duration  = duration;
+    movingAnimation.duration  = duration;
       movingAnimation.fromValue = [NSValue valueWithPoint:NSMakePoint(viewSize.width+stringSize.width/2, rowShouldBeDraw)];
-      movingAnimation.toValue   = [NSValue valueWithPoint:NSMakePoint(-stringSize.width/2, rowShouldBeDraw)];
+      movingAnimation.toValue   = [NSValue valueWithPoint:NSMakePoint(0/*-stringSize.width/2*/, rowShouldBeDraw)];
+    DLOG(@"%@",movingAnimation.toValue);
     return movingAnimation;
 }
 
@@ -182,6 +186,17 @@ CGFloat getNextRow(CALayer const * rootLayer, CGFloat const strHeight,NSSize con
     _rootLayer.backgroundColor = cgColor;
     CGColorRelease(cgColor);
 }
+
+
+- (void)setBorderWidth:(CGFloat)width {
+    _rootLayer.borderWidth = width;
+}
+
+
+- (CGFloat)borderWidth {
+    return _rootLayer.borderWidth;
+}
+
 @end
 
 
@@ -256,6 +271,21 @@ CGFloat getNextRow(CALayer const * rootLayer, CGFloat const strHeight,NSSize con
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     NSWindow * window = [self window];
     window.contentView = _contentView;
+    
+    /*enum {
+     NSViewNotSizable     = 0,
+     NSViewMinXMargin     = 1,
+     NSViewWidthSizable   = 2,
+     NSViewMaxXMargin     = 4,
+     NSViewMinYMargin     = 8,
+     NSViewHeightSizable  = 16,
+     NSViewMaxYMargin     = 32
+     };
+     */
+//    [[window contentView] setAutoresizesSubviews:YES];
+////    [[window contentView] setAutoresizingMask:0];
+//    [[window contentView] setAutoresizingMask:NSViewMinXMargin | NSViewWidthSizable | NSViewMaxXMargin | NSViewMinYMargin | NSViewHeightSizable | NSViewMaxYMargin];
+
 }
 
 
@@ -268,9 +298,12 @@ CGFloat getNextRow(CALayer const * rootLayer, CGFloat const strHeight,NSSize con
 
 
 - (void)lockWindow {
+    NSWindow *win = [self window];
+    [win setStyleMask:NSBorderlessWindowMask];
     [[self window] setIgnoresMouseEvents:YES];
 }
 - (void)unlockWindow {
+    [[self window] setStyleMask:(NSTitledWindowMask |  NSResizableWindowMask | NSClosableWindowMask)];
     [[self window] setIgnoresMouseEvents:NO];
 }
 
@@ -281,6 +314,14 @@ CGFloat getNextRow(CALayer const * rootLayer, CGFloat const strHeight,NSSize con
 
 - (void)changeBackgroundColor:(NSColor*)color {
     [_contentView changeBackgroundColor:color];
+}
+
+
+- (void)setIsShowBorder:(BOOL)isShow {
+    if (isShow)
+        _contentView.borderWidth = 3;
+    else
+        _contentView.borderWidth = 0;
 }
 
 @end
