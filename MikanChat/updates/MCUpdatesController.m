@@ -14,7 +14,7 @@
 #define kFEEDURL @"http://www.waterbolt.info/apps/feed/MikanChat.xml"
 #endif
 
-#define kDOWNLOADURL @"http://www.waterbolt.info/~hsmikan/blog/?page_id=179#license"
+#define kDOWNLOADURL @"http://www.waterbolt.info/apps/MikanChat/download.php"
 
 @interface MCUpdatesController () <NSWindowDelegate,NSXMLParserDelegate>
 

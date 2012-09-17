@@ -71,9 +71,11 @@
 @property (assign) IBOutlet NSColorWell *scrollFontColorWellST;
 @property (assign) IBOutlet NSColorWell *scrollFontColorWellWME;
 @property (assign) IBOutlet NSColorWell *scrollBackgroundColorWell;
+@property (assign) IBOutlet NSMatrix *scrollTestClient;
 - (IBAction)openScrollViewer:(id)sender;
 - (IBAction)changeScrollViewBGCL:(id)sender;
 - (IBAction)lockScrollViewer:(id)sender;
 - (IBAction)unlockScrollViewer:(id)sender;
 - (IBAction)scrollViewerShowBorder:(id)sender;
+- (IBAction)testScroll:(id)sender;
 @end

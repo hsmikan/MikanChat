@@ -111,7 +111,7 @@ CGFloat getNextRow(CALayer const * rootLayer, CGFloat const strHeight,NSSize con
     }
     
     /*==============================================
-     *    put TextLayer in ROOTLAYER
+     *    put TextLayer on ROOTLAYER
      *==============================================*/
     [_rootLayer addSublayer:textLayer];
     
@@ -130,27 +130,31 @@ CGFloat getNextRow(CALayer const * rootLayer, CGFloat const strHeight,NSSize con
 
 
 CABasicAnimation * createAnimation(CALayer const * rootLayer,CGFloat const duration,NSSize const stringSize,NSSize const viewSize) {
-    DLOG(@"string %f %f\nview %f %f",stringSize.width,stringSize.height,viewSize.width,viewSize.height);
     CGFloat rowShouldBeDraw = getNextRow(rootLayer, stringSize.height, viewSize);
     CABasicAnimation *movingAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
     movingAnimation.duration  = duration;
       movingAnimation.fromValue = [NSValue valueWithPoint:NSMakePoint(viewSize.width+stringSize.width/2, rowShouldBeDraw)];
-      movingAnimation.toValue   = [NSValue valueWithPoint:NSMakePoint(0/*-stringSize.width/2*/, rowShouldBeDraw)];
-    DLOG(@"%@",movingAnimation.toValue);
+      movingAnimation.toValue   = [NSValue valueWithPoint:NSMakePoint(-stringSize.width/2, rowShouldBeDraw)];
     return movingAnimation;
 }
 
 
 CGFloat getNextRow(CALayer const * rootLayer, CGFloat const strHeight,NSSize const viewSize ) {
 #define kTextMargin strHeight
-#define kTopRow viewSize.height - kTextMargin/2.0f
+#define kTopRow viewSize.height - kTextMargin/2.0
     
     CGFloat rowShouldBeDraw  = 0;
-    CGFloat lastRow = 0.0f;
+    CGFloat lastRow = 0.0;
     BOOL isFirst=YES;
     BOOL isDrawableAtSameRow = NO;
     for (CALayer* layer in [[rootLayer sublayers] reverseObjectEnumerator]) {
         CALayer * lay = (CALayer*)[layer presentationLayer];
+        if (lay.position.x == 0.0 && lay.position.y == 0.0) continue;
+        
+        if (lastRow >= lay.position.y) {
+            break;
+        }
+        
         if (isFirst) {
             isFirst = NO;
             lastRow = lay.position.y;
@@ -163,13 +167,14 @@ CGFloat getNextRow(CALayer const * rootLayer, CGFloat const strHeight,NSSize con
             isDrawableAtSameRow = YES;
         }/*---------------------------------------------------*/
         
-        if (lay.position.y >= kTopRow) { break; }
+        //if (lay.position.y <= kTopRow) { break; }
     }
     
     if (!isDrawableAtSameRow) { rowShouldBeDraw = lastRow - kTextMargin;}
     if (rowShouldBeDraw<=0 || rowShouldBeDraw >= viewSize.height-strHeight) {
         rowShouldBeDraw = kTopRow;
     }
+    
     return rowShouldBeDraw;
 #undef kTextMargin
 #undef kTopRow

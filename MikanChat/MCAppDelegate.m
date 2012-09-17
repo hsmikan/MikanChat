@@ -45,6 +45,7 @@
 @synthesize scrollFontColorWellST = _scrollFontColorWellST;
 @synthesize scrollFontColorWellWME = _scrollFontColorWellWME;
 @synthesize scrollBackgroundColorWell = _scrollBackgroundColorWell;
+@synthesize scrollTestClient = _scrollTestClient;
 @synthesize ignoreTBL           =   _ignoreTBL;
 @synthesize ignoreTypePB        =   _ignoreTypePB;
 @synthesize ignoreContentTF     =   _ignoreContentTF;
@@ -521,5 +522,9 @@
 
 - (IBAction)scrollViewerShowBorder:(id)sender {
     [_scrollController setIsShowBorder:(BOOL)[sender state]];
+}
+
+- (IBAction)testScroll:(id)sender {
+    [self receiveComment:[sender stringValue] clientID:(int)_scrollTestClient.selectedTag];
 }
 @end
