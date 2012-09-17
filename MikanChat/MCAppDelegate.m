@@ -113,14 +113,21 @@
     //
     // Restore
     //
-#define CHECK_NOT_NIL(X,Y) if ( [df colorForKey:(Y)] ) (X).color = [df colorForKey:(Y)]
-    CHECK_NOT_NIL(_scrollFontColorWell,kMCScrollViewFontColor);
-    CHECK_NOT_NIL(_scrollFontColorWellCT,kMCScrollViewFontColorCT);
-    CHECK_NOT_NIL(_scrollFontColorWellLT,kMCScrollViewFontColorLT);
-    CHECK_NOT_NIL(_scrollFontColorWellST,kMCScrollViewFontColorST);
-    CHECK_NOT_NIL(_scrollFontColorWellWME,kMCScrollViewFontColorWME);
+#define CalibratedBlack [NSColor colorWithCalibratedRed:0 green:0 blue:0 alpha:1]
+#define CalibratedWhite [NSColor colorWithCalibratedRed:1 green:1 blue:1 alpha:1]
+#define CHECK_NOT_NIL(X,Y,Z) (X).color = ([df colorForKey:(Y)] ? [df colorForKey:(Y)] : (Z))
+//    if ( [df colorForKey:(Y)] ) (X).color = [df colorForKey:(Y)]
+    CHECK_NOT_NIL(_scrollFontColorWell,kMCScrollViewFontColor,CalibratedBlack);
+    CHECK_NOT_NIL(_scrollFontColorWellCT,kMCScrollViewFontColorCT,CalibratedBlack);
+    CHECK_NOT_NIL(_scrollFontColorWellLT,kMCScrollViewFontColorLT,CalibratedBlack);
+    CHECK_NOT_NIL(_scrollFontColorWellST,kMCScrollViewFontColorST,CalibratedBlack);
+    CHECK_NOT_NIL(_scrollFontColorWellWME,kMCScrollViewFontColorWME,CalibratedBlack);
     
-    CHECK_NOT_NIL(_scrollBackgroundColorWell,kMCScrollViewBGColor);
+    CHECK_NOT_NIL(_scrollBackgroundColorWell,kMCScrollViewBGColor,CalibratedWhite);
+#undef CalibratedWhite
+#undef CalibratedBlack
+#undef CHECK_NOT_NIL
+    
     
     //
     // allocate ScrollViewer
@@ -128,10 +135,13 @@
     _scrollController = [[MCScrollViewWindowController alloc] init];
     [_scrollController changeBackgroundColor:_scrollBackgroundColorWell.color];
     [_scrollController setIsShowBorder:[df boolForKey:kMCScrollViewIsShowBorder]];
-    /*
+    // TEST
+#ifdef DEBUG
+
     [_scrollController showWindow:self];
-    [self receiveComment:@"test"];
-     */
+    [self receiveComment:@"test" clientID:kMCClientIRCIDNumber];
+
+#endif
 }
 
 
@@ -264,11 +274,11 @@
             break;
     }
     if (fontcolor != nil)
-    [_scrollController scrollString:comment attributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                        [NSNumber numberWithFloat:[df floatForKey:kMCScrollViewFontSize]],HSMScrollViewerFontSize,
-                                                        [NSNumber numberWithFloat:[df floatForKey:kMCScrollViewFontDuration]],HSMScrollViewerDuration,
-                                                        fontcolor,HSMScrollViewerFontColor,
-                                                        nil]];
+        [_scrollController scrollString:comment attributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                            [NSNumber numberWithFloat:[df floatForKey:kMCScrollViewFontSize]],HSMScrollViewerFontSize,
+                                                            [NSNumber numberWithFloat:[df floatForKey:kMCScrollViewFontDuration]],HSMScrollViewerDuration,
+                                                            fontcolor,HSMScrollViewerFontColor,
+                                                            nil]];
 }
 
 

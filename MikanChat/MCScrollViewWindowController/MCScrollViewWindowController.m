@@ -77,7 +77,10 @@ CGFloat getNextRow(CALayer const * rootLayer, CGFloat const strHeight,NSSize con
 - (void)scrollString:(NSString *)string attributes:(NSDictionary *)attributes {
     CGFloat duration    = [[attributes objectForKey:HSMScrollViewerDuration] floatValue];
     CGFloat fontSize    = [[attributes objectForKey:HSMScrollViewerFontSize] floatValue];
-    NSColor * fontColor = [attributes objectForKey:HSMScrollViewerFontColor];
+    NSColor * fontColor;{
+        NSColor * paramFontColor = [attributes objectForKey:HSMScrollViewerFontColor];
+        fontColor =  ( COMPARESTRING(@"NSCalibratedRGBColorSpace", [paramFontColor colorSpaceName]) ? paramFontColor : [paramFontColor colorUsingColorSpaceName:@"NSCalibratedRGBColorSpace"]);
+    }
     
     
     /*=====================Size=====================*/
